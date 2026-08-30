@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALFA GRAPHIC | Creative Graphic Design Studio</title>
+
+<meta name="description" content="ALFA GRAPHIC menyediakan jasa desain grafis profesional untuk logo, banner, poster, konten media sosial dan branding.">
+<meta name="keywords" content="jasa desain grafis, logo, banner, poster, desain sosial media, ALFA GRAPHIC">
+<meta name="author" content="ALFA GRAPHIC">
+
+<style>
+:root{
+    --bg:#08070d;
+    --bg2:#100d19;
+    --panel:#14111f;
+    --panel2:#1c1729;
+    --text:#ffffff;
+    --muted:#aaa5b5;
+    --purple:#8b5cf6;
+    --pink:#ec4899;
+    --cyan:#22d3ee;
+    --gold:#fbbf24;
+    --green:#25d366;
+    --line:rgba(255,255,255,.09);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at 80% 0%,rgba(139,92,246,.20),transparent 30%),
+        radial-gradient(circle at 0% 40%,rgba(236,72,153,.08),transparent 25%),
+        var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+    background:rgba(8,7,13,.85);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+    z-index:999;
+}
+
+.nav-inner{
+    width:min(1150px,92%);
+    height:100%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    font-size:22px;
+    font-weight:bold;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    box-shadow:0 10px 30px rgba(139,92,246,.35);
+}
+
+.brand-text{
+    font-weight:900;
+    letter-spacing:.5px;
+}
+
+.brand-text small{
+    display:block;
+    color:var(--muted);
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:var(--pink);
+}
+
+.nav-btn{
+    padding:11px 17px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:130px 0 70px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:55px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 15px;
+    border:1px solid rgba(139,92,246,.4);
+    background:rgba(139,92,246,.10);
+    color:#d8c5ff;
+    border-radius:30px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(48px,7vw,82px);
+    line-height:.95;
+    letter-spacing:-3px;
+}
+
+.gradient{
+    background:linear-gradient(135deg,#fff,var(--purple),var(--pink),var(--cyan));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    margin:25px 0;
+    max-width:620px;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 20px;
+    border-radius:12px;
+    border:1px solid var(--line);
+    background:var(--panel);
+    color:white;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.primary{
+    border:none;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    box-shadow:0 15px 40px rgba(139,92,246,.25);
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
+    position:relative;
+    min-height:450px;
+    display:grid;
+    place-items:center;
+}
+
+.art-glow{
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:var(--purple);
+    opacity:.22;
+    filter:blur(120px);
+    border-radius:50%;
+}
+
+.design-card{
+    position:relative;
+    z-index:2;
+    width:min(420px,100%);
+    padding:18px;
+    border-radius:25px;
+    background:linear-gradient(145deg,var(--panel2),var(--bg2));
+    border:1px solid var(--line);
+    box-shadow:0 30px 90px rgba(0,0,0,.5);
+    transform:rotate(-4deg);
+}
+
+.design-top{
+    display:flex;
+    gap:7px;
+    padding-bottom:15px;
+    border-bottom:1px solid var(--line);
+}
+
+.dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+}
+
+.dot:nth-child(1){background:#ef4444;}
+.dot:nth-child(2){background:#fbbf24;}
+.dot:nth-child(3){background:#22c55e;}
+
+.art-board{
+    height:330px;
+    margin-top:18px;
+    border-radius:17px;
+    background:
+        linear-gradient(135deg,rgba(139,92,246,.85),rgba(236,72,153,.8)),
+        #111;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.art-board::before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    top:-100px;
+    right:-80px;
+}
+
+.art-board::after{
+    content:"";
+    position:absolute;
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    background:rgba(34,211,238,.3);
+    bottom:-80px;
+    left:-50px;
+}
+
+.art-logo{
+    position:relative;
+    z-index:2;
+    width:150px;
+    height:150px;
+    border:5px solid white;
+    border-radius:40px;
+    display:grid;
+    place-items:center;
+    font-size:75px;
+    font-weight:bold;
+    transform:rotate(8deg);
+}
+
+.float-card{
+    position:absolute;
+    z-index:3;
+    padding:14px 17px;
+    border-radius:14px;
+    background:rgba(25,20,40,.9);
+    border:1px solid var(--line);
+    backdrop-filter:blur(15px);
+}
+
+.float-card b{
+    display:block;
+}
+
+.float-card small{
+    color:var(--muted);
+    font-size:11px;
+}
+
+.float1{
+    left:-20px;
+    bottom:40px;
+}
+
+.float2{
+    right:-10px;
+    top:45px;
+}
+
+/* SECTION */
+
+section{
+    padding:95px 0;
+}
+
+.section-tag{
+    color:#d4bdff;
+    font-size:11px;
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-size:clamp(32px,4vw,50px);
+    letter-spacing:-1px;
+}
+
+.section-desc{
+    margin:16px 0 35px;
+    max-width:720px;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.grid{
+    display:grid;
+    gap:17px;
+}
+
+.card{
+    padding:23px;
+    border-radius:18px;
+    background:linear-gradient(145deg,var(--panel),var(--bg2));
+    border:1px solid var(--line);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(236,72,153,.45);
+}
+
+/* SERVICES */
+
+.services{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.service-icon{
+    width:55px;
+    height:55px;
+    display:grid;
+    place-items:center;
+    border-radius:16px;
+    background:rgba(139,92,246,.15);
+    font-size:25px;
+    margin-bottom:17px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* PORTFOLIO */
+
+.filter-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.filter{
+    padding:10px 16px;
+    border-radius:30px;
+    border:1px solid var(--line);
+    background:var(--panel);
+    color:var(--muted);
+    cursor:pointer;
+}
+
+.filter.active{
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    border:none;
+}
+
+.portfolio{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.project{
+    padding:0;
+    overflow:hidden;
+}
+
+.project.hidden{
+    display:none;
+}
+
+.project-image{
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+    position:relative;
+    overflow:hidden;
+}
+
+.project-image::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:rgba(255,255,255,.12);
+    border-radius:50%;
+    right:-50px;
+    top:-60px;
+}
+
+.purple{background:linear-gradient(135deg,#4c1d95,#a855f7);}
+.pink{background:linear-gradient(135deg,#831843,#ec4899);}
+.cyan{background:linear-gradient(135deg,#164e63,#22d3ee);}
+.gold{background:linear-gradient(135deg,#713f12,#fbbf24);}
+.green{background:linear-gradient(135deg,#14532d,#22c55e);}
+.blue{background:linear-gradient(135deg,#172554,#3b82f6);}
+
+.project-info{
+    padding:19px;
+}
+
+.project-info p{
+    margin-bottom:13px;
+}
+
+/* PRICING */
+
+.pricing{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.price-card{
+    position:relative;
+}
+
+.price{
+    font-size:28px;
+    font-weight:bold;
+    margin:20px 0;
+    color:#d9c6ff;
+}
+
+.features{
+    list-style:none;
+    margin-bottom:22px;
+}
+
+.features li{
+    padding:8px 0;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.features li::before{
+    content:"✓";
+    color:var(--green);
+    font-weight:bold;
+    margin-right:8px;
+}
+
+/* ORDER */
+
+.order-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+form{
+    display:grid;
+    gap:12px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:14px;
+    border-radius:11px;
+    border:1px solid var(--line);
+    background:var(--bg);
+    color:white;
+    outline:none;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.info-box{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.wa-box{
+    margin-top:18px;
+    padding:18px;
+    border-radius:14px;
+    background:rgba(37,211,102,.08);
+    border:1px solid rgba(37,211,102,.25);
+}
+
+.wa-box b{
+    color:#61e69a;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:70px 25px;
+    border-radius:25px;
+    background:
+        radial-gradient(circle at 50% 0%,rgba(236,72,153,.25),transparent 50%),
+        var(--panel);
+    border:1px solid var(--line);
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:35px 0;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--green);
+    font-size:26px;
+    box-shadow:0 15px 40px rgba(37,211,102,.35);
+    z-index:500;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-grid,
+    .order-grid{
+        grid-template-columns:1fr;
+    }
+
+    .services,
+    .portfolio,
+    .pricing{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:70px 0;
+    }
+
+    .services,
+    .portfolio,
+    .pricing{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .design-card{
+        transform:none;
+    }
+
+    .float1{
+        left:0;
+    }
+
+    .float2{
+        right:0;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="nav-inner">
+
+<a href="#home" class="brand">
+
+<div class="logo">A</div>
+
+<div class="brand-text">
+ALFA GRAPHIC
+<small>CREATIVE DESIGN STUDIO</small>
+</div>
+
+</a>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#services">Layanan</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#harga">Harga</a>
+<a href="#order">Order</a>
+</div>
+
+<a href="#order" class="nav-btn">
+💬 ORDER DESAIN
+</a>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+🎨 CREATIVE GRAPHIC DESIGN STUDIO
+</div>
+
+<h1>
+Wujudkan Ide
+Menjadi
+<span class="gradient">Visual.</span>
+</h1>
+
+<p>
+ALFA GRAPHIC membantu bisnis, UMKM dan personal brand
+membangun visual yang menarik melalui desain logo,
+banner, poster, konten media sosial dan branding profesional.
+</p>
+
+<div class="buttons">
+
+<a href="#portfolio" class="btn primary">
+🎨 LIHAT PORTFOLIO
+</a>
+
+<a href="#order" class="btn">
+🚀 ORDER SEKARANG
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-visual">
+
+<div class="art-glow"></div>
+
+<div class="design-card">
+
+<div class="design-top">
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+</div>
+
+<div class="art-board">
+<div class="art-logo">A</div>
+</div>
+
+</div>
+
+<div class="float-card float1">
+<b>🎨 Creative Design</b>
+<small>Modern & Professional</small>
+</div>
+
+<div class="float-card float2">
+<b>✨ ALFA GRAPHIC</b>
+<small>Bring Ideas To Life</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-tag">OUR SERVICES</div>
+
+<h2 class="section-title">
+Layanan Desain Grafis
+</h2>
+
+<p class="section-desc">
+Berbagai kebutuhan desain visual untuk membantu bisnis
+dan brand Anda tampil lebih profesional.
+</p>
+
+<div class="grid services">
+
+<div class="card">
+<div class="service-icon">🖌️</div>
+<h3>Desain Logo</h3>
+<p>Logo kreatif untuk membangun identitas visual brand Anda.</p>
+</div>
+
+<div class="card">
+<div class="service-icon">🖼️</div>
+<h3>Banner & Poster</h3>
+<p>Desain promosi menarik untuk produk, event dan bisnis.</p>
+</div>
+
+<div class="card">
+<div class="service-icon">📱</div>
+<h3>Social Media</h3>
+<p>Konten visual untuk Instagram, Facebook dan media sosial.</p>
+</div>
+
+<div class="card">
+<div class="service-icon">🏷️</div>
+<h3>Brand Identity</h3>
+<p>Membangun identitas visual agar brand lebih konsisten.</p>
+</div>
+
+<div class="card">
+<div class="service-icon">🎬</div>
+<h3>Thumbnail</h3>
+<p>Thumbnail YouTube dan konten digital yang menarik perhatian.</p>
+</div>
+
+<div class="card">
+<div class="service-icon">✨</div>
+<h3>Custom Design</h3>
+<p>Desain khusus sesuai kebutuhan kreatif Anda.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<div class="container">
+
+<div class="section-tag">OUR CREATIVE WORK</div>
+
+<h2 class="section-title">
+Portfolio Desain
+</h2>
+
+<p class="section-desc">
+Contoh kategori karya desain ALFA GRAPHIC.
+Portfolio asli dapat terus ditambahkan seiring project berjalan.
+</p>
+
+<div class="filter-buttons">
+
+<button class="filter active" data-filter="all">Semua</button> <button class="filter" data-filter="logo">Logo</button> <button class="filter" data-filter="poster">Poster</button> <button class="filter" data-filter="social">Social Media</button>
+
+</div>
+
+<div class="grid portfolio">
+
+<div class="card project" data-category="logo">
+<div class="project-image purple">🅰️</div>
+<div class="project-info">
+<h3>Creative Logo</h3>
+<p>Konsep desain identitas brand modern.</p>
+</div>
+</div>
+
+<div class="card project" data-category="poster">
+<div class="project-image pink">🎉</div>
+<div class="project-info">
+<h3>Event Poster</h3>
+<p>Desain promosi untuk acara dan event.</p>
+</div>
+</div>
+
+<div class="card project" data-category="social">
+<div class="project-image cyan">📱</div>
+<div class="project-info">
+<h3>Social Content</h3>
+<p>Konten visual untuk media sosial.</p>
+</div>
+</div>
+
+<div class="card project" data-category="poster">
+<div class="project-image gold">🔥</div>
+<div class="project-info">
+<h3>Promo Banner</h3>
+<p>Banner promosi produk dan bisnis.</p>
+</div>
+</div>
+
+<div class="card project" data-category="logo">
+<div class="project-image green">💎</div>
+<div class="project-info">
+<h3>Brand Identity</h3>
+<p>Visual branding untuk bisnis profesional.</p>
+</div>
+</div>
+
+<div class="card project" data-category="social">
+<div class="project-image blue">🚀</div>
+<div class="project-info">
+<h3>Digital Campaign</h3>
+<p>Desain visual untuk kampanye digital.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRICING -->
+
+<section id="harga">
+
+<div class="container">
+
+<div class="section-tag">DESIGN PACKAGE</div>
+
+<h2 class="section-title">
+Paket Desain
+</h2>
+
+<p class="section-desc">
+Pilih layanan sesuai kebutuhan desain Anda.
+Harga dapat disesuaikan berdasarkan tingkat kesulitan project.
+</p>
+
+<div class="grid pricing">
+
+<div class="card price-card">
+
+<h3>🥉 BASIC</h3>
+
+<div class="price">
+Starter
+</div>
+
+<ul class="features">
+<li>Desain sederhana</li>
+<li>1 konsep desain</li>
+<li>Revisi terbatas</li>
+<li>File digital</li>
+</ul>
+
+<a href="#" class="btn wa-link"
+data-message="Halo ALFA GRAPHIC, saya tertarik dengan paket BASIC.">
+💬 Konsultasi </a>
+
+</div>
+
+<div class="card price-card">
+
+<h3>🥈 PROFESSIONAL</h3>
+
+<div class="price">
+Popular
+</div>
+
+<ul class="features">
+<li>Desain profesional</li>
+<li>Konsep kreatif</li>
+<li>Beberapa revisi</li>
+<li>High Resolution</li>
+<li>Siap digunakan</li>
+</ul>
+
+<a href="#" class="btn primary wa-link"
+data-message="Halo ALFA GRAPHIC, saya tertarik dengan paket PROFESSIONAL.">
+🚀 ORDER </a>
+
+</div>
+
+<div class="card price-card">
+
+<h3>🥇 PREMIUM</h3>
+
+<div class="price">
+Custom
+</div>
+
+<ul class="features">
+<li>Custom branding</li>
+<li>Desain eksklusif</li>
+<li>Prioritas project</li>
+<li>High Resolution</li>
+<li>Custom kebutuhan</li>
+</ul>
+
+<a href="#" class="btn wa-link"
+data-message="Halo ALFA GRAPHIC, saya ingin konsultasi paket PREMIUM.">
+💬 Diskusikan </a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ORDER -->
+
+<section id="order">
+
+<div class="container">
+
+<div class="section-tag">START YOUR PROJECT</div>
+
+<h2 class="section-title">
+Pesan Desain Sekarang 🚀
+</h2>
+
+<p class="section-desc">
+Isi informasi kebutuhan desain Anda dan langsung kirim ke WhatsApp.
+</p>
+
+<div class="card order-grid">
+
+<form id="orderForm">
+
+<input id="name" required placeholder="Nama Anda">
+
+<input id="business" placeholder="Nama Bisnis / Brand">
+
+<select id="service">
+
+<option>Desain Logo</option>
+<option>Banner Promosi</option>
+<option>Poster</option>
+<option>Social Media Design</option>
+<option>Brand Identity</option>
+<option>Thumbnail</option>
+<option>Custom Design</option>
+
+</select>
+
+<textarea id="needs"
+placeholder="Ceritakan kebutuhan desain Anda..."></textarea>
+
+<button class="btn primary">
+💬 KIRIM KE WHATSAPP
+</button>
+
+</form>
+
+<div class="info-box">
+
+<h2>ALFA GRAPHIC 🎨</h2>
+
+<p class="section-desc">
+Mari diskusikan ide kreatif Anda dan wujudkan menjadi
+desain visual yang menarik dan profesional.
+</p>
+
+<div class="wa-box">
+
+<b>📱 WhatsApp</b>
+
+<p style="margin-top:8px">
+083870874140
+</p>
+
+</div>
+
+<br>
+
+<a href="https://adnan0076767-lgtm.github.io/Alfa-Design/"
+target="_blank" class="btn">
+🌐 KUNJUNGI ALFA DESIGN </a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section>
+
+<div class="container">
+
+<div class="cta">
+
+<div class="section-tag">
+LET'S CREATE SOMETHING AMAZING
+</div>
+
+<h2 class="section-title">
+Punya Ide?
+<span class="gradient">Mari Kita Visualkan.</span>
+</h2>
+
+<p class="section-desc" style="margin:20px auto">
+ALFA GRAPHIC siap membantu kebutuhan desain kreatif Anda.
+</p>
+
+<a href="#" class="btn primary wa-link"
+data-message="Halo ALFA GRAPHIC, saya ingin konsultasi desain.">
+🎨 KONSULTASI GRATIS </a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+<b>ALFA GRAPHIC</b><br>
+Creative Graphic Design Studio
+</div>
+
+<div>
+© 2026 ALFA GRAPHIC — All Rights Reserved
+</div>
+
+</div>
+
+</footer>
+
+<a href="#" class="whatsapp wa-link"
+data-message="Halo ALFA GRAPHIC, saya ingin konsultasi desain.">
+💬 </a>
+
+<script>
+
+/* WHATSAPP */
+
+const WA_NUMBER="6283870874140";
+
+function openWhatsApp(message){
+
+window.open(
+"https://wa.me/"+WA_NUMBER+
+"?text="+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+document.querySelectorAll(".wa-link").forEach(function(el){
+
+el.addEventListener("click",function(e){
+
+e.preventDefault();
+
+openWhatsApp(
+this.dataset.message ||
+"Halo ALFA GRAPHIC, saya ingin konsultasi desain."
+);
+
+});
+
+});
+
+
+/* PORTFOLIO FILTER */
+
+const filters=document.querySelectorAll(".filter");
+const projects=document.querySelectorAll(".project");
+
+filters.forEach(function(button){
+
+button.addEventListener("click",function(){
+
+filters.forEach(function(btn){
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+const filter=button.dataset.filter;
+
+projects.forEach(function(project){
+
+if(
+filter==="all" ||
+project.dataset.category===filter
+){
+
+project.classList.remove("hidden");
+
+}else{
+
+project.classList.add("hidden");
+
+}
+
+});
+
+});
+
+});
+
+
+/* ORDER FORM */
+
+document.getElementById("orderForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+
+const business=document.getElementById("business").value;
+
+const service=document.getElementById("service").value;
+
+const needs=document.getElementById("needs").value;
+
+const message=
+
+"Halo ALFA GRAPHIC 🎨\n\n"+
+
+"Saya ingin memesan desain.\n\n"+
+
+"👤 Nama: "+name+"\n"+
+
+"🏢 Bisnis/Brand: "+business+"\n"+
+
+"🎨 Layanan: "+service+"\n"+
+
+"📝 Kebutuhan:\n"+needs+"\n\n"+
+
+"Mohon informasi selanjutnya. Terima kasih!";
+
+openWhatsApp(message);
+
+});
+
+
+/* SCROLL ANIMATION */
+
+const cards=document.querySelectorAll(".card");
+
+const observer=new IntersectionObserver(function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+},{threshold:.1});
+
+cards.forEach(function(card){
+
+card.style.opacity="0";
+card.style.transform="translateY(25px)";
+card.style.transition="all .6s ease";
+
+observer.observe(card);
+
+});
+
+</script>
+
+</body>
+</html>
