@@ -5,20 +5,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ALFA GRAPHIC | Creative Graphic Design Studio</title>
+<title>ALFA GRAPHIC V2 | Creative Graphic Design Studio</title>
 
-<meta name="description" content="ALFA GRAPHIC menyediakan jasa desain grafis profesional untuk logo, banner, poster, konten media sosial dan branding.">
-<meta name="keywords" content="jasa desain grafis, logo, banner, poster, desain sosial media, ALFA GRAPHIC">
+<meta name="description" content="ALFA GRAPHIC adalah studio desain grafis kreatif untuk logo, banner, poster, social media dan branding.">
+<meta name="keywords" content="jasa desain grafis, desain logo, banner, poster, branding, ALFA GRAPHIC">
 <meta name="author" content="ALFA GRAPHIC">
 
 <style>
 :root{
-    --bg:#08070d;
-    --bg2:#100d19;
-    --panel:#14111f;
-    --panel2:#1c1729;
+    --bg:#07070b;
+    --bg2:#101018;
+    --card:#15151f;
+    --card2:#1d1d2b;
     --text:#ffffff;
-    --muted:#aaa5b5;
+    --muted:#aaaabb;
     --purple:#8b5cf6;
     --pink:#ec4899;
     --cyan:#22d3ee;
@@ -37,9 +37,9 @@
 body{
     font-family:Arial,Helvetica,sans-serif;
     background:
-        radial-gradient(circle at 80% 0%,rgba(139,92,246,.20),transparent 30%),
-        radial-gradient(circle at 0% 40%,rgba(236,72,153,.08),transparent 25%),
-        var(--bg);
+    radial-gradient(circle at 80% 0%,rgba(139,92,246,.20),transparent 30%),
+    radial-gradient(circle at 10% 50%,rgba(236,72,153,.10),transparent 30%),
+    var(--bg);
     color:var(--text);
     overflow-x:hidden;
 }
@@ -50,26 +50,25 @@ a{
 }
 
 .container{
-    width:min(1150px,92%);
+    width:min(1180px,92%);
     margin:auto;
 }
 
-/* NAVBAR */
+/* NAVIGATION */
 
 nav{
     position:fixed;
     top:0;
-    left:0;
     width:100%;
-    height:75px;
-    background:rgba(8,7,13,.85);
+    height:76px;
+    z-index:1000;
+    background:rgba(7,7,11,.80);
     backdrop-filter:blur(18px);
     border-bottom:1px solid var(--line);
-    z-index:999;
 }
 
 .nav-inner{
-    width:min(1150px,92%);
+    width:min(1180px,92%);
     height:100%;
     margin:auto;
     display:flex;
@@ -80,98 +79,100 @@ nav{
 .brand{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:11px;
 }
 
 .logo{
-    width:45px;
-    height:45px;
-    border-radius:14px;
+    width:46px;
+    height:46px;
+    border-radius:15px;
     display:grid;
     place-items:center;
     font-size:22px;
-    font-weight:bold;
+    font-weight:900;
     background:linear-gradient(135deg,var(--purple),var(--pink));
-    box-shadow:0 10px 30px rgba(139,92,246,.35);
+    box-shadow:0 10px 30px rgba(139,92,246,.4);
 }
 
-.brand-text{
+.brand-name{
     font-weight:900;
     letter-spacing:.5px;
 }
 
-.brand-text small{
+.brand-name small{
     display:block;
     color:var(--muted);
     font-size:9px;
     letter-spacing:2px;
+    margin-top:2px;
 }
 
 .nav-links{
     display:flex;
     gap:25px;
-    color:var(--muted);
     font-size:14px;
+    color:var(--muted);
 }
 
 .nav-links a:hover{
-    color:var(--pink);
+    color:white;
 }
 
-.nav-btn{
+.nav-button{
     padding:11px 17px;
     border-radius:12px;
     background:linear-gradient(135deg,var(--purple),var(--pink));
-    font-size:13px;
     font-weight:bold;
+    font-size:13px;
 }
 
 /* HERO */
 
 .hero{
     min-height:100vh;
+    padding:145px 0 80px;
     display:flex;
     align-items:center;
-    padding:130px 0 70px;
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:55px;
+    grid-template-columns:1.05fr .95fr;
+    gap:60px;
     align-items:center;
 }
 
 .badge{
     display:inline-block;
-    padding:9px 15px;
-    border:1px solid rgba(139,92,246,.4);
-    background:rgba(139,92,246,.10);
-    color:#d8c5ff;
+    padding:9px 16px;
     border-radius:30px;
-    font-size:12px;
-    margin-bottom:20px;
+    background:rgba(139,92,246,.12);
+    border:1px solid rgba(139,92,246,.3);
+    color:#d8c7ff;
+    font-size:11px;
+    letter-spacing:1px;
 }
 
 .hero h1{
-    font-size:clamp(48px,7vw,82px);
-    line-height:.95;
-    letter-spacing:-3px;
+    font-size:clamp(50px,7vw,88px);
+    line-height:.94;
+    letter-spacing:-4px;
+    margin:20px 0;
 }
 
 .gradient{
-    background:linear-gradient(135deg,#fff,var(--purple),var(--pink),var(--cyan));
+    background:linear-gradient(90deg,#ffffff,var(--purple),var(--pink),var(--cyan));
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
 }
 
 .hero p{
-    margin:25px 0;
-    max-width:620px;
+    max-width:600px;
     color:var(--muted);
     font-size:17px;
     line-height:1.8;
+    margin-bottom:28px;
 }
 
 .buttons{
@@ -181,16 +182,15 @@ nav{
 }
 
 .btn{
+    padding:14px 21px;
+    border-radius:13px;
+    background:var(--card);
+    border:1px solid var(--line);
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    padding:14px 20px;
-    border-radius:12px;
-    border:1px solid var(--line);
-    background:var(--panel);
-    color:white;
     font-weight:bold;
-    transition:.25s;
+    transition:.3s;
 }
 
 .btn:hover{
@@ -203,131 +203,158 @@ nav{
     box-shadow:0 15px 40px rgba(139,92,246,.25);
 }
 
-/* HERO VISUAL */
+/* HERO ART */
 
-.hero-visual{
+.hero-art{
+    min-height:470px;
     position:relative;
-    min-height:450px;
     display:grid;
     place-items:center;
 }
 
-.art-glow{
+.glow{
     position:absolute;
-    width:350px;
-    height:350px;
-    background:var(--purple);
-    opacity:.22;
-    filter:blur(120px);
+    width:370px;
+    height:370px;
     border-radius:50%;
+    background:var(--purple);
+    filter:blur(130px);
+    opacity:.25;
 }
 
-.design-card{
+.main-art{
     position:relative;
     z-index:2;
     width:min(420px,100%);
     padding:18px;
-    border-radius:25px;
-    background:linear-gradient(145deg,var(--panel2),var(--bg2));
+    border-radius:28px;
+    background:linear-gradient(145deg,var(--card2),var(--bg2));
     border:1px solid var(--line);
-    box-shadow:0 30px 90px rgba(0,0,0,.5);
+    box-shadow:0 35px 100px rgba(0,0,0,.6);
     transform:rotate(-4deg);
 }
 
-.design-top{
+.browser{
     display:flex;
     gap:7px;
     padding-bottom:15px;
     border-bottom:1px solid var(--line);
 }
 
-.dot{
+.browser span{
     width:9px;
     height:9px;
     border-radius:50%;
+    background:#ff5f57;
 }
 
-.dot:nth-child(1){background:#ef4444;}
-.dot:nth-child(2){background:#fbbf24;}
-.dot:nth-child(3){background:#22c55e;}
+.browser span:nth-child(2){background:#febc2e;}
+.browser span:nth-child(3){background:#28c840;}
 
-.art-board{
+.canvas-art{
     height:330px;
     margin-top:18px;
-    border-radius:17px;
-    background:
-        linear-gradient(135deg,rgba(139,92,246,.85),rgba(236,72,153,.8)),
-        #111;
-    position:relative;
+    border-radius:19px;
+    display:grid;
+    place-items:center;
     overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    position:relative;
+    background:linear-gradient(135deg,#5b21b6,#db2777,#0891b2);
 }
 
-.art-board::before{
+.canvas-art:before{
     content:"";
     position:absolute;
-    width:260px;
-    height:260px;
+    width:250px;
+    height:250px;
     border-radius:50%;
-    background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.12);
     top:-100px;
     right:-80px;
 }
 
-.art-board::after{
+.canvas-art:after{
     content:"";
     position:absolute;
-    width:190px;
-    height:190px;
+    width:180px;
+    height:180px;
     border-radius:50%;
-    background:rgba(34,211,238,.3);
-    bottom:-80px;
+    background:rgba(255,255,255,.13);
+    bottom:-70px;
     left:-50px;
 }
 
-.art-logo{
+.big-a{
     position:relative;
     z-index:2;
     width:150px;
     height:150px;
-    border:5px solid white;
-    border-radius:40px;
     display:grid;
     place-items:center;
+    border:5px solid white;
+    border-radius:42px;
     font-size:75px;
-    font-weight:bold;
-    transform:rotate(8deg);
+    font-weight:900;
+    transform:rotate(10deg);
 }
 
-.float-card{
+.float{
     position:absolute;
-    z-index:3;
+    z-index:5;
     padding:14px 17px;
-    border-radius:14px;
-    background:rgba(25,20,40,.9);
+    border-radius:15px;
+    background:rgba(20,20,32,.88);
     border:1px solid var(--line);
     backdrop-filter:blur(15px);
 }
 
-.float-card b{
+.float b{
     display:block;
 }
 
-.float-card small{
+.float small{
     color:var(--muted);
     font-size:11px;
 }
 
-.float1{
-    left:-20px;
-    bottom:40px;
+.float-one{
+    left:-15px;
+    bottom:45px;
 }
 
-.float2{
+.float-two{
     right:-10px;
     top:45px;
+}
+
+/* STATS */
+
+.stats{
+    padding:25px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat{
+    text-align:center;
+    padding:18px;
+}
+
+.stat h3{
+    font-size:28px;
+    color:#d8c7ff;
+}
+
+.stat p{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:6px;
 }
 
 /* SECTION */
@@ -336,58 +363,58 @@ section{
     padding:95px 0;
 }
 
-.section-tag{
+.tag{
     color:#d4bdff;
     font-size:11px;
     letter-spacing:2px;
     font-weight:bold;
-    margin-bottom:12px;
 }
 
-.section-title{
-    font-size:clamp(32px,4vw,50px);
-    letter-spacing:-1px;
+.title{
+    font-size:clamp(34px,4vw,52px);
+    margin:12px 0;
+    letter-spacing:-2px;
 }
 
-.section-desc{
-    margin:16px 0 35px;
-    max-width:720px;
+.desc{
     color:var(--muted);
+    max-width:720px;
     line-height:1.8;
-}
-
-.grid{
-    display:grid;
-    gap:17px;
-}
-
-.card{
-    padding:23px;
-    border-radius:18px;
-    background:linear-gradient(145deg,var(--panel),var(--bg2));
-    border:1px solid var(--line);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(236,72,153,.45);
+    margin-bottom:35px;
 }
 
 /* SERVICES */
+
+.grid{
+    display:grid;
+    gap:18px;
+}
 
 .services{
     grid-template-columns:repeat(3,1fr);
 }
 
-.service-icon{
-    width:55px;
-    height:55px;
+.card{
+    background:linear-gradient(145deg,var(--card),var(--bg2));
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:24px;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(236,72,153,.4);
+}
+
+.icon{
+    width:58px;
+    height:58px;
     display:grid;
     place-items:center;
-    border-radius:16px;
-    background:rgba(139,92,246,.15);
-    font-size:25px;
+    font-size:26px;
+    border-radius:17px;
+    background:rgba(139,92,246,.13);
     margin-bottom:17px;
 }
 
@@ -403,26 +430,27 @@ section{
 
 /* PORTFOLIO */
 
-.filter-buttons{
+.filter-box{
     display:flex;
-    gap:10px;
     flex-wrap:wrap;
-    margin-bottom:25px;
+    gap:10px;
+    margin-bottom:28px;
 }
 
 .filter{
-    padding:10px 16px;
+    padding:10px 17px;
     border-radius:30px;
     border:1px solid var(--line);
-    background:var(--panel);
+    background:var(--card);
     color:var(--muted);
     cursor:pointer;
+    transition:.25s;
 }
 
 .filter.active{
-    background:linear-gradient(135deg,var(--purple),var(--pink));
     color:white;
-    border:none;
+    border-color:transparent;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
 }
 
 .portfolio{
@@ -432,6 +460,7 @@ section{
 .project{
     padding:0;
     overflow:hidden;
+    cursor:pointer;
 }
 
 .project.hidden{
@@ -439,39 +468,50 @@ section{
 }
 
 .project-image{
-    height:220px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:70px;
+    height:230px;
     position:relative;
+    display:grid;
+    place-items:center;
+    font-size:75px;
     overflow:hidden;
 }
 
-.project-image::after{
+.project-image:after{
     content:"";
     position:absolute;
-    width:180px;
-    height:180px;
-    background:rgba(255,255,255,.12);
+    width:190px;
+    height:190px;
     border-radius:50%;
+    background:rgba(255,255,255,.13);
     right:-50px;
     top:-60px;
 }
 
-.purple{background:linear-gradient(135deg,#4c1d95,#a855f7);}
-.pink{background:linear-gradient(135deg,#831843,#ec4899);}
-.cyan{background:linear-gradient(135deg,#164e63,#22d3ee);}
-.gold{background:linear-gradient(135deg,#713f12,#fbbf24);}
-.green{background:linear-gradient(135deg,#14532d,#22c55e);}
-.blue{background:linear-gradient(135deg,#172554,#3b82f6);}
+.project-image span{
+    position:relative;
+    z-index:2;
+}
+
+.logo-bg{background:linear-gradient(135deg,#4c1d95,#a855f7);}
+.poster-bg{background:linear-gradient(135deg,#831843,#ec4899);}
+.social-bg{background:linear-gradient(135deg,#164e63,#22d3ee);}
+.brand-bg{background:linear-gradient(135deg,#713f12,#fbbf24);}
+.green-bg{background:linear-gradient(135deg,#14532d,#22c55e);}
+.blue-bg{background:linear-gradient(135deg,#172554,#3b82f6);}
 
 .project-info{
     padding:19px;
 }
 
 .project-info p{
-    margin-bottom:13px;
+    margin-top:7px;
+}
+
+.view{
+    display:inline-block;
+    margin-top:13px;
+    font-size:12px;
+    color:#d6c5ff;
 }
 
 /* PRICING */
@@ -480,20 +520,16 @@ section{
     grid-template-columns:repeat(3,1fr);
 }
 
-.price-card{
-    position:relative;
-}
-
 .price{
-    font-size:28px;
+    font-size:29px;
+    margin:18px 0;
+    color:#d7c5ff;
     font-weight:bold;
-    margin:20px 0;
-    color:#d9c6ff;
 }
 
 .features{
     list-style:none;
-    margin-bottom:22px;
+    margin-bottom:24px;
 }
 
 .features li{
@@ -502,7 +538,7 @@ section{
     font-size:13px;
 }
 
-.features li::before{
+.features li:before{
     content:"✓";
     color:var(--green);
     font-weight:bold;
@@ -517,54 +553,52 @@ section{
     gap:20px;
 }
 
-form{
-    display:grid;
-    gap:12px;
-}
-
-input,select,textarea{
+input,
+select,
+textarea{
     width:100%;
     padding:14px;
-    border-radius:11px;
+    border-radius:12px;
     border:1px solid var(--line);
-    background:var(--bg);
+    background:#0a0a10;
     color:white;
     outline:none;
+    margin-bottom:12px;
 }
 
 textarea{
-    min-height:120px;
+    min-height:125px;
     resize:vertical;
 }
 
-.info-box{
+.contact-box{
     display:flex;
     flex-direction:column;
     justify-content:center;
 }
 
-.wa-box{
-    margin-top:18px;
+.wa-info{
     padding:18px;
-    border-radius:14px;
+    border-radius:15px;
+    margin-top:15px;
     background:rgba(37,211,102,.08);
     border:1px solid rgba(37,211,102,.25);
 }
 
-.wa-box b{
-    color:#61e69a;
+.wa-info strong{
+    color:#67e69b;
 }
 
 /* CTA */
 
 .cta{
     text-align:center;
-    padding:70px 25px;
-    border-radius:25px;
-    background:
-        radial-gradient(circle at 50% 0%,rgba(236,72,153,.25),transparent 50%),
-        var(--panel);
+    padding:75px 25px;
+    border-radius:28px;
     border:1px solid var(--line);
+    background:
+    radial-gradient(circle at 50% 0%,rgba(236,72,153,.22),transparent 50%),
+    var(--card);
 }
 
 /* FOOTER */
@@ -576,88 +610,146 @@ footer{
     font-size:13px;
 }
 
-.footer-inner{
+.footer{
     display:flex;
     justify-content:space-between;
-    gap:20px;
     flex-wrap:wrap;
+    gap:20px;
 }
 
 /* WHATSAPP */
 
 .whatsapp{
     position:fixed;
-    right:20px;
-    bottom:20px;
-    width:58px;
-    height:58px;
+    bottom:22px;
+    right:22px;
+    width:60px;
+    height:60px;
     display:grid;
     place-items:center;
     border-radius:50%;
     background:var(--green);
-    font-size:26px;
-    box-shadow:0 15px 40px rgba(37,211,102,.35);
-    z-index:500;
+    font-size:27px;
+    box-shadow:0 15px 40px rgba(37,211,102,.4);
+    z-index:999;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+    display:none;
+    position:fixed;
+    z-index:5000;
+    inset:0;
+    background:rgba(0,0,0,.90);
+    backdrop-filter:blur(8px);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox-content{
+    width:min(700px,95%);
+    min-height:400px;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 30px 100px rgba(0,0,0,.8);
+}
+
+.lightbox-content .big-icon{
+    font-size:150px;
+    position:relative;
+    z-index:2;
+}
+
+.close{
+    position:absolute;
+    top:18px;
+    right:22px;
+    font-size:32px;
+    cursor:pointer;
+    z-index:10;
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
 
-    .hero-grid,
-    .order-grid{
-        grid-template-columns:1fr;
-    }
+.hero-grid,
+.order-grid{
+    grid-template-columns:1fr;
+}
 
-    .services,
-    .portfolio,
-    .pricing{
-        grid-template-columns:repeat(2,1fr);
-    }
+.services,
+.portfolio,
+.pricing{
+    grid-template-columns:repeat(2,1fr);
+}
 
-    .nav-links{
-        display:none;
-    }
+.nav-links{
+    display:none;
+}
+
+.stats-grid{
+    grid-template-columns:repeat(2,1fr);
+}
 
 }
 
 @media(max-width:600px){
 
-    section{
-        padding:70px 0;
-    }
+section{
+    padding:70px 0;
+}
 
-    .services,
-    .portfolio,
-    .pricing{
-        grid-template-columns:1fr;
-    }
+.hero h1{
+    font-size:52px;
+}
 
-    .hero h1{
-        font-size:50px;
-    }
+.services,
+.portfolio,
+.pricing{
+    grid-template-columns:1fr;
+}
 
-    .buttons{
-        flex-direction:column;
-    }
+.stats-grid{
+    grid-template-columns:repeat(2,1fr);
+}
 
-    .btn{
-        width:100%;
-    }
+.buttons{
+    flex-direction:column;
+}
 
-    .design-card{
-        transform:none;
-    }
+.buttons .btn{
+    width:100%;
+}
 
-    .float1{
-        left:0;
-    }
+.nav-button{
+    display:none;
+}
 
-    .float2{
-        right:0;
-    }
+.main-art{
+    transform:none;
+}
+
+.float-one{
+    left:0;
+}
+
+.float-two{
+    right:0;
+}
 
 }
+
 </style>
 
 </head>
@@ -670,14 +762,12 @@ footer{
 <div class="nav-inner">
 
 <a href="#home" class="brand">
-
 <div class="logo">A</div>
 
-<div class="brand-text">
+<div class="brand-name">
 ALFA GRAPHIC
 <small>CREATIVE DESIGN STUDIO</small>
 </div>
-
 </a>
 
 <div class="nav-links">
@@ -688,9 +778,7 @@ ALFA GRAPHIC
 <a href="#order">Order</a>
 </div>
 
-<a href="#order" class="nav-btn">
-💬 ORDER DESAIN
-</a>
+<a href="#order" class="nav-button">💬 ORDER</a>
 
 </div>
 </nav>
@@ -704,61 +792,60 @@ ALFA GRAPHIC
 <div>
 
 <div class="badge">
-🎨 CREATIVE GRAPHIC DESIGN STUDIO
+🎨 PREMIUM CREATIVE DESIGN STUDIO
 </div>
 
 <h1>
-Wujudkan Ide
-Menjadi
-<span class="gradient">Visual.</span>
+Design Your
+<span class="gradient">Vision.</span>
 </h1>
 
 <p>
 ALFA GRAPHIC membantu bisnis, UMKM dan personal brand
-membangun visual yang menarik melalui desain logo,
-banner, poster, konten media sosial dan branding profesional.
+mengubah ide menjadi visual kreatif melalui desain logo,
+poster, banner, social media dan branding profesional.
 </p>
 
 <div class="buttons">
 
 <a href="#portfolio" class="btn primary">
-🎨 LIHAT PORTFOLIO
+🎨 LIHAT KARYA
 </a>
 
 <a href="#order" class="btn">
-🚀 ORDER SEKARANG
+🚀 MULAI PROJECT
 </a>
 
 </div>
 
 </div>
 
-<div class="hero-visual">
+<div class="hero-art">
 
-<div class="art-glow"></div>
+<div class="glow"></div>
 
-<div class="design-card">
+<div class="main-art">
 
-<div class="design-top">
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
+<div class="browser">
+<span></span>
+<span></span>
+<span></span>
 </div>
 
-<div class="art-board">
-<div class="art-logo">A</div>
+<div class="canvas-art">
+<div class="big-a">A</div>
 </div>
 
 </div>
 
-<div class="float-card float1">
-<b>🎨 Creative Design</b>
-<small>Modern & Professional</small>
+<div class="float float-one">
+<b>✨ Creative Ideas</b>
+<small>Modern Visual Design</small>
 </div>
 
-<div class="float-card float2">
-<b>✨ ALFA GRAPHIC</b>
-<small>Bring Ideas To Life</small>
+<div class="float float-two">
+<b>🎨 ALFA GRAPHIC</b>
+<small>V2 Premium Studio</small>
 </div>
 
 </div>
@@ -767,59 +854,89 @@ banner, poster, konten media sosial dan branding profesional.
 
 </section>
 
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="container stats-grid">
+
+<div class="stat">
+<h3>V2</h3>
+<p>Premium Version</p>
+</div>
+
+<div class="stat">
+<h3>6+</h3>
+<p>Design Categories</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Online Consultation</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Creative Possibilities</p>
+</div>
+
+</div>
+
+</div>
+
 <!-- SERVICES -->
 
 <section id="services">
 
 <div class="container">
 
-<div class="section-tag">OUR SERVICES</div>
+<div class="tag">WHAT WE CREATE</div>
 
-<h2 class="section-title">
-Layanan Desain Grafis
+<h2 class="title">
+Layanan Kreatif Kami
 </h2>
 
-<p class="section-desc">
-Berbagai kebutuhan desain visual untuk membantu bisnis
-dan brand Anda tampil lebih profesional.
+<p class="desc">
+Berbagai solusi desain grafis untuk membantu bisnis dan brand
+Anda memiliki tampilan visual yang lebih menarik dan profesional.
 </p>
 
 <div class="grid services">
 
 <div class="card">
-<div class="service-icon">🖌️</div>
+<div class="icon">🖌️</div>
 <h3>Desain Logo</h3>
-<p>Logo kreatif untuk membangun identitas visual brand Anda.</p>
+<p>Identitas visual kreatif untuk membangun karakter brand Anda.</p>
 </div>
 
 <div class="card">
-<div class="service-icon">🖼️</div>
-<h3>Banner & Poster</h3>
-<p>Desain promosi menarik untuk produk, event dan bisnis.</p>
+<div class="icon">🖼️</div>
+<h3>Poster & Banner</h3>
+<p>Visual promosi menarik untuk produk, bisnis dan event.</p>
 </div>
 
 <div class="card">
-<div class="service-icon">📱</div>
+<div class="icon">📱</div>
 <h3>Social Media</h3>
-<p>Konten visual untuk Instagram, Facebook dan media sosial.</p>
+<p>Konten visual profesional untuk Instagram dan Facebook.</p>
 </div>
 
 <div class="card">
-<div class="service-icon">🏷️</div>
+<div class="icon">🏷️</div>
 <h3>Brand Identity</h3>
-<p>Membangun identitas visual agar brand lebih konsisten.</p>
+<p>Sistem visual agar brand tampil konsisten dan terpercaya.</p>
 </div>
 
 <div class="card">
-<div class="service-icon">🎬</div>
+<div class="icon">🎬</div>
 <h3>Thumbnail</h3>
-<p>Thumbnail YouTube dan konten digital yang menarik perhatian.</p>
+<p>Thumbnail kreatif untuk YouTube dan berbagai konten digital.</p>
 </div>
 
 <div class="card">
-<div class="service-icon">✨</div>
+<div class="icon">✨</div>
 <h3>Custom Design</h3>
-<p>Desain khusus sesuai kebutuhan kreatif Anda.</p>
+<p>Solusi desain khusus berdasarkan kebutuhan project Anda.</p>
 </div>
 
 </div>
@@ -834,18 +951,18 @@ dan brand Anda tampil lebih profesional.
 
 <div class="container">
 
-<div class="section-tag">OUR CREATIVE WORK</div>
+<div class="tag">SELECTED WORK</div>
 
-<h2 class="section-title">
-Portfolio Desain
+<h2 class="title">
+Portfolio Kreatif
 </h2>
 
-<p class="section-desc">
-Contoh kategori karya desain ALFA GRAPHIC.
-Portfolio asli dapat terus ditambahkan seiring project berjalan.
+<p class="desc">
+Klik salah satu karya untuk melihat tampilan portfolio lebih besar.
+Nanti emoji contoh ini bisa diganti dengan gambar desain asli Bos.
 </p>
 
-<div class="filter-buttons">
+<div class="filter-box">
 
 <button class="filter active" data-filter="all">Semua</button> <button class="filter" data-filter="logo">Logo</button> <button class="filter" data-filter="poster">Poster</button> <button class="filter" data-filter="social">Social Media</button>
 
@@ -853,51 +970,57 @@ Portfolio asli dapat terus ditambahkan seiring project berjalan.
 
 <div class="grid portfolio">
 
-<div class="card project" data-category="logo">
-<div class="project-image purple">🅰️</div>
+<div class="card project" data-category="logo" data-icon="🅰️" data-bg="logo-bg">
+<div class="project-image logo-bg"><span>🅰️</span></div>
 <div class="project-info">
 <h3>Creative Logo</h3>
-<p>Konsep desain identitas brand modern.</p>
+<p>Modern brand identity concept.</p>
+<span class="view">🔍 Klik untuk melihat</span>
 </div>
 </div>
 
-<div class="card project" data-category="poster">
-<div class="project-image pink">🎉</div>
+<div class="card project" data-category="poster" data-icon="🎉" data-bg="poster-bg">
+<div class="project-image poster-bg"><span>🎉</span></div>
 <div class="project-info">
 <h3>Event Poster</h3>
-<p>Desain promosi untuk acara dan event.</p>
+<p>Visual promosi event kreatif.</p>
+<span class="view">🔍 Klik untuk melihat</span>
 </div>
 </div>
 
-<div class="card project" data-category="social">
-<div class="project-image cyan">📱</div>
+<div class="card project" data-category="social" data-icon="📱" data-bg="social-bg">
+<div class="project-image social-bg"><span>📱</span></div>
 <div class="project-info">
-<h3>Social Content</h3>
-<p>Konten visual untuk media sosial.</p>
+<h3>Social Campaign</h3>
+<p>Creative social media content.</p>
+<span class="view">🔍 Klik untuk melihat</span>
 </div>
 </div>
 
-<div class="card project" data-category="poster">
-<div class="project-image gold">🔥</div>
+<div class="card project" data-category="poster" data-icon="🔥" data-bg="brand-bg">
+<div class="project-image brand-bg"><span>🔥</span></div>
 <div class="project-info">
 <h3>Promo Banner</h3>
-<p>Banner promosi produk dan bisnis.</p>
+<p>Powerful promotional visual.</p>
+<span class="view">🔍 Klik untuk melihat</span>
 </div>
 </div>
 
-<div class="card project" data-category="logo">
-<div class="project-image green">💎</div>
+<div class="card project" data-category="logo" data-icon="💎" data-bg="green-bg">
+<div class="project-image green-bg"><span>💎</span></div>
 <div class="project-info">
 <h3>Brand Identity</h3>
-<p>Visual branding untuk bisnis profesional.</p>
+<p>Professional visual branding.</p>
+<span class="view">🔍 Klik untuk melihat</span>
 </div>
 </div>
 
-<div class="card project" data-category="social">
-<div class="project-image blue">🚀</div>
+<div class="card project" data-category="social" data-icon="🚀" data-bg="blue-bg">
+<div class="project-image blue-bg"><span>🚀</span></div>
 <div class="project-info">
 <h3>Digital Campaign</h3>
-<p>Desain visual untuk kampanye digital.</p>
+<p>Creative campaign design.</p>
+<span class="view">🔍 Klik untuk melihat</span>
 </div>
 </div>
 
@@ -913,30 +1036,28 @@ Portfolio asli dapat terus ditambahkan seiring project berjalan.
 
 <div class="container">
 
-<div class="section-tag">DESIGN PACKAGE</div>
+<div class="tag">DESIGN PACKAGES</div>
 
-<h2 class="section-title">
-Paket Desain
+<h2 class="title">
+Pilih Paket Anda
 </h2>
 
-<p class="section-desc">
-Pilih layanan sesuai kebutuhan desain Anda.
-Harga dapat disesuaikan berdasarkan tingkat kesulitan project.
+<p class="desc">
+Setiap project dapat disesuaikan dengan kebutuhan dan tingkat
+kesulitan desain.
 </p>
 
 <div class="grid pricing">
 
-<div class="card price-card">
+<div class="card">
 
 <h3>🥉 BASIC</h3>
 
-<div class="price">
-Starter
-</div>
+<div class="price">Starter</div>
 
 <ul class="features">
 <li>Desain sederhana</li>
-<li>1 konsep desain</li>
+<li>1 konsep</li>
 <li>Revisi terbatas</li>
 <li>File digital</li>
 </ul>
@@ -947,13 +1068,11 @@ data-message="Halo ALFA GRAPHIC, saya tertarik dengan paket BASIC.">
 
 </div>
 
-<div class="card price-card">
+<div class="card">
 
 <h3>🥈 PROFESSIONAL</h3>
 
-<div class="price">
-Popular
-</div>
+<div class="price">Popular</div>
 
 <ul class="features">
 <li>Desain profesional</li>
@@ -969,13 +1088,11 @@ data-message="Halo ALFA GRAPHIC, saya tertarik dengan paket PROFESSIONAL.">
 
 </div>
 
-<div class="card price-card">
+<div class="card">
 
 <h3>🥇 PREMIUM</h3>
 
-<div class="price">
-Custom
-</div>
+<div class="price">Custom</div>
 
 <ul class="features">
 <li>Custom branding</li>
@@ -1003,14 +1120,14 @@ data-message="Halo ALFA GRAPHIC, saya ingin konsultasi paket PREMIUM.">
 
 <div class="container">
 
-<div class="section-tag">START YOUR PROJECT</div>
+<div class="tag">START YOUR PROJECT</div>
 
-<h2 class="section-title">
-Pesan Desain Sekarang 🚀
+<h2 class="title">
+Mari Buat Sesuatu yang Keren 🚀
 </h2>
 
-<p class="section-desc">
-Isi informasi kebutuhan desain Anda dan langsung kirim ke WhatsApp.
+<p class="desc">
+Isi kebutuhan desain Anda dan pesan langsung melalui WhatsApp.
 </p>
 
 <div class="card order-grid">
@@ -1022,7 +1139,6 @@ Isi informasi kebutuhan desain Anda dan langsung kirim ke WhatsApp.
 <input id="business" placeholder="Nama Bisnis / Brand">
 
 <select id="service">
-
 <option>Desain Logo</option>
 <option>Banner Promosi</option>
 <option>Poster</option>
@@ -1030,11 +1146,9 @@ Isi informasi kebutuhan desain Anda dan langsung kirim ke WhatsApp.
 <option>Brand Identity</option>
 <option>Thumbnail</option>
 <option>Custom Design</option>
-
 </select>
 
-<textarea id="needs"
-placeholder="Ceritakan kebutuhan desain Anda..."></textarea>
+<textarea id="needs" placeholder="Ceritakan kebutuhan desain Anda..."></textarea>
 
 <button class="btn primary">
 💬 KIRIM KE WHATSAPP
@@ -1042,23 +1156,18 @@ placeholder="Ceritakan kebutuhan desain Anda..."></textarea>
 
 </form>
 
-<div class="info-box">
+<div class="contact-box">
 
 <h2>ALFA GRAPHIC 🎨</h2>
 
-<p class="section-desc">
-Mari diskusikan ide kreatif Anda dan wujudkan menjadi
-desain visual yang menarik dan profesional.
+<p class="desc">
+Punya ide desain? Mari diskusikan dan kita wujudkan menjadi
+visual kreatif yang menarik.
 </p>
 
-<div class="wa-box">
-
-<b>📱 WhatsApp</b>
-
-<p style="margin-top:8px">
-083870874140
-</p>
-
+<div class="wa-info">
+<strong>📱 WhatsApp</strong>
+<p style="margin-top:8px">083870874140</p>
 </div>
 
 <br>
@@ -1083,22 +1192,20 @@ target="_blank" class="btn">
 
 <div class="cta">
 
-<div class="section-tag">
-LET'S CREATE SOMETHING AMAZING
-</div>
+<div class="tag">LET'S CREATE TOGETHER</div>
 
-<h2 class="section-title">
-Punya Ide?
-<span class="gradient">Mari Kita Visualkan.</span>
+<h2 class="title">
+Punya Ide Besar?
+<span class="gradient">Mari Visualkan.</span>
 </h2>
 
-<p class="section-desc" style="margin:20px auto">
-ALFA GRAPHIC siap membantu kebutuhan desain kreatif Anda.
+<p class="desc" style="margin:20px auto">
+ALFA GRAPHIC siap membantu mewujudkan ide Anda menjadi desain visual.
 </p>
 
 <a href="#" class="btn primary wa-link"
 data-message="Halo ALFA GRAPHIC, saya ingin konsultasi desain.">
-🎨 KONSULTASI GRATIS </a>
+🎨 KONSULTASI SEKARANG </a>
 
 </div>
 
@@ -1108,28 +1215,46 @@ data-message="Halo ALFA GRAPHIC, saya ingin konsultasi desain.">
 
 <footer>
 
-<div class="container footer-inner">
+<div class="container footer">
 
 <div>
-<b>ALFA GRAPHIC</b><br>
+<strong>ALFA GRAPHIC</strong><br>
 Creative Graphic Design Studio
 </div>
 
 <div>
-© 2026 ALFA GRAPHIC — All Rights Reserved
+© 2026 ALFA GRAPHIC V2 — All Rights Reserved
 </div>
 
 </div>
 
 </footer>
 
+<!-- WHATSAPP -->
+
 <a href="#" class="whatsapp wa-link"
 data-message="Halo ALFA GRAPHIC, saya ingin konsultasi desain.">
 💬 </a>
 
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<div class="lightbox-content" id="lightboxContent">
+
+<div class="close" id="closeLightbox">×</div>
+
+<div class="big-icon" id="lightboxIcon">🎨</div>
+
+</div>
+
+</div>
+
 <script>
 
-/* WHATSAPP */
+/* =========================
+WHATSAPP SYSTEM
+========================= */
 
 const WA_NUMBER="6283870874140";
 
@@ -1159,7 +1284,9 @@ this.dataset.message ||
 });
 
 
-/* PORTFOLIO FILTER */
+/* =========================
+PORTFOLIO FILTER
+========================= */
 
 const filters=document.querySelectorAll(".filter");
 const projects=document.querySelectorAll(".project");
@@ -1174,14 +1301,12 @@ btn.classList.remove("active");
 
 button.classList.add("active");
 
-const filter=button.dataset.filter;
+const category=button.dataset.filter;
 
 projects.forEach(function(project){
 
-if(
-filter==="all" ||
-project.dataset.category===filter
-){
+if(category==="all" ||
+project.dataset.category===category){
 
 project.classList.remove("hidden");
 
@@ -1198,7 +1323,52 @@ project.classList.add("hidden");
 });
 
 
-/* ORDER FORM */
+/* =========================
+LIGHTBOX PORTFOLIO
+========================= */
+
+const lightbox=document.getElementById("lightbox");
+const lightboxIcon=document.getElementById("lightboxIcon");
+const lightboxContent=document.getElementById("lightboxContent");
+const closeLightbox=document.getElementById("closeLightbox");
+
+projects.forEach(function(project){
+
+project.addEventListener("click",function(){
+
+const icon=this.dataset.icon;
+const bg=this.dataset.bg;
+
+lightboxIcon.textContent=icon;
+
+lightboxContent.className="lightbox-content "+bg;
+
+lightbox.classList.add("active");
+
+});
+
+});
+
+closeLightbox.addEventListener("click",function(){
+
+lightbox.classList.remove("active");
+
+});
+
+lightbox.addEventListener("click",function(e){
+
+if(e.target===lightbox){
+
+lightbox.classList.remove("active");
+
+}
+
+});
+
+
+/* =========================
+ORDER FORM
+========================= */
 
 document.getElementById("orderForm")
 .addEventListener("submit",function(e){
@@ -1206,27 +1376,18 @@ document.getElementById("orderForm")
 e.preventDefault();
 
 const name=document.getElementById("name").value;
-
 const business=document.getElementById("business").value;
-
 const service=document.getElementById("service").value;
-
 const needs=document.getElementById("needs").value;
 
 const message=
 
 "Halo ALFA GRAPHIC 🎨\n\n"+
-
 "Saya ingin memesan desain.\n\n"+
-
 "👤 Nama: "+name+"\n"+
-
 "🏢 Bisnis/Brand: "+business+"\n"+
-
-"🎨 Layanan: "+service+"\n"+
-
-"📝 Kebutuhan:\n"+needs+"\n\n"+
-
+"🎨 Layanan: "+service+"\n\n"+
+"📝 Kebutuhan Desain:\n"+needs+"\n\n"+
 "Mohon informasi selanjutnya. Terima kasih!";
 
 openWhatsApp(message);
@@ -1234,9 +1395,11 @@ openWhatsApp(message);
 });
 
 
-/* SCROLL ANIMATION */
+/* =========================
+SCROLL ANIMATION
+========================= */
 
-const cards=document.querySelectorAll(".card");
+const animatedCards=document.querySelectorAll(".card");
 
 const observer=new IntersectionObserver(function(entries){
 
@@ -1251,13 +1414,15 @@ entry.target.style.transform="translateY(0)";
 
 });
 
-},{threshold:.1});
+},{
+threshold:.1
+});
 
-cards.forEach(function(card){
+animatedCards.forEach(function(card){
 
 card.style.opacity="0";
 card.style.transform="translateY(25px)";
-card.style.transition="all .6s ease";
+card.style.transition="opacity .6s ease, transform .6s ease";
 
 observer.observe(card);
 
