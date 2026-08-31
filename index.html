@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ALFA GRAPHIC V2 | Creative Graphic Design Studio</title>
+<title>ALFA GRAPHIC V3 | Creative Graphic Design Studio</title>
 
-<meta name="description" content="ALFA GRAPHIC adalah studio desain grafis kreatif untuk logo, banner, poster, social media dan branding.">
-<meta name="keywords" content="jasa desain grafis, desain logo, banner, poster, branding, ALFA GRAPHIC">
+<meta name="description" content="ALFA GRAPHIC adalah studio desain grafis kreatif untuk desain kaos, sablon, logo, banner, poster, social media dan branding.">
+<meta name="keywords" content="jasa desain kaos, desain sablon, desain grafis, desain logo, banner, poster, branding, ALFA GRAPHIC">
 <meta name="author" content="ALFA GRAPHIC">
 
 <style>
+
 :root{
     --bg:#07070b;
     --bg2:#101018;
@@ -191,6 +191,8 @@ nav{
     justify-content:center;
     font-weight:bold;
     transition:.3s;
+    cursor:pointer;
+    color:white;
 }
 
 .btn:hover{
@@ -248,8 +250,13 @@ nav{
     background:#ff5f57;
 }
 
-.browser span:nth-child(2){background:#febc2e;}
-.browser span:nth-child(3){background:#28c840;}
+.browser span:nth-child(2){
+    background:#febc2e;
+}
+
+.browser span:nth-child(3){
+    background:#28c840;
+}
 
 .canvas-art{
     height:330px;
@@ -492,12 +499,98 @@ section{
     z-index:2;
 }
 
-.logo-bg{background:linear-gradient(135deg,#4c1d95,#a855f7);}
-.poster-bg{background:linear-gradient(135deg,#831843,#ec4899);}
-.social-bg{background:linear-gradient(135deg,#164e63,#22d3ee);}
-.brand-bg{background:linear-gradient(135deg,#713f12,#fbbf24);}
-.green-bg{background:linear-gradient(135deg,#14532d,#22c55e);}
-.blue-bg{background:linear-gradient(135deg,#172554,#3b82f6);}
+.logo-bg{
+    background:linear-gradient(135deg,#4c1d95,#a855f7);
+}
+
+.poster-bg{
+    background:linear-gradient(135deg,#831843,#ec4899);
+}
+
+.social-bg{
+    background:linear-gradient(135deg,#164e63,#22d3ee);
+}
+
+.brand-bg{
+    background:linear-gradient(135deg,#713f12,#fbbf24);
+}
+
+.green-bg{
+    background:linear-gradient(135deg,#14532d,#22c55e);
+}
+
+.blue-bg{
+    background:linear-gradient(135deg,#172554,#3b82f6);
+}
+
+/* FEATURED VTM */
+
+.featured-project{
+    grid-column:span 3;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(236,72,153,.45);
+    box-shadow:0 25px 70px rgba(139,92,246,.16);
+}
+
+.featured-label{
+    position:absolute;
+    top:18px;
+    left:18px;
+    z-index:10;
+    padding:9px 14px;
+    border-radius:30px;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.vtm-image{
+    width:100%;
+    max-height:620px;
+    background:#050507;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.vtm-image img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+}
+
+.featured-info{
+    padding:28px;
+}
+
+.project-category{
+    display:inline-block;
+    margin-bottom:10px;
+    color:#d8c7ff;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.featured-info h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.featured-info p{
+    max-width:800px;
+}
+
+.featured-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
 
 .project-info{
     padding:19px;
@@ -641,7 +734,7 @@ footer{
     position:fixed;
     z-index:5000;
     inset:0;
-    background:rgba(0,0,0,.90);
+    background:rgba(0,0,0,.92);
     backdrop-filter:blur(8px);
     align-items:center;
     justify-content:center;
@@ -653,30 +746,36 @@ footer{
 }
 
 .lightbox-content{
-    width:min(700px,95%);
-    min-height:400px;
+    width:min(900px,95%);
+    max-height:90vh;
     border-radius:25px;
     display:flex;
     align-items:center;
     justify-content:center;
     position:relative;
-    overflow:hidden;
+    overflow:auto;
+    background:#111;
     box-shadow:0 30px 100px rgba(0,0,0,.8);
+}
+
+.lightbox-content img{
+    max-width:100%;
+    max-height:85vh;
+    object-fit:contain;
 }
 
 .lightbox-content .big-icon{
     font-size:150px;
-    position:relative;
-    z-index:2;
 }
 
 .close{
-    position:absolute;
+    position:fixed;
     top:18px;
     right:22px;
-    font-size:32px;
+    font-size:38px;
     cursor:pointer;
-    z-index:10;
+    z-index:6000;
+    color:white;
 }
 
 /* RESPONSIVE */
@@ -692,6 +791,10 @@ footer{
 .portfolio,
 .pricing{
     grid-template-columns:repeat(2,1fr);
+}
+
+.featured-project{
+    grid-column:span 2;
 }
 
 .nav-links{
@@ -720,6 +823,10 @@ section{
     grid-template-columns:1fr;
 }
 
+.featured-project{
+    grid-column:span 1;
+}
+
 .stats-grid{
     grid-template-columns:repeat(2,1fr);
 }
@@ -729,6 +836,14 @@ section{
 }
 
 .buttons .btn{
+    width:100%;
+}
+
+.featured-actions{
+    flex-direction:column;
+}
+
+.featured-actions .btn{
     width:100%;
 }
 
@@ -748,10 +863,13 @@ section{
     right:0;
 }
 
+.featured-info h3{
+    font-size:23px;
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
@@ -762,12 +880,14 @@ section{
 <div class="nav-inner">
 
 <a href="#home" class="brand">
+
 <div class="logo">A</div>
 
 <div class="brand-name">
 ALFA GRAPHIC
 <small>CREATIVE DESIGN STUDIO</small>
 </div>
+
 </a>
 
 <div class="nav-links">
@@ -782,6 +902,7 @@ ALFA GRAPHIC
 
 </div>
 </nav>
+
 
 <!-- HERO -->
 
@@ -801,9 +922,9 @@ Design Your
 </h1>
 
 <p>
-ALFA GRAPHIC membantu bisnis, UMKM dan personal brand
-mengubah ide menjadi visual kreatif melalui desain logo,
-poster, banner, social media dan branding profesional.
+ALFA GRAPHIC membantu bisnis, UMKM, komunitas dan personal brand
+mengubah ide menjadi visual kreatif melalui desain kaos & sablon,
+logo, poster, banner, social media dan branding profesional.
 </p>
 
 <div class="buttons">
@@ -819,6 +940,7 @@ poster, banner, social media dan branding profesional.
 </div>
 
 </div>
+
 
 <div class="hero-art">
 
@@ -839,13 +961,13 @@ poster, banner, social media dan branding profesional.
 </div>
 
 <div class="float float-one">
-<b>✨ Creative Ideas</b>
-<small>Modern Visual Design</small>
+<b>👕 Apparel Design</b>
+<small>Custom T-Shirt & Sablon</small>
 </div>
 
 <div class="float float-two">
 <b>🎨 ALFA GRAPHIC</b>
-<small>V2 Premium Studio</small>
+<small>V3 Premium Studio</small>
 </div>
 
 </div>
@@ -854,6 +976,7 @@ poster, banner, social media dan branding profesional.
 
 </section>
 
+
 <!-- STATS -->
 
 <div class="stats">
@@ -861,12 +984,12 @@ poster, banner, social media dan branding profesional.
 <div class="container stats-grid">
 
 <div class="stat">
-<h3>V2</h3>
+<h3>V3</h3>
 <p>Premium Version</p>
 </div>
 
 <div class="stat">
-<h3>6+</h3>
+<h3>7+</h3>
 <p>Design Categories</p>
 </div>
 
@@ -884,6 +1007,7 @@ poster, banner, social media dan branding profesional.
 
 </div>
 
+
 <!-- SERVICES -->
 
 <section id="services">
@@ -897,11 +1021,18 @@ Layanan Kreatif Kami
 </h2>
 
 <p class="desc">
-Berbagai solusi desain grafis untuk membantu bisnis dan brand
-Anda memiliki tampilan visual yang lebih menarik dan profesional.
+Berbagai solusi desain grafis untuk membantu bisnis, komunitas
+dan brand Anda memiliki tampilan visual yang lebih menarik
+dan profesional.
 </p>
 
 <div class="grid services">
+
+<div class="card">
+<div class="icon">👕</div>
+<h3>Desain Kaos & Sablon</h3>
+<p>Desain apparel custom untuk komunitas, event, brand dan kebutuhan produksi sablon.</p>
+</div>
 
 <div class="card">
 <div class="icon">🖌️</div>
@@ -945,6 +1076,7 @@ Anda memiliki tampilan visual yang lebih menarik dan profesional.
 
 </section>
 
+
 <!-- PORTFOLIO -->
 
 <section id="portfolio">
@@ -958,70 +1090,197 @@ Portfolio Kreatif
 </h2>
 
 <p class="desc">
-Klik salah satu karya untuk melihat tampilan portfolio lebih besar.
-Nanti emoji contoh ini bisa diganti dengan gambar desain asli Bos.
+Berikut beberapa contoh konsep dan hasil karya ALFA GRAPHIC.
+Klik karya untuk melihat tampilan lebih besar.
 </p>
+
 
 <div class="filter-box">
 
-<button class="filter active" data-filter="all">Semua</button> <button class="filter" data-filter="logo">Logo</button> <button class="filter" data-filter="poster">Poster</button> <button class="filter" data-filter="social">Social Media</button>
+<button class="filter active" data-filter="all">Semua</button>
+
+<button class="filter" data-filter="kaos">
+👕 Desain Kaos
+</button>
+
+<button class="filter" data-filter="logo">
+Logo
+</button>
+
+<button class="filter" data-filter="poster">
+Poster
+</button>
+
+<button class="filter" data-filter="social">
+Social Media
+</button>
 
 </div>
 
+
 <div class="grid portfolio">
 
-<div class="card project" data-category="logo" data-icon="🅰️" data-bg="logo-bg">
-<div class="project-image logo-bg"><span>🅰️</span></div>
+
+<!-- VTM FEATURED PROJECT -->
+
+<div class="card project featured-project"
+data-category="kaos"
+data-image="assets/VTM%20DESIGN.png">
+
+<div class="featured-label">
+🏆 FEATURED PROJECT
+</div>
+
+<div class="vtm-image">
+
+<img
+src="assets/VTM%20DESIGN.png"
+alt="VTM Vespa Team Motor Custom T-Shirt Design">
+
+</div>
+
+<div class="featured-info">
+
+<span class="project-category">
+👕 CUSTOM APPAREL DESIGN
+</span>
+
+<h3>
+VTM — Vespa Team Motor
+</h3>
+
+<p>
+Desain kaos custom untuk komunitas Vespa dengan konsep dark,
+classic, racing dan vintage. Dibuat sebagai visual apparel komunitas
+dengan karakter yang kuat dan siap untuk kebutuhan produksi.
+</p>
+
+<div class="featured-actions">
+
+<a href="#order" class="btn primary">
+👕 PESAN DESAIN SEPERTI INI
+</a>
+
+<a href="#"
+class="btn wa-link"
+data-message="Halo ALFA GRAPHIC, saya tertarik membuat desain kaos custom seperti portfolio VTM Vespa Team Motor.">
+💬 KONSULTASI VIA WHATSAPP
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT LAMA -->
+
+<div class="card project"
+data-category="logo"
+data-icon="🅰️"
+data-bg="logo-bg">
+
+<div class="project-image logo-bg">
+<span>🅰️</span>
+</div>
+
 <div class="project-info">
 <h3>Creative Logo</h3>
 <p>Modern brand identity concept.</p>
 <span class="view">🔍 Klik untuk melihat</span>
 </div>
+
 </div>
 
-<div class="card project" data-category="poster" data-icon="🎉" data-bg="poster-bg">
-<div class="project-image poster-bg"><span>🎉</span></div>
+
+<div class="card project"
+data-category="poster"
+data-icon="🎉"
+data-bg="poster-bg">
+
+<div class="project-image poster-bg">
+<span>🎉</span>
+</div>
+
 <div class="project-info">
 <h3>Event Poster</h3>
 <p>Visual promosi event kreatif.</p>
 <span class="view">🔍 Klik untuk melihat</span>
 </div>
+
 </div>
 
-<div class="card project" data-category="social" data-icon="📱" data-bg="social-bg">
-<div class="project-image social-bg"><span>📱</span></div>
+
+<div class="card project"
+data-category="social"
+data-icon="📱"
+data-bg="social-bg">
+
+<div class="project-image social-bg">
+<span>📱</span>
+</div>
+
 <div class="project-info">
 <h3>Social Campaign</h3>
 <p>Creative social media content.</p>
 <span class="view">🔍 Klik untuk melihat</span>
 </div>
+
 </div>
 
-<div class="card project" data-category="poster" data-icon="🔥" data-bg="brand-bg">
-<div class="project-image brand-bg"><span>🔥</span></div>
+
+<div class="card project"
+data-category="poster"
+data-icon="🔥"
+data-bg="brand-bg">
+
+<div class="project-image brand-bg">
+<span>🔥</span>
+</div>
+
 <div class="project-info">
 <h3>Promo Banner</h3>
 <p>Powerful promotional visual.</p>
 <span class="view">🔍 Klik untuk melihat</span>
 </div>
+
 </div>
 
-<div class="card project" data-category="logo" data-icon="💎" data-bg="green-bg">
-<div class="project-image green-bg"><span>💎</span></div>
+
+<div class="card project"
+data-category="logo"
+data-icon="💎"
+data-bg="green-bg">
+
+<div class="project-image green-bg">
+<span>💎</span>
+</div>
+
 <div class="project-info">
 <h3>Brand Identity</h3>
 <p>Professional visual branding.</p>
 <span class="view">🔍 Klik untuk melihat</span>
 </div>
+
 </div>
 
-<div class="card project" data-category="social" data-icon="🚀" data-bg="blue-bg">
-<div class="project-image blue-bg"><span>🚀</span></div>
+
+<div class="card project"
+data-category="social"
+data-icon="🚀"
+data-bg="blue-bg">
+
+<div class="project-image blue-bg">
+<span>🚀</span>
+</div>
+
 <div class="project-info">
 <h3>Digital Campaign</h3>
 <p>Creative campaign design.</p>
 <span class="view">🔍 Klik untuk melihat</span>
 </div>
+
 </div>
 
 </div>
@@ -1029,6 +1288,7 @@ Nanti emoji contoh ini bisa diganti dengan gambar desain asli Bos.
 </div>
 
 </section>
+
 
 <!-- PRICING -->
 
@@ -1062,11 +1322,14 @@ kesulitan desain.
 <li>File digital</li>
 </ul>
 
-<a href="#" class="btn wa-link"
+<a href="#"
+class="btn wa-link"
 data-message="Halo ALFA GRAPHIC, saya tertarik dengan paket BASIC.">
-💬 Konsultasi </a>
+💬 Konsultasi
+</a>
 
 </div>
+
 
 <div class="card">
 
@@ -1082,11 +1345,14 @@ data-message="Halo ALFA GRAPHIC, saya tertarik dengan paket BASIC.">
 <li>Siap digunakan</li>
 </ul>
 
-<a href="#" class="btn primary wa-link"
+<a href="#"
+class="btn primary wa-link"
 data-message="Halo ALFA GRAPHIC, saya tertarik dengan paket PROFESSIONAL.">
-🚀 ORDER </a>
+🚀 ORDER
+</a>
 
 </div>
+
 
 <div class="card">
 
@@ -1102,9 +1368,11 @@ data-message="Halo ALFA GRAPHIC, saya tertarik dengan paket PROFESSIONAL.">
 <li>Custom kebutuhan</li>
 </ul>
 
-<a href="#" class="btn wa-link"
+<a href="#"
+class="btn wa-link"
 data-message="Halo ALFA GRAPHIC, saya ingin konsultasi paket PREMIUM.">
-💬 Diskusikan </a>
+💬 Diskusikan
+</a>
 
 </div>
 
@@ -1113,6 +1381,7 @@ data-message="Halo ALFA GRAPHIC, saya ingin konsultasi paket PREMIUM.">
 </div>
 
 </section>
+
 
 <!-- ORDER -->
 
@@ -1139,6 +1408,8 @@ Isi kebutuhan desain Anda dan pesan langsung melalui WhatsApp.
 <input id="business" placeholder="Nama Bisnis / Brand">
 
 <select id="service">
+
+<option>Desain Kaos & Sablon</option>
 <option>Desain Logo</option>
 <option>Banner Promosi</option>
 <option>Poster</option>
@@ -1146,15 +1417,18 @@ Isi kebutuhan desain Anda dan pesan langsung melalui WhatsApp.
 <option>Brand Identity</option>
 <option>Thumbnail</option>
 <option>Custom Design</option>
+
 </select>
 
-<textarea id="needs" placeholder="Ceritakan kebutuhan desain Anda..."></textarea>
+<textarea id="needs"
+placeholder="Ceritakan kebutuhan desain Anda..."></textarea>
 
 <button class="btn primary">
 💬 KIRIM KE WHATSAPP
 </button>
 
 </form>
+
 
 <div class="contact-box">
 
@@ -1166,15 +1440,24 @@ visual kreatif yang menarik.
 </p>
 
 <div class="wa-info">
+
 <strong>📱 WhatsApp</strong>
-<p style="margin-top:8px">083870874140</p>
+
+<p style="margin-top:8px">
+083870874140
+</p>
+
 </div>
 
 <br>
 
 <a href="https://adnan0076767-lgtm.github.io/Alfa-Design/"
-target="_blank" class="btn">
-🌐 KUNJUNGI ALFA DESIGN </a>
+target="_blank"
+class="btn">
+
+🌐 KUNJUNGI ALFA DESIGN
+
+</a>
 
 </div>
 
@@ -1183,6 +1466,7 @@ target="_blank" class="btn">
 </div>
 
 </section>
+
 
 <!-- CTA -->
 
@@ -1192,20 +1476,33 @@ target="_blank" class="btn">
 
 <div class="cta">
 
-<div class="tag">LET'S CREATE TOGETHER</div>
+<div class="tag">
+LET'S CREATE TOGETHER
+</div>
 
 <h2 class="title">
+
 Punya Ide Besar?
-<span class="gradient">Mari Visualkan.</span>
+
+<span class="gradient">
+Mari Visualkan.
+</span>
+
 </h2>
 
 <p class="desc" style="margin:20px auto">
+
 ALFA GRAPHIC siap membantu mewujudkan ide Anda menjadi desain visual.
+
 </p>
 
-<a href="#" class="btn primary wa-link"
+<a href="#"
+class="btn primary wa-link"
 data-message="Halo ALFA GRAPHIC, saya ingin konsultasi desain.">
-🎨 KONSULTASI SEKARANG </a>
+
+🎨 KONSULTASI SEKARANG
+
+</a>
 
 </div>
 
@@ -1213,42 +1510,63 @@ data-message="Halo ALFA GRAPHIC, saya ingin konsultasi desain.">
 
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
 
 <div class="container footer">
 
 <div>
-<strong>ALFA GRAPHIC</strong><br>
+
+<strong>ALFA GRAPHIC</strong>
+
+<br>
+
 Creative Graphic Design Studio
+
 </div>
 
 <div>
-© 2026 ALFA GRAPHIC V2 — All Rights Reserved
+
+© 2026 ALFA GRAPHIC V3 — All Rights Reserved
+
 </div>
 
 </div>
 
 </footer>
 
+
 <!-- WHATSAPP -->
 
-<a href="#" class="whatsapp wa-link"
+<a href="#"
+class="whatsapp wa-link"
 data-message="Halo ALFA GRAPHIC, saya ingin konsultasi desain.">
-💬 </a>
+
+💬
+
+</a>
+
 
 <!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
 
+<div class="close" id="closeLightbox">
+×
+</div>
+
 <div class="lightbox-content" id="lightboxContent">
 
-<div class="close" id="closeLightbox">×</div>
-
-<div class="big-icon" id="lightboxIcon">🎨</div>
-
+<div class="big-icon" id="lightboxIcon">
+🎨
 </div>
 
 </div>
+
+</div>
+
 
 <script>
 
@@ -1289,6 +1607,7 @@ PORTFOLIO FILTER
 ========================= */
 
 const filters=document.querySelectorAll(".filter");
+
 const projects=document.querySelectorAll(".project");
 
 filters.forEach(function(button){
@@ -1296,7 +1615,9 @@ filters.forEach(function(button){
 button.addEventListener("click",function(){
 
 filters.forEach(function(btn){
+
 btn.classList.remove("active");
+
 });
 
 button.classList.add("active");
@@ -1305,8 +1626,10 @@ const category=button.dataset.filter;
 
 projects.forEach(function(project){
 
-if(category==="all" ||
-project.dataset.category===category){
+if(
+category==="all" ||
+project.dataset.category===category
+){
 
 project.classList.remove("hidden");
 
@@ -1328,20 +1651,39 @@ LIGHTBOX PORTFOLIO
 ========================= */
 
 const lightbox=document.getElementById("lightbox");
-const lightboxIcon=document.getElementById("lightboxIcon");
+
 const lightboxContent=document.getElementById("lightboxContent");
+
 const closeLightbox=document.getElementById("closeLightbox");
 
 projects.forEach(function(project){
 
-project.addEventListener("click",function(){
+project.addEventListener("click",function(e){
+
+if(e.target.closest("a")){
+return;
+}
+
+const image=this.dataset.image;
+
+if(image){
+
+lightboxContent.innerHTML=
+'<img src="'+image+'" alt="Portfolio ALFA GRAPHIC">';
+
+}else{
 
 const icon=this.dataset.icon;
+
 const bg=this.dataset.bg;
 
-lightboxIcon.textContent=icon;
+lightboxContent.className=
+"lightbox-content "+bg;
 
-lightboxContent.className="lightbox-content "+bg;
+lightboxContent.innerHTML=
+'<div class="big-icon">'+icon+'</div>';
+
+}
 
 lightbox.classList.add("active");
 
@@ -1349,11 +1691,13 @@ lightbox.classList.add("active");
 
 });
 
+
 closeLightbox.addEventListener("click",function(){
 
 lightbox.classList.remove("active");
 
 });
+
 
 lightbox.addEventListener("click",function(e){
 
@@ -1376,18 +1720,27 @@ document.getElementById("orderForm")
 e.preventDefault();
 
 const name=document.getElementById("name").value;
+
 const business=document.getElementById("business").value;
+
 const service=document.getElementById("service").value;
+
 const needs=document.getElementById("needs").value;
 
 const message=
 
 "Halo ALFA GRAPHIC 🎨\n\n"+
+
 "Saya ingin memesan desain.\n\n"+
+
 "👤 Nama: "+name+"\n"+
+
 "🏢 Bisnis/Brand: "+business+"\n"+
+
 "🎨 Layanan: "+service+"\n\n"+
+
 "📝 Kebutuhan Desain:\n"+needs+"\n\n"+
+
 "Mohon informasi selanjutnya. Terima kasih!";
 
 openWhatsApp(message);
@@ -1408,6 +1761,7 @@ entries.forEach(function(entry){
 if(entry.isIntersecting){
 
 entry.target.style.opacity="1";
+
 entry.target.style.transform="translateY(0)";
 
 }
@@ -1418,11 +1772,15 @@ entry.target.style.transform="translateY(0)";
 threshold:.1
 });
 
+
 animatedCards.forEach(function(card){
 
 card.style.opacity="0";
+
 card.style.transform="translateY(25px)";
-card.style.transition="opacity .6s ease, transform .6s ease";
+
+card.style.transition=
+"opacity .6s ease, transform .6s ease";
 
 observer.observe(card);
 
