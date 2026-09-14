@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ALFA GRAPHIC | Jasa Desain Kaos, Jersey & Desain Grafis Profesional</title>
 
-<meta name="description" content="ALFA GRAPHIC menyediakan jasa desain kaos, jersey, sablon, logo, branding, poster, merchandise dan desain grafis profesional.">
-<meta name="keywords" content="jasa desain kaos, desain jersey, desain sablon, desain grafis, desain band, desain komunitas, desain logo, Alfa Graphic">
+<meta name="description" content="ALFA GRAPHIC menyediakan jasa desain kaos, jersey, sablon, logo, branding, poster, merchandise dan desain grafis profesional. Konsultasi desain custom melalui WhatsApp.">
+
+<meta name="keywords" content="jasa desain kaos, desain jersey, desain sablon, desain grafis, desain logo, desain band, desain komunitas, Alfa Graphic">
+
 <meta name="author" content="ALFA GRAPHIC">
+
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://adnan0076767-lgtm.github.io/Alfa-Graphic/">
 
-<!-- SOCIAL PREVIEW -->
+<!-- ==================================================
+     WHATSAPP / FACEBOOK / SOCIAL PREVIEW
+     ================================================== -->
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/">
-<meta property="og:title" content="ALFA GRAPHIC | Creative Graphic Design">
-<meta property="og:description" content="Jasa desain kaos, jersey, sablon, logo, branding dan desain grafis profesional.">
-<meta property="og:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/assets/KAOS-ALFA.png">
-<meta property="og:image:alt" content="ALFA GRAPHIC Creative Design">
+
 <meta property="og:site_name" content="ALFA GRAPHIC">
 
+<meta property="og:title" content="ALFA GRAPHIC | Jasa Desain Kaos & Desain Grafis">
+
+<meta property="og:description" content="Jasa desain kaos, jersey, sablon, logo, branding dan desain grafis profesional. Pesan desain custom melalui WhatsApp.">
+
+<meta property="og:url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/">
+
+<meta property="og:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/assets/KAOS-ALFA.png">
+
+<meta property="og:image:url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/assets/KAOS-ALFA.png">
+
+<meta property="og:image:secure_url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/assets/KAOS-ALFA.png">
+
+<meta property="og:image:alt" content="ALFA GRAPHIC - Portfolio Desain Kaos">
+
+<meta property="og:image:type" content="image/png">
+
+<!-- ==================================================
+     TWITTER / X PREVIEW
+     ================================================== -->
+
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ALFA GRAPHIC | Creative Graphic Design">
+
+<meta name="twitter:title" content="ALFA GRAPHIC | Jasa Desain Kaos & Desain Grafis">
+
 <meta name="twitter:description" content="Jasa desain kaos, jersey, sablon, logo, branding dan desain grafis profesional.">
+
 <meta name="twitter:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/assets/KAOS-ALFA.png">
+
+<meta name="twitter:image:alt" content="ALFA GRAPHIC Portfolio Desain">
 
 <style>
 
-/* =========================
+/* ==================================================
    RESET
-========================= */
+   ================================================== */
 
 *{
 margin:0;
@@ -42,25 +71,31 @@ scroll-behavior:smooth;
 
 :root{
 --red:#ff3028;
---red2:#ff5b54;
---dark:#050505;
---dark2:#0b0b0b;
+--red-dark:#b90000;
+--green:#25D366;
+--black:#050505;
+--dark:#090909;
 --card:#111;
---line:#242424;
---text:#fff;
---muted:#999;
+--card2:#151515;
+--line:#252525;
+--white:#fff;
+--gray:#999;
 }
 
 body{
 font-family:Arial,Helvetica,sans-serif;
-background:var(--dark);
-color:var(--text);
+background:var(--black);
+color:var(--white);
 overflow-x:hidden;
 }
 
-/* =========================
+body.lightbox-open{
+overflow:hidden;
+}
+
+/* ==================================================
    SCROLLBAR
-========================= */
+   ================================================== */
 
 ::-webkit-scrollbar{
 width:8px;
@@ -79,23 +114,23 @@ border-radius:20px;
 background:var(--red);
 }
 
-/* =========================
+/* ==================================================
    NAVBAR
-========================= */
+   ================================================== */
 
 nav{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-height:75px;
+height:74px;
 padding:0 7%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-background:rgba(5,5,5,.88);
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
+background:rgba(5,5,5,.90);
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
 border-bottom:1px solid rgba(255,255,255,.07);
 z-index:9999;
 }
@@ -117,8 +152,8 @@ list-style:none;
 }
 
 nav ul li a{
-color:#ddd;
 text-decoration:none;
+color:#ddd;
 font-size:13px;
 font-weight:bold;
 transition:.3s;
@@ -128,9 +163,9 @@ nav ul li a:hover{
 color:var(--red);
 }
 
-/* =========================
+/* ==================================================
    HERO
-========================= */
+   ================================================== */
 
 .hero{
 min-height:100vh;
@@ -141,30 +176,31 @@ justify-content:center;
 text-align:center;
 padding:130px 20px 90px;
 overflow:hidden;
+
 background:
-radial-gradient(circle at 50% 35%,rgba(255,48,40,.22),transparent 28%),
-radial-gradient(circle at 10% 80%,rgba(255,48,40,.08),transparent 25%),
-linear-gradient(135deg,#030303,#101010 50%,#050505);
+radial-gradient(circle at 50% 35%,rgba(255,48,40,.24),transparent 27%),
+radial-gradient(circle at 15% 80%,rgba(255,48,40,.08),transparent 25%),
+linear-gradient(135deg,#030303,#111 50%,#050505);
 }
 
 .hero::before{
 content:"";
 position:absolute;
-width:500px;
-height:500px;
+width:480px;
+height:480px;
 border:1px solid rgba(255,48,40,.15);
 border-radius:50%;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-animation:pulseRing 5s infinite;
+animation:heroPulse 5s infinite;
 }
 
 .hero::after{
 content:"";
 position:absolute;
-width:700px;
-height:700px;
+width:720px;
+height:720px;
 border:1px solid rgba(255,255,255,.035);
 border-radius:50%;
 top:50%;
@@ -172,9 +208,18 @@ left:50%;
 transform:translate(-50%,-50%);
 }
 
-@keyframes pulseRing{
-0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.4}
-50%{transform:translate(-50%,-50%) scale(1.08);opacity:.8}
+@keyframes heroPulse{
+
+0%,100%{
+transform:translate(-50%,-50%) scale(1);
+opacity:.35;
+}
+
+50%{
+transform:translate(-50%,-50%) scale(1.08);
+opacity:.8;
+}
+
 }
 
 .hero-content{
@@ -186,17 +231,15 @@ max-width:1000px;
 .badge{
 display:inline-flex;
 align-items:center;
-gap:8px;
 padding:10px 18px;
-border:1px solid rgba(255,48,40,.6);
-background:rgba(255,48,40,.06);
-border-radius:100px;
-color:#ff6b64;
-font-size:12px;
+border:1px solid rgba(255,48,40,.65);
+background:rgba(255,48,40,.07);
+border-radius:50px;
+color:#ff7771;
+font-size:11px;
 font-weight:bold;
 letter-spacing:2px;
 margin-bottom:28px;
-box-shadow:0 0 25px rgba(255,48,40,.08);
 }
 
 .hero h1{
@@ -204,16 +247,15 @@ font-size:clamp(48px,9vw,110px);
 line-height:.88;
 font-weight:900;
 letter-spacing:-6px;
-text-transform:uppercase;
 }
 
 .hero h1 span{
 color:var(--red);
-text-shadow:0 0 35px rgba(255,48,40,.2);
+text-shadow:0 0 40px rgba(255,48,40,.22);
 }
 
 .hero p{
-max-width:720px;
+max-width:730px;
 margin:30px auto 0;
 color:#aaa;
 font-size:17px;
@@ -239,7 +281,6 @@ gap:10px;
 text-decoration:none;
 font-size:13px;
 font-weight:900;
-letter-spacing:.5px;
 transition:.3s;
 }
 
@@ -252,12 +293,11 @@ box-shadow:0 10px 35px rgba(255,48,40,.18);
 .btn-primary:hover{
 transform:translateY(-5px);
 box-shadow:0 15px 45px rgba(255,48,40,.35);
-background:#ff4139;
 }
 
 .btn-outline{
-border:1px solid #444;
 background:#0d0d0d;
+border:1px solid #444;
 color:#fff;
 }
 
@@ -267,21 +307,20 @@ color:var(--red);
 transform:translateY(-4px);
 }
 
-/* =========================
-   WHATSAPP SVG
-========================= */
+/* ==================================================
+   WHATSAPP ICON
+   ================================================== */
 
 .wa-icon{
 width:21px;
 height:21px;
-display:block;
 fill:currentColor;
-flex-shrink:0;
+display:block;
 }
 
-/* =========================
+/* ==================================================
    SECTION
-========================= */
+   ================================================== */
 
 section{
 padding:100px 7%;
@@ -306,13 +345,13 @@ color:var(--red);
 max-width:650px;
 margin:15px auto 0;
 color:#888;
-line-height:1.7;
 font-size:14px;
+line-height:1.7;
 }
 
-/* =========================
+/* ==================================================
    STATS
-========================= */
+   ================================================== */
 
 .stats{
 max-width:1050px;
@@ -325,7 +364,7 @@ gap:15px;
 .stat{
 position:relative;
 overflow:hidden;
-background:linear-gradient(145deg,#131313,#0b0b0b);
+background:linear-gradient(145deg,#141414,#0b0b0b);
 border:1px solid var(--line);
 border-radius:16px;
 padding:30px 20px;
@@ -333,25 +372,9 @@ text-align:center;
 transition:.35s;
 }
 
-.stat::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:2px;
-background:var(--red);
-transform:scaleX(0);
-transition:.35s;
-}
-
 .stat:hover{
 transform:translateY(-7px);
 border-color:#444;
-}
-
-.stat:hover::before{
-transform:scaleX(1);
 }
 
 .stat h3{
@@ -363,14 +386,13 @@ font-weight:900;
 .stat p{
 margin-top:8px;
 color:#888;
-font-size:12px;
-text-transform:uppercase;
+font-size:11px;
 letter-spacing:1px;
 }
 
-/* =========================
+/* ==================================================
    SERVICES
-========================= */
+   ================================================== */
 
 .services{
 display:grid;
@@ -381,33 +403,17 @@ gap:18px;
 .service{
 position:relative;
 overflow:hidden;
-background:linear-gradient(145deg,#131313,#0b0b0b);
+background:linear-gradient(145deg,#141414,#0b0b0b);
 padding:32px;
 border:1px solid var(--line);
 border-radius:18px;
 transition:.35s;
 }
 
-.service::after{
-content:"";
-position:absolute;
-right:-50px;
-bottom:-50px;
-width:120px;
-height:120px;
-border-radius:50%;
-background:rgba(255,48,40,.08);
-transition:.35s;
-}
-
 .service:hover{
 transform:translateY(-8px);
 border-color:rgba(255,48,40,.5);
-box-shadow:0 15px 40px rgba(0,0,0,.3);
-}
-
-.service:hover::after{
-transform:scale(1.5);
+box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
 .service .icon{
@@ -417,7 +423,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 border-radius:15px;
-background:rgba(255,48,40,.09);
+background:rgba(255,48,40,.08);
 border:1px solid rgba(255,48,40,.2);
 font-size:28px;
 margin-bottom:22px;
@@ -429,29 +435,30 @@ margin-bottom:12px;
 }
 
 .service p{
-color:#888;
 font-size:14px;
 line-height:1.7;
+color:#888;
 }
 
-/* =========================
+/* ==================================================
    PORTFOLIO
-========================= */
+   ================================================== */
 
 .portfolio{
 background:
 linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
 linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px),
 #090909;
+
 background-size:40px 40px;
 }
 
 .portfolio-grid{
+max-width:1200px;
+margin:auto;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-max-width:1200px;
-margin:auto;
 }
 
 .portfolio-item{
@@ -461,12 +468,13 @@ overflow:hidden;
 border-radius:18px;
 background:#111;
 border:1px solid #222;
+cursor:pointer;
 transition:.4s;
 }
 
 .portfolio-item:hover{
 transform:translateY(-8px);
-border-color:rgba(255,48,40,.7);
+border-color:rgba(255,48,40,.75);
 box-shadow:0 20px 50px rgba(0,0,0,.45);
 }
 
@@ -475,35 +483,11 @@ width:100%;
 height:100%;
 object-fit:cover;
 display:block;
-transition:.5s;
+transition:.6s;
 }
 
 .portfolio-item:hover img{
-transform:scale(1.07);
-}
-
-.portfolio-placeholder{
-height:100%;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:
-radial-gradient(circle,rgba(255,48,40,.12),transparent 45%),
-linear-gradient(145deg,#171717,#080808);
-}
-
-.portfolio-placeholder .emoji{
-font-size:70px;
-margin-bottom:15px;
-filter:grayscale(.2);
-}
-
-.portfolio-placeholder h3{
-font-size:15px;
-letter-spacing:2px;
-color:#aaa;
+transform:scale(1.08);
 }
 
 .portfolio-info{
@@ -511,8 +495,8 @@ position:absolute;
 left:0;
 bottom:0;
 width:100%;
-padding:65px 22px 22px;
-background:linear-gradient(transparent,rgba(0,0,0,.95));
+padding:70px 22px 22px;
+background:linear-gradient(transparent,rgba(0,0,0,.96));
 }
 
 .portfolio-info h3{
@@ -525,9 +509,137 @@ color:#bbb;
 margin-top:6px;
 }
 
-/* =========================
+.portfolio-badge{
+position:absolute;
+top:15px;
+left:15px;
+padding:7px 11px;
+border-radius:20px;
+background:rgba(0,0,0,.7);
+border:1px solid rgba(255,255,255,.15);
+font-size:10px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+/* ==================================================
+   PORTFOLIO PLACEHOLDER
+   ================================================== */
+
+.portfolio-placeholder{
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+
+background:
+radial-gradient(circle,rgba(255,48,40,.13),transparent 45%),
+linear-gradient(145deg,#171717,#080808);
+}
+
+.portfolio-placeholder .emoji{
+font-size:70px;
+margin-bottom:15px;
+}
+
+.portfolio-placeholder h3{
+font-size:14px;
+letter-spacing:2px;
+color:#aaa;
+}
+
+/* ==================================================
+   LIGHTBOX
+   ================================================== */
+
+.lightbox{
+position:fixed;
+inset:0;
+display:none;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,.94);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+z-index:100000;
+padding:30px;
+}
+
+.lightbox.active{
+display:flex;
+}
+
+.lightbox-content{
+position:relative;
+max-width:1000px;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.lightbox img{
+max-width:90vw;
+max-height:82vh;
+object-fit:contain;
+border-radius:12px;
+box-shadow:0 30px 100px rgba(0,0,0,.7);
+}
+
+.lightbox-close{
+position:fixed;
+top:22px;
+right:28px;
+width:48px;
+height:48px;
+border-radius:50%;
+background:#151515;
+border:1px solid #333;
+color:white;
+font-size:25px;
+cursor:pointer;
+z-index:3;
+}
+
+.lightbox-close:hover{
+background:var(--red);
+border-color:var(--red);
+}
+
+.lightbox-prev,
+.lightbox-next{
+position:fixed;
+top:50%;
+transform:translateY(-50%);
+width:52px;
+height:52px;
+border-radius:50%;
+background:#151515;
+border:1px solid #333;
+color:white;
+font-size:28px;
+cursor:pointer;
+z-index:3;
+}
+
+.lightbox-prev{
+left:25px;
+}
+
+.lightbox-next{
+right:25px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover{
+background:var(--red);
+border-color:var(--red);
+}
+
+/* ==================================================
    CLIENT PROJECT
-========================= */
+   ================================================== */
 
 .client-project{
 max-width:1200px;
@@ -537,8 +649,9 @@ grid-template-columns:1.2fr .8fr;
 gap:40px;
 align-items:center;
 background:
-radial-gradient(circle at 80% 50%,rgba(255,48,40,.08),transparent 30%),
+radial-gradient(circle at 80% 50%,rgba(255,48,40,.09),transparent 30%),
 #101010;
+
 padding:55px;
 border:1px solid #222;
 border-radius:25px;
@@ -573,11 +686,10 @@ font-size:14px;
 }
 
 .money-box{
-position:relative;
-overflow:hidden;
 background:
 radial-gradient(circle at top right,rgba(255,255,255,.2),transparent 25%),
 linear-gradient(135deg,#ff3b32,#990000);
+
 padding:55px 30px;
 border-radius:22px;
 text-align:center;
@@ -598,16 +710,16 @@ color:#fff;
 opacity:.85;
 }
 
-/* =========================
+/* ==================================================
    ORDER
-========================= */
+   ================================================== */
 
 .order-steps{
+max-width:1200px;
+margin:auto;
 display:grid;
 grid-template-columns:repeat(5,1fr);
 gap:15px;
-max-width:1200px;
-margin:auto;
 }
 
 .step{
@@ -628,14 +740,13 @@ border-color:rgba(255,48,40,.5);
 width:48px;
 height:48px;
 margin:auto auto 17px;
-border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
+border-radius:50%;
 background:var(--red);
 font-size:19px;
 font-weight:900;
-box-shadow:0 8px 25px rgba(255,48,40,.2);
 }
 
 .step h3{
@@ -649,28 +760,28 @@ color:#888;
 line-height:1.6;
 }
 
-/* =========================
+/* ==================================================
    PRICING
-========================= */
+   ================================================== */
 
 .pricing{
 background:#090909;
 }
 
 .pricing-grid{
+max-width:1100px;
+margin:auto;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:22px;
-max-width:1100px;
-margin:auto;
 align-items:stretch;
 }
 
 .price-card{
-background:linear-gradient(145deg,#131313,#0b0b0b);
+background:linear-gradient(145deg,#141414,#0b0b0b);
 padding:38px 30px;
-border-radius:20px;
 border:1px solid #222;
+border-radius:20px;
 text-align:center;
 transition:.35s;
 }
@@ -687,18 +798,14 @@ transform:scale(1.04);
 box-shadow:0 20px 60px rgba(255,48,40,.1);
 }
 
-.price-card.featured:hover{
-transform:scale(1.04) translateY(-8px);
-}
-
 .price-card.featured::before{
 content:"PALING POPULER";
 position:absolute;
 top:-13px;
 left:50%;
 transform:translateX(-50%);
-padding:6px 15px;
 background:var(--red);
+padding:6px 15px;
 border-radius:20px;
 font-size:10px;
 font-weight:900;
@@ -732,16 +839,16 @@ border-bottom:1px solid #222;
 width:100%;
 }
 
-/* =========================
+/* ==================================================
    TESTIMONIAL
-========================= */
+   ================================================== */
 
 .testimonials{
+max-width:1100px;
+margin:auto;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
-max-width:1100px;
-margin:auto;
 }
 
 .testimonial{
@@ -775,9 +882,9 @@ color:var(--red);
 font-size:13px;
 }
 
-/* =========================
+/* ==================================================
    FAQ
-========================= */
+   ================================================== */
 
 .faq{
 max-width:850px;
@@ -810,28 +917,28 @@ font-size:13px;
 margin-top:15px;
 }
 
-/* =========================
+/* ==================================================
    CTA
-========================= */
+   ================================================== */
 
 .cta{
 position:relative;
-text-align:center;
 overflow:hidden;
+text-align:center;
 background:
-radial-gradient(circle at center,rgba(255,48,40,.17),transparent 45%),
+radial-gradient(circle at center,rgba(255,48,40,.18),transparent 45%),
 #060606;
 }
 
 .cta::before{
 content:"ALFA";
 position:absolute;
-font-size:clamp(120px,25vw,350px);
-font-weight:900;
-color:rgba(255,255,255,.018);
 left:50%;
 top:50%;
 transform:translate(-50%,-50%);
+font-size:clamp(120px,25vw,350px);
+font-weight:900;
+color:rgba(255,255,255,.018);
 pointer-events:none;
 }
 
@@ -855,9 +962,9 @@ margin-bottom:30px;
 font-size:16px;
 }
 
-/* =========================
+/* ==================================================
    FOOTER
-========================= */
+   ================================================== */
 
 footer{
 background:#030303;
@@ -882,21 +989,21 @@ font-size:13px;
 line-height:1.8;
 }
 
-/* =========================
+/* ==================================================
    FLOATING WHATSAPP
-========================= */
+   ================================================== */
 
 .whatsapp{
 position:fixed;
 right:24px;
 bottom:24px;
-width:62px;
-height:62px;
+width:63px;
+height:63px;
 display:flex;
 align-items:center;
 justify-content:center;
-background:#25D366;
-color:#fff;
+background:var(--green);
+color:white;
 border-radius:50%;
 text-decoration:none;
 z-index:99999;
@@ -909,32 +1016,32 @@ animation:waPulse 2.5s infinite;
 
 .whatsapp:hover{
 transform:scale(1.12);
-box-shadow:
-0 12px 35px rgba(37,211,102,.5),
-0 0 0 7px rgba(37,211,102,.08);
 }
 
 .whatsapp .wa-icon{
-width:34px;
-height:34px;
+width:35px;
+height:35px;
 }
 
 @keyframes waPulse{
+
 0%,100%{
 box-shadow:
 0 8px 25px rgba(37,211,102,.35),
 0 0 0 5px rgba(37,211,102,.08);
 }
+
 50%{
 box-shadow:
 0 8px 30px rgba(37,211,102,.45),
 0 0 0 9px rgba(37,211,102,.04);
 }
+
 }
 
-/* =========================
+/* ==================================================
    MOBILE
-========================= */
+   ================================================== */
 
 @media(max-width:1000px){
 
@@ -969,10 +1076,6 @@ max-width:600px;
 
 .price-card.featured{
 transform:none;
-}
-
-.price-card.featured:hover{
-transform:translateY(-8px);
 }
 
 .testimonials{
@@ -1010,18 +1113,12 @@ padding-top:100px;
 }
 
 .hero h1{
-font-size:clamp(46px,14vw,75px);
+font-size:clamp(45px,14vw,75px);
 letter-spacing:-4px;
 }
 
 .hero p{
 font-size:14px;
-line-height:1.7;
-}
-
-.badge{
-font-size:10px;
-letter-spacing:1.5px;
 }
 
 .buttons{
@@ -1106,16 +1203,36 @@ width:31px;
 height:31px;
 }
 
+.lightbox{
+padding:15px;
 }
 
-/* =========================
-   SMALL SCREEN FIX
-========================= */
+.lightbox img{
+max-width:95vw;
+max-height:75vh;
+}
+
+.lightbox-prev,
+.lightbox-next{
+width:44px;
+height:44px;
+font-size:22px;
+}
+
+.lightbox-prev{
+left:10px;
+}
+
+.lightbox-next{
+right:10px;
+}
+
+}
 
 @media(max-width:380px){
 
 .hero h1{
-font-size:43px;
+font-size:42px;
 }
 
 .stats{
@@ -1129,13 +1246,15 @@ height:300px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- =========================
+
+<!-- ==================================================
      NAVBAR
-========================= -->
+     ================================================== -->
 
 <nav>
 
@@ -1144,19 +1263,35 @@ ALFA <span>GRAPHIC</span>
 </div>
 
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#services">Layanan</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#order">Cara Order</a></li>
-<li><a href="#contact">Kontak</a></li>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#services">Layanan</a>
+</li>
+
+<li>
+<a href="#portfolio">Portfolio</a>
+</li>
+
+<li>
+<a href="#order">Cara Order</a>
+</li>
+
+<li>
+<a href="#contact">Kontak</a>
+</li>
+
 </ul>
 
 </nav>
 
 
-<!-- =========================
+<!-- ==================================================
      HERO
-========================= -->
+     ================================================== -->
 
 <section class="hero" id="home">
 
@@ -1167,15 +1302,24 @@ ALFA <span>GRAPHIC</span>
 </div>
 
 <h1>
-WE CREATE<br>
-<span>YOUR VISUAL</span><br>
+
+WE CREATE
+<br>
+
+<span>YOUR VISUAL</span>
+
+<br>
+
 IDENTITY
+
 </h1>
 
 <p>
+
 ALFA GRAPHIC menyediakan jasa desain grafis profesional
 untuk kebutuhan kaos, jersey, komunitas, band, UMKM,
 branding, merchandise dan berbagai kebutuhan visual kreatif.
+
 </p>
 
 <div class="buttons">
@@ -1186,17 +1330,24 @@ class="btn btn-primary"
 target="_blank"
 rel="noopener">
 
-<svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+<svg class="wa-icon" viewBox="0 0 32 32">
+
 <path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
 <path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+
 </svg>
 
 PESAN DESAIN
 
 </a>
 
-<a href="#portfolio" class="btn btn-outline">
+<a
+href="#portfolio"
+class="btn btn-outline">
+
 🎨 LIHAT PORTFOLIO
+
 </a>
 
 </div>
@@ -1206,9 +1357,9 @@ PESAN DESAIN
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      STATS
-========================= -->
+     ================================================== -->
 
 <section>
 
@@ -1239,9 +1390,9 @@ PESAN DESAIN
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      SERVICES
-========================= -->
+     ================================================== -->
 
 <section id="services">
 
@@ -1319,9 +1470,9 @@ untuk promosi bisnis Anda.
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      PORTFOLIO
-========================= -->
+     ================================================== -->
 
 <section class="portfolio" id="portfolio">
 
@@ -1332,129 +1483,192 @@ PORTFOLIO <span>DESAIN</span>
 </h2>
 
 <p>
-Beberapa karya dan kategori desain
-dari ALFA GRAPHIC.
+Klik gambar untuk melihat karya dalam ukuran besar.
 </p>
 
 </div>
 
 <div class="portfolio-grid">
 
-<!-- KAOS ALFA -->
 
-<div class="portfolio-item">
+<div
+class="portfolio-item"
+onclick="openLightbox(0)">
 
 <img
 src="assets/KAOS-ALFA.png"
 alt="Desain Kaos ALFA GRAPHIC"
 loading="lazy">
 
+<div class="portfolio-badge">
+APPAREL
+</div>
+
 <div class="portfolio-info">
-<h3>ALFA T-SHIRT DESIGN</h3>
-<p>Creative Apparel Artwork</p>
-</div>
+
+<h3>
+ALFA T-SHIRT DESIGN
+</h3>
+
+<p>
+Creative Apparel Artwork
+</p>
 
 </div>
 
+</div>
 
-<!-- REGGAE -->
 
-<div class="portfolio-item">
+<div
+class="portfolio-item"
+onclick="openLightbox(1)">
 
 <img
 src="assets/KAOS-REGGAE.png"
 alt="Desain Kaos Reggae ALFA GRAPHIC"
 loading="lazy">
 
+<div class="portfolio-badge">
+MUSIC
+</div>
+
 <div class="portfolio-info">
-<h3>REGGAE T-SHIRT</h3>
-<p>Music & Apparel Artwork</p>
-</div>
+
+<h3>
+REGGAE T-SHIRT
+</h3>
+
+<p>
+Music & Apparel Artwork
+</p>
 
 </div>
 
+</div>
 
-<!-- SAMURAI -->
 
-<div class="portfolio-item">
+<div
+class="portfolio-item"
+onclick="openLightbox(2)">
 
 <img
 src="assets/SAMURAI MUAY THAI.png"
-alt="Desain Samurai Muay Thai"
+alt="Desain Samurai Muay Thai ALFA GRAPHIC"
 loading="lazy">
 
+<div class="portfolio-badge">
+SPORT
+</div>
+
 <div class="portfolio-info">
-<h3>SAMURAI MUAY THAI</h3>
-<p>Combat Sport Artwork</p>
-</div>
+
+<h3>
+SAMURAI MUAY THAI
+</h3>
+
+<p>
+Combat Sport Artwork
+</p>
 
 </div>
 
+</div>
 
-<!-- VTM -->
 
-<div class="portfolio-item">
+<div
+class="portfolio-item"
+onclick="openLightbox(3)">
 
 <img
 src="assets/VTM DESIGN VER 2.png"
-alt="VTM Design Vespa"
+alt="VTM Design Vespa ALFA GRAPHIC"
 loading="lazy">
 
+<div class="portfolio-badge">
+COMMUNITY
+</div>
+
 <div class="portfolio-info">
-<h3>VTM DESIGN</h3>
-<p>Community & Motor Artwork</p>
-</div>
+
+<h3>
+VTM DESIGN
+</h3>
+
+<p>
+Community & Motor Artwork
+</p>
 
 </div>
 
+</div>
 
-<!-- EXTRA CATEGORY -->
 
 <div class="portfolio-item">
 
 <div class="portfolio-placeholder">
 
-<div class="emoji">🎨</div>
+<div class="emoji">
+🎨
+</div>
 
-<h3>GRAPHIC ART</h3>
+<h3>
+GRAPHIC ART
+</h3>
 
 </div>
 
 <div class="portfolio-info">
-<h3>CREATIVE GRAPHIC ART</h3>
-<p>Visual Creative Concept</p>
-</div>
+
+<h3>
+CREATIVE GRAPHIC ART
+</h3>
+
+<p>
+Visual Creative Concept
+</p>
 
 </div>
 
+</div>
 
-<!-- CUSTOM -->
 
 <div class="portfolio-item">
 
 <div class="portfolio-placeholder">
 
-<div class="emoji">🚀</div>
+<div class="emoji">
+🚀
+</div>
 
-<h3>CUSTOM PROJECT</h3>
+<h3>
+CUSTOM PROJECT
+</h3>
 
 </div>
 
 <div class="portfolio-info">
-<h3>CUSTOM DESIGN PROJECT</h3>
-<p>Made For Your Idea</p>
+
+<h3>
+CUSTOM DESIGN PROJECT
+</h3>
+
+<p>
+Made For Your Idea
+</p>
+
 </div>
 
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      CLIENT PROJECT
-========================= -->
+     ================================================== -->
 
 <section>
 
@@ -1463,14 +1677,18 @@ loading="lazy">
 <div>
 
 <h2>
+
 SUDAH MENERIMA
 <span>PROJECT BERBAYAR</span>
 💰
+
 </h2>
 
 <p>
+
 ALFA GRAPHIC terus berkembang melalui karya kreatif
 dan project desain untuk berbagai kebutuhan client.
+
 </p>
 
 <ul class="project-list">
@@ -1488,7 +1706,9 @@ dan project desain untuk berbagai kebutuhan client.
 
 <div class="money-box">
 
-<div class="money">💰</div>
+<div class="money">
+💰
+</div>
 
 <h3>
 REAL CREATIVE WORK
@@ -1506,9 +1726,9 @@ Terus berkembang melalui project nyata.
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      ORDER
-========================= -->
+     ================================================== -->
 
 <section id="order">
 
@@ -1572,9 +1792,9 @@ Desain selesai dan siap digunakan.
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      PRICING
-========================= -->
+     ================================================== -->
 
 <section class="pricing">
 
@@ -1596,16 +1816,20 @@ tingkat kerumitan desain.
 
 <div class="price-card">
 
-<h3>STARTER</h3>
+<h3>
+STARTER
+</h3>
 
 <div class="price">
 CUSTOM
 </div>
 
 <ul>
+
 <li>Desain sederhana</li>
 <li>Konsep custom</li>
 <li>File digital</li>
+
 </ul>
 
 <a
@@ -1615,8 +1839,11 @@ target="_blank"
 rel="noopener">
 
 <svg class="wa-icon" viewBox="0 0 32 32">
+
 <path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
 <path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+
 </svg>
 
 TANYA HARGA
@@ -1628,17 +1855,21 @@ TANYA HARGA
 
 <div class="price-card featured">
 
-<h3>PROFESSIONAL 🔥</h3>
+<h3>
+PROFESSIONAL 🔥
+</h3>
 
 <div class="price">
 CUSTOM
 </div>
 
 <ul>
+
 <li>Desain lebih detail</li>
 <li>Konsep sesuai request</li>
 <li>Revisi sesuai kesepakatan</li>
 <li>Siap untuk kebutuhan produksi</li>
+
 </ul>
 
 <a
@@ -1648,8 +1879,11 @@ target="_blank"
 rel="noopener">
 
 <svg class="wa-icon" viewBox="0 0 32 32">
+
 <path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
 <path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+
 </svg>
 
 PESAN SEKARANG
@@ -1661,17 +1895,21 @@ PESAN SEKARANG
 
 <div class="price-card">
 
-<h3>FULL CUSTOM</h3>
+<h3>
+FULL CUSTOM
+</h3>
 
 <div class="price">
 PROJECT
 </div>
 
 <ul>
+
 <li>Desain eksklusif</li>
 <li>Konsep premium</li>
 <li>Custom sesuai kebutuhan</li>
 <li>Konsultasi project</li>
+
 </ul>
 
 <a
@@ -1681,8 +1919,11 @@ target="_blank"
 rel="noopener">
 
 <svg class="wa-icon" viewBox="0 0 32 32">
-<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+
+<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
+<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59-3.84 1.05-.42.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+
 </svg>
 
 HUBUNGI KAMI
@@ -1696,9 +1937,9 @@ HUBUNGI KAMI
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      TESTIMONIAL
-========================= -->
+     ================================================== -->
 
 <section>
 
@@ -1775,9 +2016,9 @@ dan merchandise.”
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      FAQ
-========================= -->
+     ================================================== -->
 
 <section>
 
@@ -1792,35 +2033,58 @@ PERTANYAAN <span>UMUM</span>
 <div class="faq">
 
 <details>
-<summary>Bagaimana cara memesan desain?</summary>
+
+<summary>
+Bagaimana cara memesan desain?
+</summary>
+
 <p>
 Hubungi ALFA GRAPHIC melalui WhatsApp
 dan kirimkan kebutuhan desain Anda.
 </p>
+
 </details>
 
+
 <details>
-<summary>Apakah bisa membuat desain sesuai request?</summary>
+
+<summary>
+Apakah bisa membuat desain sesuai request?
+</summary>
+
 <p>
 Ya. Desain dapat dibuat berdasarkan konsep,
 tema dan kebutuhan project.
 </p>
+
 </details>
 
+
 <details>
-<summary>Apakah harga desain selalu sama?</summary>
+
+<summary>
+Apakah harga desain selalu sama?
+</summary>
+
 <p>
 Harga dapat menyesuaikan tingkat kerumitan
 dan kebutuhan project.
 </p>
+
 </details>
 
+
 <details>
-<summary>Apakah menerima desain kaos dan jersey?</summary>
+
+<summary>
+Apakah menerima desain kaos dan jersey?
+</summary>
+
 <p>
 Ya. ALFA GRAPHIC menerima berbagai kebutuhan
 desain apparel dan desain grafis.
 </p>
+
 </details>
 
 </div>
@@ -1828,9 +2092,9 @@ desain apparel dan desain grafis.
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      CTA
-========================= -->
+     ================================================== -->
 
 <section class="cta" id="contact">
 
@@ -1858,8 +2122,11 @@ target="_blank"
 rel="noopener">
 
 <svg class="wa-icon" viewBox="0 0 32 32">
+
 <path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+
+<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+
 </svg>
 
 CHAT WHATSAPP SEKARANG
@@ -1869,9 +2136,9 @@ CHAT WHATSAPP SEKARANG
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      FOOTER
-========================= -->
+     ================================================== -->
 
 <footer>
 
@@ -1886,15 +2153,58 @@ Creative Graphic Design • Apparel Design • Visual Identity
 <br>
 
 <p>
+WhatsApp: 083870874140
+</p>
+
+<p>
 © 2026 ALFA GRAPHIC. All Rights Reserved.
 </p>
 
 </footer>
 
 
-<!-- =========================
+<!-- ==================================================
+     LIGHTBOX
+     ================================================== -->
+
+<div
+class="lightbox"
+id="lightbox"
+onclick="closeLightbox(event)">
+
+<button
+class="lightbox-close"
+onclick="closeLightbox()">
+×
+</button>
+
+<button
+class="lightbox-prev"
+onclick="changeImage(-1,event)">
+‹
+</button>
+
+<div class="lightbox-content">
+
+<img
+id="lightboxImage"
+src=""
+alt="Portfolio ALFA GRAPHIC">
+
+</div>
+
+<button
+class="lightbox-next"
+onclick="changeImage(1,event)">
+›
+</button>
+
+</div>
+
+
+<!-- ==================================================
      FLOATING WHATSAPP
-========================= -->
+     ================================================== -->
 
 <a
 href="https://wa.me/6283870874140"
@@ -1904,12 +2214,128 @@ rel="noopener"
 title="Chat WhatsApp"
 aria-label="Chat WhatsApp ALFA GRAPHIC">
 
-<svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+<svg
+class="wa-icon"
+viewBox="0 0 32 32"
+aria-hidden="true">
+
 <path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
 <path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+
 </svg>
 
 </a>
+
+
+<script>
+
+/* ==================================================
+   PORTFOLIO LIGHTBOX
+   ================================================== */
+
+const portfolioImages = [
+
+"assets/KAOS-ALFA.png",
+
+"assets/KAOS-REGGAE.png",
+
+"assets/SAMURAI MUAY THAI.png",
+
+"assets/VTM DESIGN VER 2.png"
+
+];
+
+let currentImage = 0;
+
+
+/* OPEN */
+
+function openLightbox(index){
+
+currentImage = index;
+
+document.getElementById("lightboxImage").src =
+portfolioImages[currentImage];
+
+document.getElementById("lightbox").classList.add("active");
+
+document.body.classList.add("lightbox-open");
+
+}
+
+
+/* CLOSE */
+
+function closeLightbox(event){
+
+if(
+event &&
+event.target &&
+event.target.id !== "lightbox" &&
+!event.target.classList.contains("lightbox-close")
+){
+return;
+}
+
+document.getElementById("lightbox").classList.remove("active");
+
+document.body.classList.remove("lightbox-open");
+
+}
+
+
+/* NEXT / PREVIOUS */
+
+function changeImage(direction,event){
+
+if(event){
+event.stopPropagation();
+}
+
+currentImage += direction;
+
+if(currentImage < 0){
+currentImage = portfolioImages.length - 1;
+}
+
+if(currentImage >= portfolioImages.length){
+currentImage = 0;
+}
+
+document.getElementById("lightboxImage").src =
+portfolioImages[currentImage];
+
+}
+
+
+/* KEYBOARD */
+
+document.addEventListener("keydown",function(event){
+
+const box =
+document.getElementById("lightbox");
+
+if(!box.classList.contains("active")){
+return;
+}
+
+if(event.key === "Escape"){
+closeLightbox();
+}
+
+if(event.key === "ArrowRight"){
+changeImage(1);
+}
+
+if(event.key === "ArrowLeft"){
+changeImage(-1);
+}
+
+});
+
+</script>
+
 
 </body>
 </html>
