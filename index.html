@@ -19,43 +19,26 @@
 <link rel="canonical" href="https://adnan0076767-lgtm.github.io/Alfa-Graphic/">
 
 <!-- ==================================================
-     WHATSAPP / FACEBOOK / SOCIAL PREVIEW
+     SOCIAL PREVIEW
      ================================================== -->
 
 <meta property="og:type" content="website">
-
 <meta property="og:site_name" content="ALFA GRAPHIC">
-
 <meta property="og:title" content="ALFA GRAPHIC | Jasa Desain Kaos & Desain Grafis">
-
 <meta property="og:description" content="Jasa desain kaos, jersey, sablon, logo, branding dan desain grafis profesional. Pesan desain custom melalui WhatsApp.">
-
 <meta property="og:url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/">
-
 <meta property="og:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/KAOS-ALFA.png">
-
 <meta property="og:image:url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/KAOS-ALFA.png">
-
 <meta property="og:image:secure_url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/KAOS-ALFA.png">
-
 <meta property="og:image:alt" content="ALFA GRAPHIC - Portfolio Desain Kaos">
-
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
-<!-- ==================================================
-     TWITTER / X PREVIEW
-     ================================================== -->
-
 <meta name="twitter:card" content="summary_large_image">
-
 <meta name="twitter:title" content="ALFA GRAPHIC | Jasa Desain Kaos & Desain Grafis">
-
 <meta name="twitter:description" content="Jasa desain kaos, jersey, sablon, logo, branding dan desain grafis profesional.">
-
-<meta name="twitter:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/assets/KAOS-ALFA.png">
-
+<meta name="twitter:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/KAOS-ALFA.png">
 <meta name="twitter:image:alt" content="ALFA GRAPHIC Portfolio Desain">
 
 <style>
@@ -93,6 +76,26 @@ overflow-x:hidden;
 
 body.lightbox-open{
 overflow:hidden;
+}
+
+/* ==================================================
+   GLOBAL AMBIENT EFFECT
+   ================================================== */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:9990;
+background:
+linear-gradient(
+rgba(255,255,255,.012) 1px,
+transparent 1px
+);
+background-size:100% 4px;
+opacity:.18;
+mix-blend-mode:screen;
 }
 
 /* ==================================================
@@ -141,10 +144,28 @@ z-index:9999;
 font-size:23px;
 font-weight:900;
 letter-spacing:3px;
+position:relative;
 }
 
 .logo span{
 color:var(--red);
+}
+
+.logo::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-8px;
+width:35px;
+height:2px;
+background:var(--red);
+box-shadow:0 0 12px var(--red);
+animation:logoLine 2.5s ease-in-out infinite;
+}
+
+@keyframes logoLine{
+0%,100%{width:25px;opacity:.5}
+50%{width:65px;opacity:1}
 }
 
 nav ul{
@@ -163,6 +184,7 @@ transition:.3s;
 
 nav ul li a:hover{
 color:var(--red);
+text-shadow:0 0 15px rgba(255,48,40,.5);
 }
 
 /* ==================================================
@@ -210,6 +232,314 @@ left:50%;
 transform:translate(-50%,-50%);
 }
 
+/* ==================================================
+   HOLOGRAM SYSTEM
+   ================================================== */
+
+.hologram{
+position:absolute;
+width:520px;
+height:520px;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+z-index:1;
+pointer-events:none;
+transition:transform .15s ease-out;
+}
+
+.holo-ring{
+position:absolute;
+left:50%;
+top:50%;
+width:100%;
+height:100%;
+transform:translate(-50%,-50%);
+border:1px solid rgba(255,48,40,.20);
+border-radius:50%;
+box-shadow:
+0 0 25px rgba(255,48,40,.08),
+inset 0 0 30px rgba(255,48,40,.04);
+}
+
+.holo-ring:nth-child(1){
+animation:holoRotate 16s linear infinite;
+}
+
+.holo-ring:nth-child(2){
+width:82%;
+height:82%;
+border-style:dashed;
+border-color:rgba(255,48,40,.32);
+animation:holoRotateReverse 10s linear infinite;
+}
+
+.holo-ring:nth-child(3){
+width:62%;
+height:62%;
+border-color:rgba(255,255,255,.16);
+animation:holoPulse 3s ease-in-out infinite;
+}
+
+.holo-ring:nth-child(4){
+width:43%;
+height:43%;
+border-style:dotted;
+border-color:rgba(255,48,40,.45);
+animation:holoRotate 6s linear infinite;
+}
+
+.holo-core{
+position:absolute;
+left:50%;
+top:50%;
+width:150px;
+height:150px;
+transform:translate(-50%,-50%);
+border-radius:50%;
+background:
+radial-gradient(
+circle,
+rgba(255,48,40,.24),
+rgba(255,48,40,.07) 40%,
+transparent 70%
+);
+border:1px solid rgba(255,48,40,.65);
+box-shadow:
+0 0 30px rgba(255,48,40,.25),
+inset 0 0 30px rgba(255,48,40,.15);
+animation:coreFloat 3s ease-in-out infinite;
+}
+
+.holo-core::before{
+content:"ALFA";
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+font-size:23px;
+font-weight:900;
+letter-spacing:6px;
+color:#fff;
+text-shadow:
+0 0 8px rgba(255,48,40,.9),
+0 0 25px rgba(255,48,40,.6);
+}
+
+.holo-core::after{
+content:"GRAPHIC";
+position:absolute;
+left:50%;
+top:67%;
+transform:translateX(-50%);
+font-size:7px;
+letter-spacing:3px;
+color:#ff7771;
+white-space:nowrap;
+}
+
+.holo-scan{
+position:absolute;
+left:13%;
+width:74%;
+height:2px;
+top:15%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,48,40,.95),
+transparent
+);
+box-shadow:
+0 0 10px rgba(255,48,40,.8),
+0 0 25px rgba(255,48,40,.4);
+animation:holoScan 3.5s linear infinite;
+}
+
+.holo-line{
+position:absolute;
+left:50%;
+top:50%;
+width:90%;
+height:1px;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,48,40,.3),
+transparent
+);
+transform:translate(-50%,-50%);
+}
+
+.holo-line.vertical{
+transform:translate(-50%,-50%) rotate(90deg);
+}
+
+.holo-data{
+position:absolute;
+font-family:monospace;
+font-size:8px;
+letter-spacing:2px;
+color:rgba(255,100,90,.55);
+white-space:nowrap;
+}
+
+.data-a{
+top:18%;
+left:3%;
+}
+
+.data-b{
+top:75%;
+right:2%;
+}
+
+.data-c{
+bottom:8%;
+left:20%;
+}
+
+.holo-particle{
+position:absolute;
+width:4px;
+height:4px;
+border-radius:50%;
+background:var(--red);
+box-shadow:
+0 0 8px var(--red),
+0 0 18px rgba(255,48,40,.7);
+}
+
+.hp1{
+left:15%;
+top:25%;
+animation:particleFloat1 4s ease-in-out infinite;
+}
+
+.hp2{
+left:78%;
+top:30%;
+animation:particleFloat2 5s ease-in-out infinite;
+}
+
+.hp3{
+left:25%;
+top:78%;
+animation:particleFloat3 4.5s ease-in-out infinite;
+}
+
+.hp4{
+left:73%;
+top:76%;
+animation:particleFloat1 6s ease-in-out infinite reverse;
+}
+
+.hp5{
+left:50%;
+top:8%;
+animation:particleFloat2 4s ease-in-out infinite;
+}
+
+.hp6{
+left:8%;
+top:55%;
+animation:particleFloat3 5s ease-in-out infinite;
+}
+
+.hp7{
+right:7%;
+top:58%;
+animation:particleFloat1 5.5s ease-in-out infinite;
+}
+
+@keyframes holoRotate{
+from{
+transform:translate(-50%,-50%) rotate(0deg);
+}
+to{
+transform:translate(-50%,-50%) rotate(360deg);
+}
+}
+
+@keyframes holoRotateReverse{
+from{
+transform:translate(-50%,-50%) rotate(360deg);
+}
+to{
+transform:translate(-50%,-50%) rotate(0deg);
+}
+}
+
+@keyframes holoPulse{
+0%,100%{
+opacity:.25;
+transform:translate(-50%,-50%) scale(.96);
+}
+50%{
+opacity:.8;
+transform:translate(-50%,-50%) scale(1.06);
+}
+}
+
+@keyframes coreFloat{
+0%,100%{
+transform:translate(-50%,-50%) scale(.94);
+}
+50%{
+transform:translate(-50%,-50%) scale(1.06);
+}
+}
+
+@keyframes holoScan{
+0%{
+top:13%;
+opacity:0;
+}
+15%{
+opacity:1;
+}
+85%{
+opacity:1;
+}
+100%{
+top:87%;
+opacity:0;
+}
+}
+
+@keyframes particleFloat1{
+0%,100%{
+transform:translate(0,0) scale(.8);
+opacity:.3;
+}
+50%{
+transform:translate(15px,-35px) scale(1.5);
+opacity:1;
+}
+}
+
+@keyframes particleFloat2{
+0%,100%{
+transform:translate(0,0) scale(.7);
+opacity:.25;
+}
+50%{
+transform:translate(-25px,30px) scale(1.6);
+opacity:1;
+}
+}
+
+@keyframes particleFloat3{
+0%,100%{
+transform:translate(0,0);
+opacity:.3;
+}
+50%{
+transform:translate(30px,-20px);
+opacity:1;
+}
+}
+
 @keyframes heroPulse{
 
 0%,100%{
@@ -226,7 +556,7 @@ opacity:.8;
 
 .hero-content{
 position:relative;
-z-index:2;
+z-index:4;
 max-width:1000px;
 }
 
@@ -242,6 +572,21 @@ font-size:11px;
 font-weight:bold;
 letter-spacing:2px;
 margin-bottom:28px;
+box-shadow:
+0 0 15px rgba(255,48,40,.08),
+inset 0 0 15px rgba(255,48,40,.04);
+animation:badgeGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes badgeGlow{
+0%,100%{
+box-shadow:0 0 10px rgba(255,48,40,.05);
+}
+50%{
+box-shadow:
+0 0 25px rgba(255,48,40,.22),
+inset 0 0 15px rgba(255,48,40,.08);
+}
 }
 
 .hero h1{
@@ -249,11 +594,26 @@ font-size:clamp(48px,9vw,110px);
 line-height:.88;
 font-weight:900;
 letter-spacing:-6px;
+position:relative;
 }
 
 .hero h1 span{
 color:var(--red);
-text-shadow:0 0 40px rgba(255,48,40,.22);
+text-shadow:
+0 0 20px rgba(255,48,40,.18),
+0 0 50px rgba(255,48,40,.12);
+animation:titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow{
+0%,100%{
+text-shadow:0 0 20px rgba(255,48,40,.12);
+}
+50%{
+text-shadow:
+0 0 30px rgba(255,48,40,.35),
+0 0 70px rgba(255,48,40,.18);
+}
 }
 
 .hero p{
@@ -293,8 +653,10 @@ box-shadow:0 10px 35px rgba(255,48,40,.18);
 }
 
 .btn-primary:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 45px rgba(255,48,40,.35);
+transform:translateY(-5px) scale(1.02);
+box-shadow:
+0 15px 45px rgba(255,48,40,.35),
+0 0 25px rgba(255,48,40,.2);
 }
 
 .btn-outline{
@@ -307,6 +669,7 @@ color:#fff;
 border-color:var(--red);
 color:var(--red);
 transform:translateY(-4px);
+box-shadow:0 0 25px rgba(255,48,40,.12);
 }
 
 /* ==================================================
@@ -374,9 +737,34 @@ text-align:center;
 transition:.35s;
 }
 
+.stat::before,
+.service::before,
+.price-card::before,
+.testimonial::before{
+content:"";
+position:absolute;
+width:100px;
+height:1px;
+left:-120px;
+top:0;
+background:linear-gradient(
+90deg,
+transparent,
+var(--red),
+transparent
+);
+animation:cardScan 4s linear infinite;
+}
+
+@keyframes cardScan{
+0%{left:-120px}
+100%{left:110%}
+}
+
 .stat:hover{
 transform:translateY(-7px);
 border-color:#444;
+box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
 .stat h3{
@@ -409,13 +797,23 @@ background:linear-gradient(145deg,#141414,#0b0b0b);
 padding:32px;
 border:1px solid var(--line);
 border-radius:18px;
-transition:.35s;
+transition:
+transform .35s,
+border-color .35s,
+box-shadow .35s;
+transform-style:preserve-3d;
 }
 
 .service:hover{
-transform:translateY(-8px);
+transform:
+translateY(-8px)
+perspective(700px)
+rotateX(2deg)
+rotateY(-2deg);
 border-color:rgba(255,48,40,.5);
-box-shadow:0 20px 45px rgba(0,0,0,.35);
+box-shadow:
+0 20px 45px rgba(0,0,0,.35),
+0 0 25px rgba(255,48,40,.05);
 }
 
 .service .icon{
@@ -429,6 +827,12 @@ background:rgba(255,48,40,.08);
 border:1px solid rgba(255,48,40,.2);
 font-size:28px;
 margin-bottom:22px;
+transition:.35s;
+}
+
+.service:hover .icon{
+transform:translateZ(15px) scale(1.08);
+box-shadow:0 0 25px rgba(255,48,40,.15);
 }
 
 .service h3{
@@ -453,6 +857,26 @@ linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px),
 #090909;
 
 background-size:40px 40px;
+position:relative;
+}
+
+.portfolio::before{
+content:"";
+position:absolute;
+inset:0;
+pointer-events:none;
+background:
+radial-gradient(
+circle at 50% 50%,
+rgba(255,48,40,.06),
+transparent 35%
+);
+animation:portfolioGlow 5s ease-in-out infinite;
+}
+
+@keyframes portfolioGlow{
+0%,100%{opacity:.5}
+50%{opacity:1}
 }
 
 .portfolio-grid{
@@ -461,6 +885,8 @@ margin:auto;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
+position:relative;
+z-index:2;
 }
 
 .portfolio-item{
@@ -475,9 +901,14 @@ transition:.4s;
 }
 
 .portfolio-item:hover{
-transform:translateY(-8px);
+transform:
+translateY(-8px)
+perspective(900px)
+rotateX(1deg);
 border-color:rgba(255,48,40,.75);
-box-shadow:0 20px 50px rgba(0,0,0,.45);
+box-shadow:
+0 20px 50px rgba(0,0,0,.45),
+0 0 30px rgba(255,48,40,.07);
 }
 
 .portfolio-item img{
@@ -490,6 +921,28 @@ transition:.6s;
 
 .portfolio-item:hover img{
 transform:scale(1.08);
+}
+
+.portfolio-item::after{
+content:"";
+position:absolute;
+left:-100%;
+top:0;
+width:45%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+transform:skewX(-20deg);
+transition:.6s;
+pointer-events:none;
+}
+
+.portfolio-item:hover::after{
+left:140%;
 }
 
 .portfolio-info{
@@ -522,6 +975,7 @@ border:1px solid rgba(255,255,255,.15);
 font-size:10px;
 font-weight:bold;
 letter-spacing:1px;
+z-index:3;
 }
 
 /* ==================================================
@@ -696,6 +1150,16 @@ padding:55px 30px;
 border-radius:22px;
 text-align:center;
 box-shadow:0 20px 60px rgba(255,48,40,.15);
+animation:moneyFloat 4s ease-in-out infinite;
+}
+
+@keyframes moneyFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
 }
 
 .money-box .money{
@@ -736,6 +1200,7 @@ transition:.3s;
 .step:hover{
 transform:translateY(-7px);
 border-color:rgba(255,48,40,.5);
+box-shadow:0 15px 35px rgba(0,0,0,.3);
 }
 
 .step-number{
@@ -749,6 +1214,7 @@ border-radius:50%;
 background:var(--red);
 font-size:19px;
 font-weight:900;
+box-shadow:0 0 20px rgba(255,48,40,.15);
 }
 
 .step h3{
@@ -780,6 +1246,8 @@ align-items:stretch;
 }
 
 .price-card{
+position:relative;
+overflow:hidden;
 background:linear-gradient(145deg,#141414,#0b0b0b);
 padding:38px 30px;
 border:1px solid #222;
@@ -791,13 +1259,20 @@ transition:.35s;
 .price-card:hover{
 transform:translateY(-8px);
 border-color:#444;
+box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
 
 .price-card.featured{
 position:relative;
 border:2px solid var(--red);
 transform:scale(1.04);
-box-shadow:0 20px 60px rgba(255,48,40,.1);
+box-shadow:
+0 20px 60px rgba(255,48,40,.1),
+0 0 30px rgba(255,48,40,.05);
+}
+
+.price-card.featured:hover{
+transform:scale(1.04) translateY(-8px);
 }
 
 .price-card.featured::before{
@@ -812,6 +1287,12 @@ border-radius:20px;
 font-size:10px;
 font-weight:900;
 letter-spacing:1px;
+animation:popularPulse 2s infinite;
+}
+
+@keyframes popularPulse{
+0%,100%{box-shadow:0 0 5px rgba(255,48,40,.2)}
+50%{box-shadow:0 0 20px rgba(255,48,40,.6)}
 }
 
 .price-card h3{
@@ -854,6 +1335,8 @@ gap:18px;
 }
 
 .testimonial{
+position:relative;
+overflow:hidden;
 background:#111;
 padding:32px;
 border:1px solid #222;
@@ -864,6 +1347,7 @@ transition:.3s;
 .testimonial:hover{
 transform:translateY(-7px);
 border-color:#444;
+box-shadow:0 15px 35px rgba(0,0,0,.3);
 }
 
 .stars{
@@ -904,6 +1388,7 @@ transition:.3s;
 
 details:hover{
 border-color:#444;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 summary{
@@ -942,6 +1427,16 @@ font-size:clamp(120px,25vw,350px);
 font-weight:900;
 color:rgba(255,255,255,.018);
 pointer-events:none;
+animation:ctaWatermark 6s ease-in-out infinite;
+}
+
+@keyframes ctaWatermark{
+0%,100%{
+transform:translate(-50%,-50%) scale(1);
+}
+50%{
+transform:translate(-50%,-50%) scale(1.05);
+}
 }
 
 .cta h2,
@@ -1080,6 +1575,10 @@ max-width:600px;
 transform:none;
 }
 
+.price-card.featured:hover{
+transform:translateY(-8px);
+}
+
 .testimonials{
 grid-template-columns:1fr;
 max-width:600px;
@@ -1089,7 +1588,17 @@ max-width:600px;
 grid-template-columns:1fr;
 }
 
+.hologram{
+width:430px;
+height:430px;
+opacity:.65;
 }
+
+}
+
+/* ==================================================
+   MOBILE SMALL
+   ================================================== */
 
 @media(max-width:650px){
 
@@ -1133,6 +1642,40 @@ margin-right:auto;
 
 .btn{
 width:100%;
+}
+
+.hologram{
+width:330px;
+height:330px;
+opacity:.45;
+}
+
+.holo-core{
+width:100px;
+height:100px;
+}
+
+.holo-core::before{
+font-size:15px;
+letter-spacing:4px;
+}
+
+.holo-core::after{
+font-size:6px;
+}
+
+.holo-data{
+font-size:6px;
+}
+
+.hero::before{
+width:360px;
+height:360px;
+}
+
+.hero::after{
+width:500px;
+height:500px;
 }
 
 .stats{
@@ -1231,6 +1774,10 @@ right:10px;
 
 }
 
+/* ==================================================
+   VERY SMALL DEVICES
+   ================================================== */
+
 @media(max-width:380px){
 
 .hero h1{
@@ -1245,14 +1792,46 @@ grid-template-columns:1fr;
 height:300px;
 }
 
+.hologram{
+width:280px;
+height:280px;
 }
+
+}
+
+/* ==================================================
+   REDUCED MOTION
+   ================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+scroll-behavior:auto;
+}
+
+.hologram,
+.holo-ring,
+.holo-core,
+.holo-scan,
+.holo-particle,
+.badge,
+.hero h1 span,
+.money-box,
+.whatsapp{
+animation:none !important;
+}
+
+}
+
+/* ==================================================
+   END CSS
+   ================================================== */
 
 </style>
 
 </head>
 
 <body>
-
 
 <!-- ==================================================
      NAVBAR
@@ -1297,10 +1876,51 @@ ALFA <span>GRAPHIC</span>
 
 <section class="hero" id="home">
 
+<!-- ==================================================
+     HOLOGRAM
+     ================================================== -->
+
+<div class="hologram" id="hologram">
+
+<div class="holo-ring"></div>
+<div class="holo-ring"></div>
+<div class="holo-ring"></div>
+<div class="holo-ring"></div>
+
+<div class="holo-line"></div>
+<div class="holo-line vertical"></div>
+
+<div class="holo-core"></div>
+
+<div class="holo-scan"></div>
+
+<div class="holo-data data-a">
+ALFA_SYSTEM // ONLINE
+</div>
+
+<div class="holo-data data-b">
+CREATIVE_ENGINE // V9.0
+</div>
+
+<div class="holo-data data-c">
+VISUAL_MODE // ACTIVE
+</div>
+
+<div class="holo-particle hp1"></div>
+<div class="holo-particle hp2"></div>
+<div class="holo-particle hp3"></div>
+<div class="holo-particle hp4"></div>
+<div class="holo-particle hp5"></div>
+<div class="holo-particle hp6"></div>
+<div class="holo-particle hp7"></div>
+
+</div>
+
+
 <div class="hero-content">
 
 <div class="badge">
-🎨 CREATIVE GRAPHIC DESIGN
+🎨 CREATIVE GRAPHIC DESIGN // HOLOGRAPHIC STUDIO
 </div>
 
 <h1>
@@ -1884,7 +2504,7 @@ rel="noopener">
 
 <path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
 
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-1.59-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
 
 </svg>
 
@@ -1922,9 +2542,9 @@ rel="noopener">
 
 <svg class="wa-icon" viewBox="0 0 32 32">
 
-<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
 
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59-3.84 1.05-.42.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
 
 </svg>
 
@@ -2127,7 +2747,7 @@ rel="noopener">
 
 <path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
 
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
+<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1-1.05 3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
 
 </svg>
 
@@ -2230,6 +2850,10 @@ aria-hidden="true">
 </a>
 
 
+<!-- ==================================================
+     JAVASCRIPT
+     ================================================== -->
+
 <script>
 
 /* ==================================================
@@ -2251,7 +2875,9 @@ const portfolioImages = [
 let currentImage = 0;
 
 
-/* OPEN */
+/* ==================================================
+   OPEN LIGHTBOX
+   ================================================== */
 
 function openLightbox(index){
 
@@ -2267,7 +2893,9 @@ document.body.classList.add("lightbox-open");
 }
 
 
-/* CLOSE */
+/* ==================================================
+   CLOSE LIGHTBOX
+   ================================================== */
 
 function closeLightbox(event){
 
@@ -2287,7 +2915,9 @@ document.body.classList.remove("lightbox-open");
 }
 
 
-/* NEXT / PREVIOUS */
+/* ==================================================
+   NEXT / PREVIOUS
+   ================================================== */
 
 function changeImage(direction,event){
 
@@ -2311,7 +2941,9 @@ portfolioImages[currentImage];
 }
 
 
-/* KEYBOARD */
+/* ==================================================
+   KEYBOARD
+   ================================================== */
 
 document.addEventListener("keydown",function(event){
 
@@ -2333,6 +2965,124 @@ changeImage(1);
 if(event.key === "ArrowLeft"){
 changeImage(-1);
 }
+
+});
+
+
+/* ==================================================
+   HOLOGRAM MOUSE PARALLAX
+   ================================================== */
+
+(function(){
+
+const hologram =
+document.getElementById("hologram");
+
+if(!hologram){
+return;
+}
+
+let targetX = 0;
+let targetY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener("mousemove",function(event){
+
+const x =
+(event.clientX / window.innerWidth) - .5;
+
+const y =
+(event.clientY / window.innerHeight) - .5;
+
+targetX = x * 22;
+targetY = y * 22;
+
+});
+
+function animateHologram(){
+
+currentX +=
+(targetX - currentX) * .05;
+
+currentY +=
+(targetY - currentY) * .05;
+
+hologram.style.marginLeft =
+currentX + "px";
+
+hologram.style.marginTop =
+currentY + "px";
+
+requestAnimationFrame(animateHologram);
+
+}
+
+animateHologram();
+
+})();
+
+
+/* ==================================================
+   SERVICE CARD LIGHT PARALLAX
+   ================================================== */
+
+(function(){
+
+const cards =
+document.querySelectorAll(".service");
+
+cards.forEach(function(card){
+
+card.addEventListener("mousemove",function(event){
+
+const rect =
+card.getBoundingClientRect();
+
+const x =
+event.clientX - rect.left;
+
+const y =
+event.clientY - rect.top;
+
+const rotateY =
+((x / rect.width) - .5) * 4;
+
+const rotateX =
+((y / rect.height) - .5) * -4;
+
+card.style.transform =
+"translateY(-8px) perspective(700px) rotateX(" +
+rotateX +
+"deg) rotateY(" +
+rotateY +
+"deg)";
+
+});
+
+card.addEventListener("mouseleave",function(){
+
+card.style.transform = "";
+
+});
+
+});
+
+})();
+
+
+/* ==================================================
+   STARTUP EFFECT
+   ================================================== */
+
+window.addEventListener("load",function(){
+
+document.body.classList.add("alfa-v9-ready");
+
+console.log(
+"ALFA GRAPHIC V9.0 // HOLOGRAPHIC GRAPHIC STUDIO ONLINE"
+);
 
 });
 
