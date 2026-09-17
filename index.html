@@ -30,19 +30,20 @@
 <meta name="twitter:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/assets/KAOS-ALFA.png">
 
 <style>
+
 :root{
   --red:#ff3028;
-  --red2:#ff5b55;
-  --red-dark:#b90000;
+  --red2:#ff6b66;
+  --red3:#8d0000;
   --green:#25D366;
-  --black:#030303;
-  --dark:#090909;
-  --card:#111;
+  --black:#020202;
+  --dark:#080808;
+  --card:#101010;
   --card2:#151515;
   --line:#252525;
   --white:#fff;
   --gray:#999;
-  --soft:#d9d9d9;
+  --soft:#ddd;
 }
 
 *{
@@ -53,15 +54,15 @@
 }
 
 html{
-  background:#030303;
+  background:#020202;
 }
 
 body{
   font-family:Arial,Helvetica,sans-serif;
   background:
     radial-gradient(circle at 50% -10%,rgba(255,48,40,.12),transparent 35%),
-    #030303;
-  color:var(--white);
+    #020202;
+  color:#fff;
   overflow-x:hidden;
 }
 
@@ -79,30 +80,51 @@ button{
   font:inherit;
 }
 
-/* =========================
-   AMBIENT BACKGROUND
-========================= */
+/* =====================================================
+   AMBIENT MOVING LIGHT
+===================================================== */
 
 body::before{
   content:"";
   position:fixed;
-  inset:-30%;
+  width:600px;
+  height:600px;
+  left:-250px;
+  top:20%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,48,40,.10),transparent 68%);
   pointer-events:none;
   z-index:-5;
-  background:
-    radial-gradient(circle at 20% 30%,rgba(255,48,40,.08),transparent 25%),
-    radial-gradient(circle at 80% 70%,rgba(255,0,0,.06),transparent 25%);
-  animation:ambientMove 12s ease-in-out infinite alternate;
+  animation:ambientLeft 13s ease-in-out infinite alternate;
 }
 
-@keyframes ambientMove{
-  from{transform:translate(-2%,-2%) scale(1);}
-  to{transform:translate(3%,2%) scale(1.08);}
+body::after{
+  content:"";
+  position:fixed;
+  width:600px;
+  height:600px;
+  right:-280px;
+  bottom:0;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,48,40,.08),transparent 68%);
+  pointer-events:none;
+  z-index:-5;
+  animation:ambientRight 16s ease-in-out infinite alternate;
 }
 
-/* =========================
+@keyframes ambientLeft{
+  0%{transform:translate(0,0) scale(.8);}
+  100%{transform:translate(220px,-80px) scale(1.2);}
+}
+
+@keyframes ambientRight{
+  0%{transform:translate(0,0) scale(1);}
+  100%{transform:translate(-180px,-100px) scale(1.25);}
+}
+
+/* =====================================================
    NAVBAR
-========================= */
+===================================================== */
 
 .navbar{
   position:fixed;
@@ -111,7 +133,7 @@ body::before{
   width:100%;
   z-index:1000;
   padding:18px 5%;
-  background:rgba(3,3,3,.78);
+  background:rgba(2,2,2,.78);
   backdrop-filter:blur(18px);
   border-bottom:1px solid rgba(255,255,255,.08);
 }
@@ -120,9 +142,8 @@ body::before{
   max-width:1200px;
   margin:auto;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:25px;
+  justify-content:space-between;
 }
 
 .logo{
@@ -133,7 +154,15 @@ body::before{
 
 .logo span{
   color:var(--red);
-  text-shadow:0 0 18px rgba(255,48,40,.7);
+  text-shadow:
+    0 0 10px var(--red),
+    0 0 25px rgba(255,48,40,.5);
+  animation:logoGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes logoGlow{
+  0%,100%{text-shadow:0 0 8px var(--red);}
+  50%{text-shadow:0 0 25px var(--red),0 0 45px rgba(255,48,40,.4);}
 }
 
 .nav-links{
@@ -153,9 +182,9 @@ body::before{
   text-shadow:0 0 12px rgba(255,48,40,.6);
 }
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
   min-height:100vh;
@@ -171,57 +200,24 @@ body::before{
 
 .hero-grid{
   position:absolute;
-  inset:0;
-  opacity:.25;
+  inset:-20%;
+  opacity:.23;
   background-image:
-    linear-gradient(rgba(255,48,40,.08) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,48,40,.08) 1px,transparent 1px);
+    linear-gradient(rgba(255,48,40,.10) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,48,40,.10) 1px,transparent 1px);
   background-size:55px 55px;
-  transform:perspective(500px) rotateX(62deg) scale(1.7);
+  transform:
+    perspective(500px)
+    rotateX(62deg)
+    scale(1.8);
   transform-origin:center bottom;
-  animation:gridMove 7s linear infinite;
-  pointer-events:none;
+  animation:gridMove 5s linear infinite;
 }
 
 @keyframes gridMove{
   from{background-position:0 0,0 0;}
   to{background-position:0 55px,55px 0;}
 }
-
-.hero::before{
-  content:"";
-  position:absolute;
-  width:650px;
-  height:650px;
-  border:1px solid rgba(255,48,40,.12);
-  border-radius:50%;
-  box-shadow:
-    0 0 80px rgba(255,48,40,.06),
-    inset 0 0 80px rgba(255,48,40,.04);
-  animation:heroRing 18s linear infinite;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  width:430px;
-  height:430px;
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:50%;
-  animation:heroRingReverse 12s linear infinite;
-}
-
-@keyframes heroRing{
-  from{transform:rotate(0deg) scale(1);}
-  to{transform:rotate(360deg) scale(1.04);}
-}
-
-@keyframes heroRingReverse{
-  from{transform:rotate(360deg) scale(.9);}
-  to{transform:rotate(0deg) scale(1);}
-}
-
-/* PARTICLES */
 
 #particles{
   position:absolute;
@@ -231,22 +227,154 @@ body::before{
   pointer-events:none;
 }
 
-/* =========================
-   HOLOGRAM
-========================= */
+/* =====================================================
+   HOLOGRAM STAGE
+===================================================== */
 
 .holo-stage{
   position:absolute;
-  width:520px;
-  height:520px;
-  right:5%;
+  width:570px;
+  height:570px;
+  right:3%;
   top:50%;
   transform:translateY(-50%);
-  pointer-events:none;
   transform-style:preserve-3d;
-  transition:transform .15s ease-out;
-  opacity:.95;
+  pointer-events:none;
+  transition:transform .12s ease-out;
+  z-index:3;
 }
+
+/* central light */
+.holo-stage::before{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(255,48,40,.18),
+    rgba(255,48,40,.05) 40%,
+    transparent 72%
+  );
+  filter:blur(10px);
+  animation:centerGlow 3s ease-in-out infinite;
+}
+
+@keyframes centerGlow{
+  0%,100%{transform:translate(-50%,-50%) scale(.8);opacity:.55;}
+  50%{transform:translate(-50%,-50%) scale(1.2);opacity:1;}
+}
+
+/* hologram rings */
+
+.holo-ring{
+  position:absolute;
+  left:50%;
+  top:50%;
+  border-radius:50%;
+  transform-style:preserve-3d;
+}
+
+.ring1{
+  width:180px;
+  height:180px;
+  border:2px solid rgba(255,48,40,.7);
+  box-shadow:
+    0 0 20px rgba(255,48,40,.35),
+    inset 0 0 20px rgba(255,48,40,.15);
+  animation:ringOne 5s linear infinite;
+}
+
+@keyframes ringOne{
+  from{
+    transform:
+      translate(-50%,-50%)
+      rotateX(70deg)
+      rotateZ(0deg);
+  }
+  to{
+    transform:
+      translate(-50%,-50%)
+      rotateX(70deg)
+      rotateZ(360deg);
+  }
+}
+
+.ring2{
+  width:270px;
+  height:270px;
+  border:1px dashed rgba(255,255,255,.42);
+  animation:ringTwo 8s linear infinite;
+}
+
+@keyframes ringTwo{
+  from{
+    transform:
+      translate(-50%,-50%)
+      rotateY(65deg)
+      rotateZ(360deg);
+  }
+  to{
+    transform:
+      translate(-50%,-50%)
+      rotateY(65deg)
+      rotateZ(0deg);
+  }
+}
+
+.ring3{
+  width:370px;
+  height:190px;
+  border:1px solid rgba(255,48,40,.55);
+  animation:ringThree 7s linear infinite;
+}
+
+@keyframes ringThree{
+  from{
+    transform:
+      translate(-50%,-50%)
+      rotateY(75deg)
+      rotateX(10deg)
+      rotateZ(0deg);
+  }
+  to{
+    transform:
+      translate(-50%,-50%)
+      rotateY(75deg)
+      rotateX(10deg)
+      rotateZ(360deg);
+  }
+}
+
+.ring4{
+  width:440px;
+  height:440px;
+  border:1px dashed rgba(255,48,40,.25);
+  animation:ringFour 18s linear infinite;
+}
+
+@keyframes ringFour{
+  from{
+    transform:
+      translate(-50%,-50%)
+      rotateX(70deg)
+      rotateZ(0deg);
+  }
+  to{
+    transform:
+      translate(-50%,-50%)
+      rotateX(70deg)
+      rotateZ(-360deg);
+  }
+}
+
+/* =====================================================
+   HOLOGRAM CORE
+===================================================== */
 
 .holo-core{
   position:absolute;
@@ -260,203 +388,309 @@ body::before{
   align-items:center;
   justify-content:center;
   background:
-    radial-gradient(circle,rgba(255,48,40,.38),rgba(20,0,0,.7) 55%,transparent 72%);
-  border:1px solid rgba(255,48,40,.75);
+    radial-gradient(
+      circle,
+      rgba(255,48,40,.42),
+      rgba(15,0,0,.8) 52%,
+      transparent 73%
+    );
+  border:1px solid rgba(255,48,40,.8);
   box-shadow:
-    0 0 25px rgba(255,48,40,.55),
-    0 0 70px rgba(255,48,40,.2),
-    inset 0 0 30px rgba(255,48,40,.3);
-  animation:corePulse 3s ease-in-out infinite;
+    0 0 20px rgba(255,48,40,.55),
+    0 0 60px rgba(255,48,40,.25),
+    inset 0 0 35px rgba(255,48,40,.3);
+  animation:coreFloat 3s ease-in-out infinite;
+  z-index:10;
+}
+
+@keyframes coreFloat{
+  0%,100%{
+    transform:translate(-50%,-50%) scale(.96);
+  }
+  50%{
+    transform:translate(-50%,-57%) scale(1.06);
+  }
 }
 
 .holo-core::before{
   content:"";
   position:absolute;
-  inset:18px;
-  border:1px dashed rgba(255,255,255,.5);
+  inset:14px;
+  border:1px dashed rgba(255,255,255,.6);
   border-radius:50%;
-  animation:holoSpin 7s linear infinite;
+  animation:innerRotate 4s linear infinite;
+}
+
+@keyframes innerRotate{
+  from{transform:rotate(0);}
+  to{transform:rotate(360deg);}
 }
 
 .holo-core::after{
   content:"";
   position:absolute;
-  inset:32px;
+  inset:28px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.5),rgba(255,48,40,.18) 35%,transparent 70%);
+  background:
+    radial-gradient(circle,#fff 0%,#ff3028 15%,transparent 68%);
+  opacity:.65;
   filter:blur(3px);
+  animation:coreLight 2s ease-in-out infinite;
+}
+
+@keyframes coreLight{
+  0%,100%{opacity:.35;}
+  50%{opacity:.9;}
 }
 
 .core-text{
   position:relative;
-  z-index:3;
-  font-size:32px;
-  font-weight:900;
+  z-index:20;
+  font-size:34px;
+  font-weight:1000;
   letter-spacing:5px;
-  color:#fff;
   text-shadow:
-    0 0 7px #fff,
-    0 0 20px var(--red),
-    0 0 45px var(--red);
+    0 0 6px #fff,
+    0 0 18px var(--red),
+    0 0 40px var(--red);
+  animation:textFlicker 2.8s infinite;
 }
 
-.holo-ring{
+@keyframes textFlicker{
+  0%,90%,100%{opacity:1;}
+  92%{opacity:.65;}
+  94%{opacity:1;}
+}
+
+/* =====================================================
+   SCAN BEAMS
+===================================================== */
+
+.scan-beam{
   position:absolute;
   left:50%;
   top:50%;
-  border:1px solid rgba(255,48,40,.58);
-  border-radius:50%;
-  transform-style:preserve-3d;
-  box-shadow:0 0 15px rgba(255,48,40,.12);
-}
-
-.ring1{
-  width:250px;
-  height:250px;
-  transform:translate(-50%,-50%) rotateX(70deg);
-  animation:holoSpin 9s linear infinite;
-}
-
-.ring2{
-  width:340px;
-  height:180px;
-  transform:translate(-50%,-50%) rotateY(65deg);
-  border-color:rgba(255,255,255,.3);
-  animation:holoSpinReverse 12s linear infinite;
-}
-
-.ring3{
-  width:420px;
-  height:420px;
-  transform:translate(-50%,-50%) rotateX(65deg) rotateZ(20deg);
-  border-style:dashed;
-  border-color:rgba(255,48,40,.28);
-  animation:holoSpin 18s linear infinite;
-}
-
-.ring4{
-  width:470px;
-  height:110px;
-  transform:translate(-50%,-50%) rotateY(72deg) rotateZ(8deg);
-  border-color:rgba(255,255,255,.16);
-  animation:holoSpinReverse 15s linear infinite;
-}
-
-@keyframes holoSpin{
-  from{transform:translate(-50%,-50%) rotateX(70deg) rotateZ(0deg);}
-  to{transform:translate(-50%,-50%) rotateX(70deg) rotateZ(360deg);}
-}
-
-@keyframes holoSpinReverse{
-  from{transform:translate(-50%,-50%) rotateY(65deg) rotateZ(360deg);}
-  to{transform:translate(-50%,-50%) rotateY(65deg) rotateZ(0deg);}
-}
-
-@keyframes corePulse{
-  0%,100%{transform:translate(-50%,-50%) scale(.96);filter:brightness(.9);}
-  50%{transform:translate(-50%,-50%) scale(1.06);filter:brightness(1.3);}
-}
-
-.holo-line{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:480px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--red),transparent);
+  width:460px;
+  height:2px;
   transform:translate(-50%,-50%);
-  animation:scanRotate 5s linear infinite;
-  opacity:.45;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,48,40,.1),
+    #ff3028,
+    rgba(255,48,40,.1),
+    transparent
+  );
+  filter:blur(.5px);
+  opacity:.8;
 }
 
-@keyframes scanRotate{
+.beam1{
+  animation:beamRotate 6s linear infinite;
+}
+
+.beam2{
+  animation:beamRotateReverse 9s linear infinite;
+}
+
+@keyframes beamRotate{
   from{transform:translate(-50%,-50%) rotate(0deg);}
   to{transform:translate(-50%,-50%) rotate(360deg);}
 }
 
+@keyframes beamRotateReverse{
+  from{transform:translate(-50%,-50%) rotate(360deg);}
+  to{transform:translate(-50%,-50%) rotate(0deg);}
+}
+
+/* =====================================================
+   HOLOGRAM SCANLINE
+===================================================== */
+
+.holo-scan{
+  position:absolute;
+  left:50%;
+  top:10%;
+  width:310px;
+  height:2px;
+  transform:translateX(-50%);
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.8),
+    var(--red),
+    rgba(255,255,255,.8),
+    transparent
+  );
+  box-shadow:0 0 15px var(--red);
+  animation:scanDown 3.2s ease-in-out infinite;
+  opacity:.8;
+}
+
+@keyframes scanDown{
+  0%{
+    top:20%;
+    opacity:0;
+  }
+  15%{
+    opacity:1;
+  }
+  50%{
+    top:80%;
+    opacity:.8;
+  }
+  85%{
+    opacity:1;
+  }
+  100%{
+    top:20%;
+    opacity:0;
+  }
+}
+
+/* =====================================================
+   ORBIT OBJECTS
+===================================================== */
+
+.orbit-object{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,48,40,.65);
+  background:rgba(8,0,0,.8);
+  color:#fff;
+  font-size:19px;
+  box-shadow:
+    0 0 12px rgba(255,48,40,.35);
+  backdrop-filter:blur(5px);
+}
+
+.object1{
+  animation:objectOrbit1 7s linear infinite;
+}
+
+.object2{
+  animation:objectOrbit2 10s linear infinite;
+}
+
+.object3{
+  animation:objectOrbit3 12s linear infinite;
+}
+
+@keyframes objectOrbit1{
+  from{
+    transform:
+      rotate(0deg)
+      translateX(220px)
+      rotate(0deg);
+  }
+  to{
+    transform:
+      rotate(360deg)
+      translateX(220px)
+      rotate(-360deg);
+  }
+}
+
+@keyframes objectOrbit2{
+  from{
+    transform:
+      rotate(360deg)
+      translateX(175px)
+      rotate(-360deg);
+  }
+  to{
+    transform:
+      rotate(0deg)
+      translateX(175px)
+      rotate(0deg);
+  }
+}
+
+@keyframes objectOrbit3{
+  from{
+    transform:
+      rotate(0deg)
+      translateX(255px)
+      rotate(0deg);
+  }
+  to{
+    transform:
+      rotate(360deg)
+      translateX(255px)
+      rotate(-360deg);
+  }
+}
+
+/* =====================================================
+   HOLOGRAM LABEL
+===================================================== */
+
 .holo-label{
   position:absolute;
-  right:4%;
-  bottom:7%;
-  padding:8px 13px;
-  border:1px solid rgba(255,48,40,.5);
-  background:rgba(10,0,0,.65);
-  color:#ff6862;
+  right:0;
+  bottom:5%;
+  padding:9px 14px;
+  border:1px solid rgba(255,48,40,.55);
+  background:rgba(7,0,0,.72);
+  color:#ff726d;
   font-size:9px;
   letter-spacing:2px;
-  box-shadow:0 0 20px rgba(255,48,40,.12);
+  box-shadow:0 0 20px rgba(255,48,40,.15);
   animation:labelFloat 3s ease-in-out infinite;
 }
 
 .holo-label::before{
   content:"●";
-  margin-right:7px;
   color:#ff3028;
+  margin-right:7px;
   text-shadow:0 0 10px #ff3028;
 }
 
 @keyframes labelFloat{
   0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-8px);}
+  50%{transform:translateY(-10px);}
 }
 
-.orbit-dot{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#fff;
-  box-shadow:0 0 8px #fff,0 0 20px var(--red);
-}
-
-.dot1{
-  animation:orbit1 5s linear infinite;
-}
-
-.dot2{
-  animation:orbit2 8s linear infinite;
-}
-
-@keyframes orbit1{
-  from{transform:rotate(0deg) translateX(190px) rotate(0deg);}
-  to{transform:rotate(360deg) translateX(190px) rotate(-360deg);}
-}
-
-@keyframes orbit2{
-  from{transform:rotate(360deg) translateX(145px) rotate(-360deg);}
-  to{transform:rotate(0deg) translateX(145px) rotate(0deg);}
-}
-
-/* =========================
+/* =====================================================
    HERO CONTENT
-========================= */
+===================================================== */
 
 .hero-content{
   position:relative;
-  z-index:10;
-  max-width:780px;
+  z-index:20;
+  max-width:820px;
   margin:auto;
 }
 
 .badge{
   display:inline-block;
-  padding:9px 16px;
-  border:1px solid rgba(255,48,40,.5);
+  padding:10px 17px;
+  border:1px solid rgba(255,48,40,.55);
   background:rgba(255,48,40,.07);
-  color:#ff6963;
+  color:#ff706b;
   border-radius:30px;
   font-size:12px;
   font-weight:bold;
   letter-spacing:2px;
   box-shadow:0 0 25px rgba(255,48,40,.12);
-  animation:badgePulse 3s ease-in-out infinite;
+  animation:badgeMotion 3s ease-in-out infinite;
 }
 
-@keyframes badgePulse{
-  0%,100%{box-shadow:0 0 12px rgba(255,48,40,.1);}
-  50%{box-shadow:0 0 28px rgba(255,48,40,.28);}
+@keyframes badgeMotion{
+  0%,100%{
+    transform:translateY(0);
+    box-shadow:0 0 15px rgba(255,48,40,.1);
+  }
+  50%{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(255,48,40,.3);
+  }
 }
 
 .hero h1{
@@ -466,16 +700,31 @@ body::before{
   letter-spacing:-4px;
   font-weight:1000;
   text-transform:uppercase;
-  text-shadow:
-    0 0 15px rgba(255,255,255,.06),
-    0 0 45px rgba(255,48,40,.08);
+}
+
+.hero h1 .line{
+  display:block;
+  overflow:hidden;
 }
 
 .hero h1 span{
   color:var(--red);
+  display:inline-block;
   text-shadow:
-    0 0 10px rgba(255,48,40,.7),
+    0 0 10px rgba(255,48,40,.8),
     0 0 35px rgba(255,48,40,.35);
+  animation:visualPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes visualPulse{
+  0%,100%{
+    transform:translateX(0);
+    filter:brightness(.9);
+  }
+  50%{
+    transform:translateX(7px);
+    filter:brightness(1.25);
+  }
 }
 
 .hero p{
@@ -509,12 +758,25 @@ body::before{
 .btn-red{
   background:var(--red);
   color:#fff;
-  box-shadow:0 0 25px rgba(255,48,40,.22);
+  box-shadow:
+    0 0 25px rgba(255,48,40,.25);
+  animation:buttonGlow 3s ease-in-out infinite;
+}
+
+@keyframes buttonGlow{
+  0%,100%{
+    box-shadow:0 0 18px rgba(255,48,40,.2);
+  }
+  50%{
+    box-shadow:
+      0 0 35px rgba(255,48,40,.5),
+      0 0 70px rgba(255,48,40,.15);
+  }
 }
 
 .btn-red:hover{
-  transform:translateY(-4px) scale(1.02);
-  box-shadow:0 0 40px rgba(255,48,40,.48);
+  transform:translateY(-5px) scale(1.03);
+  box-shadow:0 0 45px rgba(255,48,40,.55);
 }
 
 .btn-outline{
@@ -526,12 +788,12 @@ body::before{
 .btn-outline:hover{
   border-color:var(--red);
   color:var(--red);
-  transform:translateY(-4px);
+  transform:translateY(-5px);
 }
 
-/* =========================
+/* =====================================================
    SECTIONS
-========================= */
+===================================================== */
 
 section{
   padding:100px 5%;
@@ -565,9 +827,9 @@ section{
   margin-top:14px;
 }
 
-/* =========================
+/* =====================================================
    STATS
-========================= */
+===================================================== */
 
 .stats{
   border-top:1px solid var(--line);
@@ -599,9 +861,9 @@ section{
   margin-top:5px;
 }
 
-/* =========================
+/* =====================================================
    SERVICES
-========================= */
+===================================================== */
 
 .services-grid{
   display:grid;
@@ -612,43 +874,60 @@ section{
 .service-card{
   position:relative;
   padding:30px;
-  background:linear-gradient(145deg,#121212,#090909);
+  background:linear-gradient(145deg,#121212,#080808);
   border:1px solid var(--line);
   border-radius:15px;
   overflow:hidden;
-  transition:.4s;
+  transition:.45s;
 }
 
 .service-card::before{
   content:"";
   position:absolute;
-  top:-100%;
-  left:-30%;
-  width:50%;
-  height:300%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+  top:-120%;
+  left:-35%;
+  width:45%;
+  height:330%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.12),
+    transparent
+  );
   transform:rotate(25deg);
-  transition:.7s;
+  transition:.8s;
 }
 
 .service-card:hover::before{
-  left:130%;
+  left:135%;
 }
 
 .service-card::after{
   content:"";
   position:absolute;
-  inset:auto 0 0;
+  left:0;
+  bottom:0;
+  width:100%;
   height:2px;
-  background:linear-gradient(90deg,transparent,var(--red),transparent);
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--red),
+    transparent
+  );
   transform:scaleX(0);
-  transition:.4s;
+  transition:.45s;
 }
 
 .service-card:hover{
-  transform:translateY(-9px);
+  transform:
+    translateY(-10px)
+    perspective(800px)
+    rotateX(2deg);
   border-color:rgba(255,48,40,.55);
-  box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(255,48,40,.1);
+  box-shadow:
+    0 25px 50px rgba(0,0,0,.45),
+    0 0 35px rgba(255,48,40,.1);
 }
 
 .service-card:hover::after{
@@ -658,6 +937,7 @@ section{
 .service-icon{
   font-size:35px;
   margin-bottom:18px;
+  filter:drop-shadow(0 0 8px rgba(255,48,40,.25));
 }
 
 .service-card h3{
@@ -670,9 +950,9 @@ section{
   font-size:14px;
 }
 
-/* =========================
+/* =====================================================
    PORTFOLIO
-========================= */
+===================================================== */
 
 .portfolio-grid{
   display:grid;
@@ -689,7 +969,7 @@ section{
   overflow:hidden;
   cursor:pointer;
   transform-style:preserve-3d;
-  transition:.4s;
+  transition:.35s;
 }
 
 .portfolio-card img{
@@ -700,13 +980,14 @@ section{
 }
 
 .portfolio-card:hover{
-  transform:perspective(900px) rotateX(3deg) rotateY(-3deg) translateY(-7px);
   border-color:rgba(255,48,40,.6);
-  box-shadow:0 25px 50px rgba(0,0,0,.5),0 0 30px rgba(255,48,40,.12);
+  box-shadow:
+    0 25px 55px rgba(0,0,0,.55),
+    0 0 30px rgba(255,48,40,.12);
 }
 
 .portfolio-card:hover img{
-  transform:scale(1.07);
+  transform:scale(1.08);
   filter:saturate(1.2);
 }
 
@@ -716,7 +997,10 @@ section{
   display:flex;
   align-items:flex-end;
   padding:20px;
-  background:linear-gradient(transparent 40%,rgba(0,0,0,.9));
+  background:linear-gradient(
+    transparent 35%,
+    rgba(0,0,0,.9)
+  );
 }
 
 .portfolio-overlay h3{
@@ -737,13 +1021,17 @@ section{
   margin-bottom:12px;
 }
 
-/* =========================
+/* =====================================================
    CLIENT PROJECT
-========================= */
+===================================================== */
 
 .client-project{
   background:
-    radial-gradient(circle at center,rgba(255,48,40,.08),transparent 45%),
+    radial-gradient(
+      circle at center,
+      rgba(255,48,40,.08),
+      transparent 45%
+    ),
     #080808;
 }
 
@@ -759,6 +1047,12 @@ section{
 .client-box .money{
   font-size:42px;
   margin-bottom:15px;
+  animation:moneyFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes moneyFloat{
+  0%,100%{transform:translateY(0) rotate(0);}
+  50%{transform:translateY(-10px) rotate(3deg);}
 }
 
 .client-box h2{
@@ -772,9 +1066,9 @@ section{
   line-height:1.8;
 }
 
-/* =========================
+/* =====================================================
    STEPS
-========================= */
+===================================================== */
 
 .steps-grid{
   display:grid;
@@ -788,12 +1082,13 @@ section{
   border:1px solid var(--line);
   background:#0b0b0b;
   border-radius:12px;
-  transition:.3s;
+  transition:.35s;
 }
 
 .step:hover{
-  transform:translateY(-7px);
+  transform:translateY(-8px);
   border-color:rgba(255,48,40,.5);
+  box-shadow:0 15px 35px rgba(255,48,40,.07);
 }
 
 .step-number{
@@ -820,9 +1115,9 @@ section{
   line-height:1.6;
 }
 
-/* =========================
+/* =====================================================
    PRICING
-========================= */
+===================================================== */
 
 .pricing-grid{
   display:grid;
@@ -856,7 +1151,7 @@ section{
 }
 
 .price-card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-9px);
 }
 
 .price-card h3{
@@ -891,9 +1186,9 @@ section{
   margin-right:9px;
 }
 
-/* =========================
+/* =====================================================
    TESTIMONIAL
-========================= */
+===================================================== */
 
 .testimonial-grid{
   display:grid;
@@ -906,6 +1201,12 @@ section{
   border:1px solid var(--line);
   border-radius:14px;
   padding:28px;
+  transition:.35s;
+}
+
+.testimonial:hover{
+  transform:translateY(-7px);
+  border-color:rgba(255,48,40,.4);
 }
 
 .stars{
@@ -925,9 +1226,9 @@ section{
   margin-top:20px;
 }
 
-/* =========================
+/* =====================================================
    FAQ
-========================= */
+===================================================== */
 
 .faq{
   max-width:850px;
@@ -940,6 +1241,11 @@ details{
   border-radius:10px;
   margin-bottom:12px;
   overflow:hidden;
+  transition:.3s;
+}
+
+details:hover{
+  border-color:rgba(255,48,40,.4);
 }
 
 summary{
@@ -954,15 +1260,19 @@ details p{
   line-height:1.7;
 }
 
-/* =========================
+/* =====================================================
    CTA
-========================= */
+===================================================== */
 
 .cta{
   text-align:center;
   padding:100px 5%;
   background:
-    radial-gradient(circle at center,rgba(255,48,40,.14),transparent 48%),
+    radial-gradient(
+      circle at center,
+      rgba(255,48,40,.14),
+      transparent 48%
+    ),
     #070707;
 }
 
@@ -976,9 +1286,9 @@ details p{
   margin-bottom:28px;
 }
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
   padding:35px 5%;
@@ -993,9 +1303,9 @@ footer strong{
   color:#fff;
 }
 
-/* =========================
-   WHATSAPP FLOAT
-========================= */
+/* =====================================================
+   WHATSAPP
+===================================================== */
 
 .wa-float{
   position:fixed;
@@ -1020,18 +1330,22 @@ footer strong{
 }
 
 @keyframes waPulse{
-  0%,100%{transform:scale(1);box-shadow:0 10px 35px rgba(37,211,102,.25);}
-  50%{transform:scale(1.08);box-shadow:0 10px 50px rgba(37,211,102,.45);}
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.09);
+  }
 }
 
-/* =========================
+/* =====================================================
    LIGHTBOX
-========================= */
+===================================================== */
 
 .lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.94);
+  background:rgba(0,0,0,.95);
   z-index:2000;
   display:none;
   align-items:center;
@@ -1087,14 +1401,16 @@ footer strong{
   color:var(--red);
 }
 
-/* =========================
+/* =====================================================
    REVEAL
-========================= */
+===================================================== */
 
 .reveal{
   opacity:0;
-  transform:translateY(35px);
-  transition:opacity .8s ease,transform .8s ease;
+  transform:translateY(40px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
 .reveal.show{
@@ -1102,24 +1418,22 @@ footer strong{
   transform:translateY(0);
 }
 
-/* =========================
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
-@media(max-width:1000px){
-
-  .nav-links{
-    gap:14px;
-  }
+@media(max-width:1100px){
 
   .holo-stage{
-    opacity:.2;
     right:50%;
-    transform:translate(50%,-50%) scale(.8);
+    transform:
+      translate(50%,-50%)
+      scale(.8);
+    opacity:.18;
   }
 
   .hero-content{
-    position:relative;
+    z-index:20;
   }
 
   .services-grid,
@@ -1170,9 +1484,9 @@ footer strong{
   }
 
   .holo-stage{
-    width:400px;
-    height:400px;
-    opacity:.16;
+    width:420px;
+    height:420px;
+    opacity:.13;
   }
 
   .holo-core{
@@ -1181,7 +1495,7 @@ footer strong{
   }
 
   .core-text{
-    font-size:24px;
+    font-size:25px;
   }
 
   section{
@@ -1215,6 +1529,7 @@ footer strong{
   .lightbox-next{
     right:10px;
   }
+
 }
 
 @media(max-width:380px){
@@ -1236,9 +1551,9 @@ footer strong{
   }
 }
 
-/* =========================
+/* =====================================================
    REDUCED MOTION
-========================= */
+===================================================== */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1250,16 +1565,25 @@ footer strong{
     scroll-behavior:auto!important;
     transition-duration:.01ms!important;
   }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ===================================================
+     NAVBAR
+=================================================== -->
+
 <nav class="navbar">
+
   <div class="nav-inner">
-    <a href="#home" class="logo">ALFA <span>GRAPHIC</span></a>
+
+    <a href="#home" class="logo">
+      ALFA <span>GRAPHIC</span>
+    </a>
 
     <ul class="nav-links">
       <li><a href="#services">Layanan</a></li>
@@ -1268,17 +1592,25 @@ footer strong{
       <li><a href="#about">Tentang</a></li>
       <li><a href="#contact">Kontak</a></li>
     </ul>
+
   </div>
+
 </nav>
 
-<!-- HERO -->
+
+<!-- ===================================================
+     HERO
+=================================================== -->
+
 <header class="hero" id="home">
 
   <div class="hero-grid" aria-hidden="true"></div>
 
   <canvas id="particles" aria-hidden="true"></canvas>
 
-  <!-- HOLOGRAM -->
+
+  <!-- ================= HOLOGRAM ================= -->
+
   <div class="holo-stage" id="holoStage" aria-hidden="true">
 
     <div class="holo-ring ring1"></div>
@@ -1286,20 +1618,27 @@ footer strong{
     <div class="holo-ring ring3"></div>
     <div class="holo-ring ring4"></div>
 
-    <div class="holo-line"></div>
+    <div class="scan-beam beam1"></div>
+    <div class="scan-beam beam2"></div>
+
+    <div class="holo-scan"></div>
 
     <div class="holo-core">
       <div class="core-text">AG</div>
     </div>
 
-    <div class="orbit-dot dot1"></div>
-    <div class="orbit-dot dot2"></div>
+    <div class="orbit-object object1">✦</div>
+    <div class="orbit-object object2">✚</div>
+    <div class="orbit-object object3">◆</div>
 
     <div class="holo-label">
       ALFA CREATIVE // VISUAL ENGINE
     </div>
 
   </div>
+
+
+  <!-- ================= HERO CONTENT ================= -->
 
   <div class="hero-content reveal">
 
@@ -1308,9 +1647,19 @@ footer strong{
     </div>
 
     <h1>
-      WE CREATE<br>
-      <span>YOUR VISUAL</span><br>
-      IDENTITY
+
+      <span class="line">
+        WE CREATE
+      </span>
+
+      <span class="line">
+        <span>YOUR VISUAL</span>
+      </span>
+
+      <span class="line">
+        IDENTITY
+      </span>
+
     </h1>
 
     <p>
@@ -1321,23 +1670,34 @@ footer strong{
 
     <div class="hero-buttons">
 
-      <a class="btn btn-red"
-         href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20desain."
-         target="_blank">
+      <a
+        class="btn btn-red"
+        href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20desain."
+        target="_blank"
+      >
         💬 Pesan Sekarang
       </a>
 
-      <a class="btn btn-outline" href="#portfolio">
+      <a
+        class="btn btn-outline"
+        href="#portfolio"
+      >
         👁 Lihat Portfolio
       </a>
 
     </div>
 
   </div>
+
 </header>
 
-<!-- STATS -->
+
+<!-- ===================================================
+     STATS
+=================================================== -->
+
 <section class="stats">
+
   <div class="stats-grid">
 
     <div class="stat reveal">
@@ -1361,213 +1721,419 @@ footer strong{
     </div>
 
   </div>
+
 </section>
 
-<!-- SERVICES -->
+
+<!-- ===================================================
+     SERVICES
+=================================================== -->
+
 <section id="services">
+
   <div class="container">
 
     <div class="section-title reveal">
+
       <small>OUR SERVICES</small>
+
       <h2>Layanan Kreatif</h2>
-      <p>Kebutuhan visual Anda, kami bantu wujudkan.</p>
+
+      <p>
+        Kebutuhan visual Anda, kami bantu wujudkan.
+      </p>
+
     </div>
+
 
     <div class="services-grid">
 
       <article class="service-card reveal">
+
         <div class="service-icon">👕</div>
+
         <h3>Desain Kaos</h3>
-        <p>Desain kaos custom untuk personal, komunitas, brand dan merchandise.</p>
+
+        <p>
+          Desain kaos custom untuk personal,
+          komunitas, brand dan merchandise.
+        </p>
+
       </article>
 
+
       <article class="service-card reveal">
+
         <div class="service-icon">🏆</div>
+
         <h3>Desain Jersey</h3>
-        <p>Konsep jersey olahraga dengan visual modern dan identitas yang kuat.</p>
+
+        <p>
+          Konsep jersey olahraga dengan visual
+          modern dan identitas yang kuat.
+        </p>
+
       </article>
 
+
       <article class="service-card reveal">
+
         <div class="service-icon">🎸</div>
+
         <h3>Desain Band</h3>
-        <p>Artwork untuk band, musik, komunitas dan kebutuhan merchandise.</p>
+
+        <p>
+          Artwork untuk band, musik, komunitas
+          dan kebutuhan merchandise.
+        </p>
+
       </article>
 
+
       <article class="service-card reveal">
+
         <div class="service-icon">🔥</div>
+
         <h3>Desain Sablon</h3>
-        <p>Artwork siap produksi untuk kebutuhan sablon dan printing.</p>
+
+        <p>
+          Artwork siap produksi untuk kebutuhan
+          sablon dan printing.
+        </p>
+
       </article>
 
+
       <article class="service-card reveal">
+
         <div class="service-icon">◈</div>
+
         <h3>Logo & Branding</h3>
-        <p>Identitas visual yang membantu brand tampil lebih profesional.</p>
+
+        <p>
+          Identitas visual yang membantu brand
+          tampil lebih profesional.
+        </p>
+
       </article>
 
+
       <article class="service-card reveal">
+
         <div class="service-icon">📢</div>
+
         <h3>Desain Promosi</h3>
-        <p>Poster, banner, flyer, konten promosi dan kebutuhan visual lainnya.</p>
+
+        <p>
+          Poster, banner, flyer, konten promosi
+          dan kebutuhan visual lainnya.
+        </p>
+
       </article>
 
     </div>
+
   </div>
+
 </section>
 
-<!-- PORTFOLIO -->
+
+<!-- ===================================================
+     PORTFOLIO
+=================================================== -->
+
 <section id="portfolio">
+
   <div class="container">
 
     <div class="section-title reveal">
+
       <small>SELECTED WORKS</small>
+
       <h2>Portfolio</h2>
-      <p>Beberapa contoh karya ALFA GRAPHIC.</p>
+
+      <p>
+        Beberapa contoh karya ALFA GRAPHIC.
+      </p>
+
     </div>
+
 
     <div class="portfolio-grid">
 
-      <div class="portfolio-card reveal"
-           data-image="assets/KAOS-ALFA.png"
-           data-title="ALFA T-Shirt Design">
-        <img src="assets/KAOS-ALFA.png" alt="Desain Kaos Alfa Graphic">
+
+      <div
+        class="portfolio-card reveal"
+        data-image="assets/KAOS-ALFA.png"
+        data-title="ALFA T-Shirt Design"
+      >
+
+        <img
+          src="assets/KAOS-ALFA.png"
+          alt="Desain Kaos Alfa Graphic"
+        >
+
         <div class="portfolio-overlay">
           <h3>ALFA T-Shirt Design</h3>
         </div>
+
       </div>
 
-      <div class="portfolio-card reveal"
-           data-image="assets/KAOS-REGGAE.png"
-           data-title="Reggae T-Shirt Design">
-        <img src="assets/KAOS-REGGAE.png" alt="Desain Kaos Reggae">
+
+      <div
+        class="portfolio-card reveal"
+        data-image="assets/KAOS-REGGAE.png"
+        data-title="Reggae T-Shirt Design"
+      >
+
+        <img
+          src="assets/KAOS-REGGAE.png"
+          alt="Desain Kaos Reggae"
+        >
+
         <div class="portfolio-overlay">
           <h3>Reggae T-Shirt Design</h3>
         </div>
+
       </div>
 
-      <div class="portfolio-card reveal"
-           data-image="assets/SAMURAI MUAY THAI.png"
-           data-title="Samurai Muay Thai">
-        <img src="assets/SAMURAI MUAY THAI.png" alt="Samurai Muay Thai Design">
+
+      <div
+        class="portfolio-card reveal"
+        data-image="assets/SAMURAI MUAY THAI.png"
+        data-title="Samurai Muay Thai"
+      >
+
+        <img
+          src="assets/SAMURAI MUAY THAI.png"
+          alt="Samurai Muay Thai Design"
+        >
+
         <div class="portfolio-overlay">
           <h3>Samurai Muay Thai</h3>
         </div>
+
       </div>
 
-      <div class="portfolio-card reveal"
-           data-image="assets/VTM DESIGN VER 2.png"
-           data-title="VTM Design">
-        <img src="assets/VTM DESIGN VER 2.png" alt="VTM Design">
+
+      <div
+        class="portfolio-card reveal"
+        data-image="assets/VTM DESIGN VER 2.png"
+        data-title="VTM Design"
+      >
+
+        <img
+          src="assets/VTM DESIGN VER 2.png"
+          alt="VTM Design"
+        >
+
         <div class="portfolio-overlay">
           <h3>VTM Design</h3>
         </div>
+
       </div>
 
+
       <div class="portfolio-card placeholder reveal">
+
         <span>✦</span>
+
         <h3>Custom Project</h3>
-        <p>Project berikutnya bisa menjadi karya Anda.</p>
+
+        <p>
+          Project berikutnya bisa menjadi karya Anda.
+        </p>
+
       </div>
 
+
       <div class="portfolio-card placeholder reveal">
+
         <span>+</span>
+
         <h3>Your Brand</h3>
-        <p>Let's create something unique.</p>
+
+        <p>
+          Let's create something unique.
+        </p>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
-<!-- CLIENT PROJECT -->
-<section class="client-project" id="about">
+
+<!-- ===================================================
+     CLIENT PROJECT
+=================================================== -->
+
+<section
+  class="client-project"
+  id="about"
+>
+
   <div class="container">
 
     <div class="client-box reveal">
 
       <div class="money">💰</div>
 
-      <h2>SUDAH MENERIMA PROJECT BERBAYAR</h2>
+      <h2>
+        SUDAH MENERIMA PROJECT BERBAYAR
+      </h2>
 
       <p>
-        ALFA GRAPHIC bukan hanya demo. Kami sudah menerima project
-        desain dari client dan terus mengembangkan kualitas layanan
-        untuk kebutuhan visual personal, komunitas maupun bisnis.
+        ALFA GRAPHIC bukan hanya demo.
+        Kami sudah menerima project desain dari client
+        dan terus mengembangkan kualitas layanan untuk
+        kebutuhan visual personal, komunitas maupun bisnis.
       </p>
 
-      <a class="btn btn-red"
-         href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20memesan%20desain."
-         target="_blank">
+      <a
+        class="btn btn-red"
+        href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20memesan%20desain."
+        target="_blank"
+      >
         💬 Konsultasi Project
       </a>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- ORDER STEPS -->
+
+<!-- ===================================================
+     ORDER STEPS
+=================================================== -->
+
 <section>
+
   <div class="container">
 
     <div class="section-title reveal">
+
       <small>HOW IT WORKS</small>
+
       <h2>Cara Order</h2>
-      <p>Simple, cepat dan langsung melalui WhatsApp.</p>
+
+      <p>
+        Simple, cepat dan langsung melalui WhatsApp.
+      </p>
+
     </div>
+
 
     <div class="steps-grid">
 
+
       <div class="step reveal">
+
         <div class="step-number">1</div>
+
         <h3>Chat</h3>
-        <p>Hubungi ALFA GRAPHIC melalui WhatsApp.</p>
+
+        <p>
+          Hubungi ALFA GRAPHIC melalui WhatsApp.
+        </p>
+
       </div>
 
+
       <div class="step reveal">
+
         <div class="step-number">2</div>
+
         <h3>Konsultasi</h3>
-        <p>Jelaskan kebutuhan dan konsep desain.</p>
+
+        <p>
+          Jelaskan kebutuhan dan konsep desain.
+        </p>
+
       </div>
 
+
       <div class="step reveal">
+
         <div class="step-number">3</div>
+
         <h3>Konsep</h3>
-        <p>Kami mulai mengembangkan konsep visual.</p>
+
+        <p>
+          Kami mulai mengembangkan konsep visual.
+        </p>
+
       </div>
 
+
       <div class="step reveal">
+
         <div class="step-number">4</div>
+
         <h3>Revisi</h3>
-        <p>Desain disesuaikan sampai sesuai kebutuhan.</p>
+
+        <p>
+          Desain disesuaikan sampai sesuai kebutuhan.
+        </p>
+
       </div>
 
+
       <div class="step reveal">
+
         <div class="step-number">5</div>
+
         <h3>Final</h3>
-        <p>File final siap digunakan atau diproduksi.</p>
+
+        <p>
+          File final siap digunakan atau diproduksi.
+        </p>
+
       </div>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- PRICING -->
+
+<!-- ===================================================
+     PRICING
+=================================================== -->
+
 <section id="pricing">
+
   <div class="container">
 
     <div class="section-title reveal">
+
       <small>PRICING</small>
+
       <h2>Paket Desain</h2>
-      <p>Pilihan paket dapat disesuaikan dengan kebutuhan.</p>
+
+      <p>
+        Pilihan paket dapat disesuaikan dengan kebutuhan.
+      </p>
+
     </div>
+
 
     <div class="pricing-grid">
 
+
       <div class="price-card reveal">
+
         <h3>STARTER</h3>
-        <div class="price">Rp50K <span>/ project</span></div>
+
+        <div class="price">
+          Rp50K
+          <span>/ project</span>
+        </div>
 
         <ul>
           <li>1 Konsep Desain</li>
@@ -1576,16 +2142,25 @@ footer strong{
           <li>File PNG/JPG</li>
         </ul>
 
-        <a class="btn btn-outline"
-           href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20tertarik%20paket%20STARTER."
-           target="_blank">
+        <a
+          class="btn btn-outline"
+          href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20tertarik%20paket%20STARTER."
+          target="_blank"
+        >
           Pilih Paket
         </a>
+
       </div>
 
+
       <div class="price-card featured reveal">
+
         <h3>PROFESSIONAL</h3>
-        <div class="price">Rp100K <span>/ project</span></div>
+
+        <div class="price">
+          Rp100K
+          <span>/ project</span>
+        </div>
 
         <ul>
           <li>2 Konsep Desain</li>
@@ -1595,16 +2170,25 @@ footer strong{
           <li>Source File</li>
         </ul>
 
-        <a class="btn btn-red"
-           href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20tertarik%20paket%20PROFESSIONAL."
-           target="_blank">
+        <a
+          class="btn btn-red"
+          href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20tertarik%20paket%20PROFESSIONAL."
+          target="_blank"
+        >
           Pilih Paket
         </a>
+
       </div>
 
+
       <div class="price-card reveal">
+
         <h3>FULL CUSTOM</h3>
-        <div class="price">CUSTOM <span>/ project</span></div>
+
+        <div class="price">
+          CUSTOM
+          <span>/ project</span>
+        </div>
 
         <ul>
           <li>Konsep Custom</li>
@@ -1614,118 +2198,199 @@ footer strong{
           <li>File Produksi</li>
         </ul>
 
-        <a class="btn btn-outline"
-           href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20paket%20FULL%20CUSTOM."
-           target="_blank">
+        <a
+          class="btn btn-outline"
+          href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20paket%20FULL%20CUSTOM."
+          target="_blank"
+        >
           Konsultasi
         </a>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
-<!-- TESTIMONIAL -->
+
+<!-- ===================================================
+     TESTIMONIAL
+=================================================== -->
+
 <section>
+
   <div class="container">
 
     <div class="section-title reveal">
+
       <small>CLIENT FEEDBACK</small>
+
       <h2>Testimonial</h2>
+
     </div>
+
 
     <div class="testimonial-grid">
 
-      <div class="testimonial reveal">
-        <div class="stars">★★★★★</div>
-        <p>
-          "Desainnya sesuai konsep yang saya mau dan komunikasinya mudah."
-        </p>
-        <strong>Client Project</strong>
-      </div>
 
       <div class="testimonial reveal">
+
         <div class="stars">★★★★★</div>
+
         <p>
-          "Hasil desain terlihat profesional dan siap digunakan untuk produksi."
+          "Desainnya sesuai konsep yang saya mau
+          dan komunikasinya mudah."
         </p>
+
         <strong>Client Project</strong>
+
       </div>
 
+
       <div class="testimonial reveal">
+
         <div class="stars">★★★★★</div>
+
+        <p>
+          "Hasil desain terlihat profesional
+          dan siap digunakan untuk produksi."
+        </p>
+
+        <strong>Client Project</strong>
+
+      </div>
+
+
+      <div class="testimonial reveal">
+
+        <div class="stars">★★★★★</div>
+
         <p>
           "Prosesnya cepat dan konsep visualnya keren."
         </p>
+
         <strong>Client Project</strong>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
-<!-- FAQ -->
+
+<!-- ===================================================
+     FAQ
+=================================================== -->
+
 <section>
+
   <div class="container">
 
     <div class="section-title reveal">
+
       <small>FAQ</small>
+
       <h2>Pertanyaan Umum</h2>
+
     </div>
+
 
     <div class="faq">
 
-      <details class="reveal">
-        <summary>Apakah bisa request desain custom?</summary>
-        <p>
-          Bisa. Konsep desain dapat disesuaikan dengan kebutuhan,
-          referensi dan karakter brand atau komunitas Anda.
-        </p>
-      </details>
 
       <details class="reveal">
-        <summary>Apakah desain bisa untuk sablon?</summary>
+
+        <summary>
+          Apakah bisa request desain custom?
+        </summary>
+
         <p>
-          Bisa. Kami dapat menyiapkan desain dengan resolusi tinggi
-          untuk kebutuhan produksi dan printing.
+          Bisa. Konsep desain dapat disesuaikan dengan
+          kebutuhan, referensi dan karakter brand atau
+          komunitas Anda.
         </p>
+
       </details>
 
-      <details class="reveal">
-        <summary>Bagaimana cara order?</summary>
-        <p>
-          Cukup hubungi WhatsApp ALFA GRAPHIC dan jelaskan kebutuhan
-          desain Anda.
-        </p>
-      </details>
 
       <details class="reveal">
-        <summary>Apakah menerima project logo dan branding?</summary>
+
+        <summary>
+          Apakah desain bisa untuk sablon?
+        </summary>
+
         <p>
-          Ya. ALFA GRAPHIC juga menerima project logo, identitas visual,
-          branding dan materi promosi.
+          Bisa. Kami dapat menyiapkan desain dengan
+          resolusi tinggi untuk kebutuhan produksi
+          dan printing.
         </p>
+
+      </details>
+
+
+      <details class="reveal">
+
+        <summary>
+          Bagaimana cara order?
+        </summary>
+
+        <p>
+          Cukup hubungi WhatsApp ALFA GRAPHIC
+          dan jelaskan kebutuhan desain Anda.
+        </p>
+
+      </details>
+
+
+      <details class="reveal">
+
+        <summary>
+          Apakah menerima project logo dan branding?
+        </summary>
+
+        <p>
+          Ya. ALFA GRAPHIC juga menerima project logo,
+          identitas visual, branding dan materi promosi.
+        </p>
+
       </details>
 
     </div>
+
   </div>
+
 </section>
 
-<!-- CTA -->
-<section class="cta" id="contact">
+
+<!-- ===================================================
+     CTA
+=================================================== -->
+
+<section
+  class="cta"
+  id="contact"
+>
 
   <div class="container reveal">
 
-    <h2>READY TO CREATE?</h2>
+    <h2>
+      READY TO CREATE?
+    </h2>
 
     <p>
-      Mari buat visual yang membuat brand, komunitas atau project
-      Anda terlihat lebih kuat.
+      Mari buat visual yang membuat brand,
+      komunitas atau project Anda terlihat lebih kuat.
     </p>
 
-    <a class="btn btn-red"
-       href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20membuat%20desain."
-       target="_blank">
+    <a
+      class="btn btn-red"
+      href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20membuat%20desain."
+      target="_blank"
+    >
       💬 Chat ALFA GRAPHIC
     </a>
 
@@ -1733,200 +2398,421 @@ footer strong{
 
 </section>
 
-<!-- FOOTER -->
+
+<!-- ===================================================
+     FOOTER
+=================================================== -->
+
 <footer>
+
   <p>
-    © 2026 <strong>ALFA GRAPHIC</strong>.
+    © 2026
+    <strong>ALFA GRAPHIC</strong>.
     Graphic Design & Creative Visual.
   </p>
+
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a class="wa-float"
-   href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20desain."
-   target="_blank"
-   aria-label="Chat WhatsApp ALFA GRAPHIC">
+
+<!-- ===================================================
+     WHATSAPP FLOAT
+=================================================== -->
+
+<a
+  class="wa-float"
+  href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20desain."
+  target="_blank"
+  aria-label="Chat WhatsApp ALFA GRAPHIC"
+>
 
   <svg viewBox="0 0 32 32" aria-hidden="true">
+
     <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.6 4.45 1.65 6.32L3.1 29l6.86-1.5A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.6c-2.02 0-3.9-.58-5.5-1.58l-.39-.24-4.07.89.87-3.97-.25-.41A10.58 10.58 0 1 1 16 26.6zm5.8-7.93c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.52-.16-.74.16-.22.32-.84 1.05-1.03 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.38.49-.57.16-.19.22-.32.33-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.32-1.14 1.11-1.14 2.7s1.17 3.13 1.33 3.35c.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.9-.78 2.17-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"/>
+
   </svg>
 
 </a>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
 
-  <button class="lightbox-close" id="closeLightbox" aria-label="Tutup">×</button>
+<!-- ===================================================
+     LIGHTBOX
+=================================================== -->
 
-  <button class="lightbox-prev" id="prevLightbox" aria-label="Sebelumnya">‹</button>
+<div
+  class="lightbox"
+  id="lightbox"
+>
 
-  <img id="lightboxImage" src="" alt="Portfolio ALFA GRAPHIC">
+  <button
+    class="lightbox-close"
+    id="closeLightbox"
+    aria-label="Tutup"
+  >
+    ×
+  </button>
 
-  <button class="lightbox-next" id="nextLightbox" aria-label="Berikutnya">›</button>
+  <button
+    class="lightbox-prev"
+    id="prevLightbox"
+    aria-label="Sebelumnya"
+  >
+    ‹
+  </button>
+
+  <img
+    id="lightboxImage"
+    src=""
+    alt="Portfolio ALFA GRAPHIC"
+  >
+
+  <button
+    class="lightbox-next"
+    id="nextLightbox"
+    aria-label="Berikutnya"
+  >
+    ›
+  </button>
 
 </div>
 
+
 <script>
 
-/* =========================
-   PARTICLES
-========================= */
+/* =====================================================
+   PARTICLE ENGINE
+===================================================== */
 
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
+const canvas =
+  document.getElementById("particles");
+
+const ctx =
+  canvas.getContext("2d");
 
 let particles = [];
-let width;
-let height;
+
+let W = 0;
+let H = 0;
 
 function resizeCanvas(){
-  width = canvas.width = canvas.offsetWidth * devicePixelRatio;
-  height = canvas.height = canvas.offsetHeight * devicePixelRatio;
-  ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+
+  const ratio =
+    window.devicePixelRatio || 1;
+
+  W = window.innerWidth;
+  H = window.innerHeight;
+
+  canvas.width = W * ratio;
+  canvas.height = H * ratio;
+
+  canvas.style.width = W + "px";
+  canvas.style.height = H + "px";
+
+  ctx.setTransform(
+    ratio,
+    0,
+    0,
+    ratio,
+    0,
+    0
+  );
 }
+
 
 function createParticles(){
 
   particles = [];
 
-  const amount = window.innerWidth < 650 ? 22 : 42;
+  const amount =
+    window.innerWidth < 650 ? 25 : 55;
 
   for(let i=0;i<amount;i++){
 
     particles.push({
-      x:Math.random()*window.innerWidth,
-      y:Math.random()*window.innerHeight,
-      r:Math.random()*1.8+.4,
-      speed:Math.random()*.35+.08,
+
+      x:Math.random()*W,
+
+      y:Math.random()*H,
+
+      size:Math.random()*2+.4,
+
+      speed:Math.random()*.45+.08,
+
       drift:(Math.random()-.5)*.35,
-      alpha:Math.random()*.65+.15
+
+      alpha:Math.random()*.6+.15
+
     });
 
   }
+
 }
+
 
 function animateParticles(){
 
-  ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+  ctx.clearRect(
+    0,
+    0,
+    W,
+    H
+  );
 
   particles.forEach(p=>{
 
     p.y -= p.speed;
+
     p.x += p.drift;
 
     if(p.y < -10){
-      p.y = window.innerHeight + 10;
-      p.x = Math.random()*window.innerWidth;
+
+      p.y = H + 10;
+
+      p.x = Math.random()*W;
+
     }
 
-    if(p.x < -10) p.x = window.innerWidth+10;
-    if(p.x > window.innerWidth+10) p.x = -10;
+    if(p.x < -10)
+      p.x = W + 10;
+
+    if(p.x > W + 10)
+      p.x = -10;
+
 
     ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+
+    ctx.arc(
+      p.x,
+      p.y,
+      p.size,
+      0,
+      Math.PI*2
+    );
 
     ctx.fillStyle =
       `rgba(255,48,40,${p.alpha})`;
 
     ctx.shadowBlur = 12;
-    ctx.shadowColor = "rgba(255,48,40,.8)";
+
+    ctx.shadowColor =
+      "rgba(255,48,40,.8)";
+
     ctx.fill();
 
   });
 
-  requestAnimationFrame(animateParticles);
+  requestAnimationFrame(
+    animateParticles
+  );
+
 }
 
-window.addEventListener("resize",()=>{
-  resizeCanvas();
-  createParticles();
-});
-
 resizeCanvas();
+
 createParticles();
+
 animateParticles();
 
-/* =========================
-   SCROLL REVEAL
-========================= */
 
-const observer = new IntersectionObserver(
-  entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("show");
-      }
-    });
-  },
-  {
-    threshold:.12
+window.addEventListener(
+  "resize",
+  ()=>{
+    resizeCanvas();
+    createParticles();
   }
 );
 
-document.querySelectorAll(".reveal").forEach(el=>{
-  observer.observe(el);
-});
 
-/* =========================
-   HOLOGRAM MOUSE MOTION
-========================= */
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
 
-const hero = document.querySelector(".hero");
-const holo = document.getElementById("holoStage");
+const revealObserver =
+  new IntersectionObserver(
+    entries=>{
 
-if(window.matchMedia("(pointer:fine)").matches){
+      entries.forEach(entry=>{
 
-  hero.addEventListener("pointermove",(e)=>{
+        if(entry.isIntersecting){
 
-    const rect = hero.getBoundingClientRect();
+          entry.target.classList.add("show");
 
-    const x =
-      (e.clientX - rect.left) / rect.width - .5;
+        }
 
-    const y =
-      (e.clientY - rect.top) / rect.height - .5;
+      });
 
-    holo.style.transform =
-      `translateY(-50%) rotateX(${y * -7}deg) rotateY(${x * 9}deg)`;
+    },
+    {
+      threshold:.12
+    }
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(el=>{
+
+    revealObserver.observe(el);
 
   });
 
-  hero.addEventListener("pointerleave",()=>{
-    holo.style.transform =
-      "translateY(-50%) rotateX(0deg) rotateY(0deg)";
-  });
+
+/* =====================================================
+   HOLOGRAM MOUSE PARALLAX
+===================================================== */
+
+const hero =
+  document.querySelector(".hero");
+
+const holo =
+  document.getElementById("holoStage");
+
+
+if(
+  window.matchMedia("(pointer:fine)").matches
+){
+
+  hero.addEventListener(
+    "pointermove",
+    e=>{
+
+      const rect =
+        hero.getBoundingClientRect();
+
+      const x =
+        (e.clientX - rect.left) /
+        rect.width -
+        .5;
+
+      const y =
+        (e.clientY - rect.top) /
+        rect.height -
+        .5;
+
+      holo.style.transform =
+        `
+        translateY(-50%)
+        rotateX(${y * -8}deg)
+        rotateY(${x * 10}deg)
+        scale(1.01)
+        `;
+
+    }
+  );
+
+
+  hero.addEventListener(
+    "pointerleave",
+    ()=>{
+
+      holo.style.transform =
+        "translateY(-50%)";
+
+    }
+  );
 
 }
 
-/* =========================
+
+/* =====================================================
+   PORTFOLIO 3D MOUSE
+===================================================== */
+
+if(
+  window.matchMedia("(pointer:fine)").matches
+){
+
+  document
+    .querySelectorAll(".portfolio-card")
+    .forEach(card=>{
+
+      card.addEventListener(
+        "pointermove",
+        e=>{
+
+          const rect =
+            card.getBoundingClientRect();
+
+          const x =
+            (e.clientX - rect.left) /
+            rect.width -
+            .5;
+
+          const y =
+            (e.clientY - rect.top) /
+            rect.height -
+            .5;
+
+          card.style.transform =
+            `
+            perspective(900px)
+            rotateX(${y * -6}deg)
+            rotateY(${x * 6}deg)
+            translateY(-8px)
+            `;
+
+        }
+      );
+
+
+      card.addEventListener(
+        "pointerleave",
+        ()=>{
+
+          card.style.transform = "";
+
+        }
+      );
+
+    });
+
+}
+
+
+/* =====================================================
    LIGHTBOX
-========================= */
+===================================================== */
 
 const cards =
-  [...document.querySelectorAll(".portfolio-card[data-image]")];
+  [
+    ...document.querySelectorAll(
+      ".portfolio-card[data-image]"
+    )
+  ];
 
 const lightbox =
-  document.getElementById("lightbox");
+  document.getElementById(
+    "lightbox"
+  );
 
 const lightboxImage =
-  document.getElementById("lightboxImage");
+  document.getElementById(
+    "lightboxImage"
+  );
 
 const closeLightbox =
-  document.getElementById("closeLightbox");
+  document.getElementById(
+    "closeLightbox"
+  );
 
 const prevLightbox =
-  document.getElementById("prevLightbox");
+  document.getElementById(
+    "prevLightbox"
+  );
 
 const nextLightbox =
-  document.getElementById("nextLightbox");
+  document.getElementById(
+    "nextLightbox"
+  );
 
 let currentIndex = 0;
+
 
 function openLightbox(index){
 
   currentIndex = index;
 
-  const card = cards[currentIndex];
+  const card =
+    cards[currentIndex];
 
   lightboxImage.src =
     card.dataset.image;
@@ -1934,101 +2820,169 @@ function openLightbox(index){
   lightboxImage.alt =
     card.dataset.title;
 
-  lightbox.classList.add("active");
+  lightbox.classList.add(
+    "active"
+  );
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow =
+    "hidden";
+
 }
+
 
 function closeBox(){
 
-  lightbox.classList.remove("active");
+  lightbox.classList.remove(
+    "active"
+  );
 
-  document.body.style.overflow = "";
+  document.body.style.overflow =
+    "";
 
 }
+
 
 function nextImage(){
 
   currentIndex =
-    (currentIndex + 1) % cards.length;
+    (currentIndex + 1) %
+    cards.length;
 
-  openLightbox(currentIndex);
+  openLightbox(
+    currentIndex
+  );
+
 }
 
-function prevImage(){
+
+function previousImage(){
 
   currentIndex =
-    (currentIndex - 1 + cards.length) % cards.length;
+    (
+      currentIndex -
+      1 +
+      cards.length
+    ) %
+    cards.length;
 
-  openLightbox(currentIndex);
+  openLightbox(
+    currentIndex
+  );
+
 }
 
-cards.forEach((card,index)=>{
 
-  card.addEventListener("click",()=>{
-    openLightbox(index);
-  });
+cards.forEach(
+  (card,index)=>{
 
-});
+    card.addEventListener(
+      "click",
+      ()=>{
+        openLightbox(index);
+      }
+    );
 
-closeLightbox.addEventListener("click",closeBox);
-nextLightbox.addEventListener("click",nextImage);
-prevLightbox.addEventListener("click",prevImage);
-
-lightbox.addEventListener("click",(e)=>{
-
-  if(e.target === lightbox){
-    closeBox();
   }
+);
 
-});
 
-document.addEventListener("keydown",(e)=>{
+closeLightbox.addEventListener(
+  "click",
+  closeBox
+);
 
-  if(!lightbox.classList.contains("active")) return;
+nextLightbox.addEventListener(
+  "click",
+  nextImage
+);
 
-  if(e.key === "Escape") closeBox();
-  if(e.key === "ArrowRight") nextImage();
-  if(e.key === "ArrowLeft") prevImage();
+prevLightbox.addEventListener(
+  "click",
+  previousImage
+);
 
-});
 
-/* =========================
-   CARD TILT
-========================= */
+lightbox.addEventListener(
+  "click",
+  e=>{
 
-if(window.matchMedia("(pointer:fine)").matches){
+    if(
+      e.target === lightbox
+    ){
 
-  document.querySelectorAll(".portfolio-card").forEach(card=>{
+      closeBox();
 
-    card.addEventListener("pointermove",(e)=>{
+    }
 
-      const rect =
-        card.getBoundingClientRect();
+  }
+);
 
-      const x =
-        (e.clientX - rect.left) / rect.width - .5;
 
-      const y =
-        (e.clientY - rect.top) / rect.height - .5;
+document.addEventListener(
+  "keydown",
+  e=>{
 
-      card.style.transform =
-        `perspective(900px)
-         rotateX(${y * -5}deg)
-         rotateY(${x * 5}deg)
-         translateY(-7px)`;
+    if(
+      !lightbox.classList.contains(
+        "active"
+      )
+    ){
 
-    });
+      return;
 
-    card.addEventListener("pointerleave",()=>{
+    }
 
-      card.style.transform = "";
+    if(e.key === "Escape")
+      closeBox();
 
-    });
+    if(e.key === "ArrowRight")
+      nextImage();
 
-  });
+    if(e.key === "ArrowLeft")
+      previousImage();
 
-}
+  }
+);
+
+
+/* =====================================================
+   TOUCH SWIPE LIGHTBOX
+===================================================== */
+
+let touchStartX = 0;
+
+lightbox.addEventListener(
+  "touchstart",
+  e=>{
+
+    touchStartX =
+      e.changedTouches[0].screenX;
+
+  }
+);
+
+
+lightbox.addEventListener(
+  "touchend",
+  e=>{
+
+    const touchEndX =
+      e.changedTouches[0].screenX;
+
+    const distance =
+      touchEndX -
+      touchStartX;
+
+    if(Math.abs(distance) < 50)
+      return;
+
+    if(distance < 0)
+      nextImage();
+    else
+      previousImage();
+
+  }
+);
 
 </script>
 
