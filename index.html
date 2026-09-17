@@ -1,3093 +1,2036 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ALFA GRAPHIC | Jasa Desain Kaos, Jersey & Desain Grafis Profesional</title>
 
-<meta name="description" content="ALFA GRAPHIC menyediakan jasa desain kaos, jersey, sablon, logo, branding, poster, merchandise dan desain grafis profesional. Konsultasi desain custom melalui WhatsApp.">
-
-<meta name="keywords" content="jasa desain kaos, desain jersey, desain sablon, desain grafis, desain logo, desain band, desain komunitas, Alfa Graphic">
-
+<meta name="description" content="ALFA GRAPHIC menyediakan jasa desain kaos, jersey, band, sablon, logo, branding, poster, merchandise dan desain grafis profesional.">
+<meta name="keywords" content="desain kaos, desain jersey, desain sablon, desain band, logo branding, graphic design, Alfa Graphic">
 <meta name="author" content="ALFA GRAPHIC">
-
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://adnan0076767-lgtm.github.io/Alfa-Graphic/">
 
-<!-- ==================================================
-     SOCIAL PREVIEW
-     ================================================== -->
-
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="ALFA GRAPHIC">
-<meta property="og:title" content="ALFA GRAPHIC | Jasa Desain Kaos & Desain Grafis">
-<meta property="og:description" content="Jasa desain kaos, jersey, sablon, logo, branding dan desain grafis profesional. Pesan desain custom melalui WhatsApp.">
+<meta property="og:title" content="ALFA GRAPHIC | Jasa Desain Grafis Profesional">
+<meta property="og:description" content="Desain kaos, jersey, band, sablon, logo, branding dan desain promosi profesional.">
 <meta property="og:url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/">
 <meta property="og:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/KAOS-ALFA.png">
 <meta property="og:image:url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/KAOS-ALFA.png">
 <meta property="og:image:secure_url" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/KAOS-ALFA.png">
-<meta property="og:image:alt" content="ALFA GRAPHIC - Portfolio Desain Kaos">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ALFA GRAPHIC | Jasa Desain Kaos & Desain Grafis">
-<meta name="twitter:description" content="Jasa desain kaos, jersey, sablon, logo, branding dan desain grafis profesional.">
-<meta name="twitter:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/KAOS-ALFA.png">
-<meta name="twitter:image:alt" content="ALFA GRAPHIC Portfolio Desain">
+<meta name="twitter:title" content="ALFA GRAPHIC | Jasa Desain Grafis Profesional">
+<meta name="twitter:description" content="Desain kaos, jersey, logo, branding dan berbagai kebutuhan visual.">
+<meta name="twitter:image" content="https://adnan0076767-lgtm.github.io/Alfa-Graphic/assets/KAOS-ALFA.png">
 
 <style>
-
-/* ==================================================
-   RESET
-   ================================================== */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+:root{
+  --red:#ff3028;
+  --red2:#ff5b55;
+  --red-dark:#b90000;
+  --green:#25D366;
+  --black:#030303;
+  --dark:#090909;
+  --card:#111;
+  --card2:#151515;
+  --line:#252525;
+  --white:#fff;
+  --gray:#999;
+  --soft:#d9d9d9;
 }
 
-:root{
---red:#ff3028;
---red-dark:#b90000;
---green:#25D366;
---black:#050505;
---dark:#090909;
---card:#111;
---card2:#151515;
---line:#252525;
---white:#fff;
---gray:#999;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+html{
+  background:#030303;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:var(--black);
-color:var(--white);
-overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(255,48,40,.12),transparent 35%),
+    #030303;
+  color:var(--white);
+  overflow-x:hidden;
 }
 
-body.lightbox-open{
-overflow:hidden;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-/* ==================================================
-   GLOBAL AMBIENT EFFECT
-   ================================================== */
+img{
+  max-width:100%;
+  display:block;
+}
+
+button{
+  font:inherit;
+}
+
+/* =========================
+   AMBIENT BACKGROUND
+========================= */
 
 body::before{
-content:"";
-position:fixed;
-inset:0;
-pointer-events:none;
-z-index:9990;
-background:
-linear-gradient(
-rgba(255,255,255,.012) 1px,
-transparent 1px
-);
-background-size:100% 4px;
-opacity:.18;
-mix-blend-mode:screen;
+  content:"";
+  position:fixed;
+  inset:-30%;
+  pointer-events:none;
+  z-index:-5;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(255,48,40,.08),transparent 25%),
+    radial-gradient(circle at 80% 70%,rgba(255,0,0,.06),transparent 25%);
+  animation:ambientMove 12s ease-in-out infinite alternate;
 }
 
-/* ==================================================
-   SCROLLBAR
-   ================================================== */
-
-::-webkit-scrollbar{
-width:8px;
+@keyframes ambientMove{
+  from{transform:translate(-2%,-2%) scale(1);}
+  to{transform:translate(3%,2%) scale(1.08);}
 }
 
-::-webkit-scrollbar-track{
-background:#050505;
-}
-
-::-webkit-scrollbar-thumb{
-background:#333;
-border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-background:var(--red);
-}
-
-/* ==================================================
+/* =========================
    NAVBAR
-   ================================================== */
+========================= */
 
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:74px;
-padding:0 7%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:rgba(5,5,5,.90);
-backdrop-filter:blur(16px);
--webkit-backdrop-filter:blur(16px);
-border-bottom:1px solid rgba(255,255,255,.07);
-z-index:9999;
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  padding:18px 5%;
+  background:rgba(3,3,3,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
 }
 
 .logo{
-font-size:23px;
-font-weight:900;
-letter-spacing:3px;
-position:relative;
+  font-size:23px;
+  font-weight:900;
+  letter-spacing:2px;
 }
 
 .logo span{
-color:var(--red);
+  color:var(--red);
+  text-shadow:0 0 18px rgba(255,48,40,.7);
 }
 
-.logo::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-8px;
-width:35px;
-height:2px;
-background:var(--red);
-box-shadow:0 0 12px var(--red);
-animation:logoLine 2.5s ease-in-out infinite;
+.nav-links{
+  display:flex;
+  gap:25px;
+  list-style:none;
 }
 
-@keyframes logoLine{
-0%,100%{width:25px;opacity:.5}
-50%{width:65px;opacity:1}
+.nav-links a{
+  color:#ccc;
+  font-size:14px;
+  transition:.3s;
 }
 
-nav ul{
-display:flex;
-gap:28px;
-list-style:none;
+.nav-links a:hover{
+  color:var(--red);
+  text-shadow:0 0 12px rgba(255,48,40,.6);
 }
 
-nav ul li a{
-text-decoration:none;
-color:#ddd;
-font-size:13px;
-font-weight:bold;
-transition:.3s;
-}
-
-nav ul li a:hover{
-color:var(--red);
-text-shadow:0 0 15px rgba(255,48,40,.5);
-}
-
-/* ==================================================
+/* =========================
    HERO
-   ================================================== */
+========================= */
 
 .hero{
-min-height:100vh;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:130px 20px 90px;
-overflow:hidden;
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  padding:130px 5% 90px;
+  perspective:1200px;
+}
 
-background:
-radial-gradient(circle at 50% 35%,rgba(255,48,40,.24),transparent 27%),
-radial-gradient(circle at 15% 80%,rgba(255,48,40,.08),transparent 25%),
-linear-gradient(135deg,#030303,#111 50%,#050505);
+.hero-grid{
+  position:absolute;
+  inset:0;
+  opacity:.25;
+  background-image:
+    linear-gradient(rgba(255,48,40,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,48,40,.08) 1px,transparent 1px);
+  background-size:55px 55px;
+  transform:perspective(500px) rotateX(62deg) scale(1.7);
+  transform-origin:center bottom;
+  animation:gridMove 7s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes gridMove{
+  from{background-position:0 0,0 0;}
+  to{background-position:0 55px,55px 0;}
 }
 
 .hero::before{
-content:"";
-position:absolute;
-width:480px;
-height:480px;
-border:1px solid rgba(255,48,40,.15);
-border-radius:50%;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-animation:heroPulse 5s infinite;
+  content:"";
+  position:absolute;
+  width:650px;
+  height:650px;
+  border:1px solid rgba(255,48,40,.12);
+  border-radius:50%;
+  box-shadow:
+    0 0 80px rgba(255,48,40,.06),
+    inset 0 0 80px rgba(255,48,40,.04);
+  animation:heroRing 18s linear infinite;
 }
 
 .hero::after{
-content:"";
-position:absolute;
-width:720px;
-height:720px;
-border:1px solid rgba(255,255,255,.035);
-border-radius:50%;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
+  content:"";
+  position:absolute;
+  width:430px;
+  height:430px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:50%;
+  animation:heroRingReverse 12s linear infinite;
 }
 
-/* ==================================================
-   HOLOGRAM SYSTEM
-   ================================================== */
+@keyframes heroRing{
+  from{transform:rotate(0deg) scale(1);}
+  to{transform:rotate(360deg) scale(1.04);}
+}
 
-.hologram{
-position:absolute;
-width:520px;
-height:520px;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-z-index:1;
-pointer-events:none;
-transition:transform .15s ease-out;
+@keyframes heroRingReverse{
+  from{transform:rotate(360deg) scale(.9);}
+  to{transform:rotate(0deg) scale(1);}
+}
+
+/* PARTICLES */
+
+#particles{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+
+/* =========================
+   HOLOGRAM
+========================= */
+
+.holo-stage{
+  position:absolute;
+  width:520px;
+  height:520px;
+  right:5%;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  transform-style:preserve-3d;
+  transition:transform .15s ease-out;
+  opacity:.95;
+}
+
+.holo-core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:145px;
+  height:145px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle,rgba(255,48,40,.38),rgba(20,0,0,.7) 55%,transparent 72%);
+  border:1px solid rgba(255,48,40,.75);
+  box-shadow:
+    0 0 25px rgba(255,48,40,.55),
+    0 0 70px rgba(255,48,40,.2),
+    inset 0 0 30px rgba(255,48,40,.3);
+  animation:corePulse 3s ease-in-out infinite;
+}
+
+.holo-core::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px dashed rgba(255,255,255,.5);
+  border-radius:50%;
+  animation:holoSpin 7s linear infinite;
+}
+
+.holo-core::after{
+  content:"";
+  position:absolute;
+  inset:32px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.5),rgba(255,48,40,.18) 35%,transparent 70%);
+  filter:blur(3px);
+}
+
+.core-text{
+  position:relative;
+  z-index:3;
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:5px;
+  color:#fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 20px var(--red),
+    0 0 45px var(--red);
 }
 
 .holo-ring{
-position:absolute;
-left:50%;
-top:50%;
-width:100%;
-height:100%;
-transform:translate(-50%,-50%);
-border:1px solid rgba(255,48,40,.20);
-border-radius:50%;
-box-shadow:
-0 0 25px rgba(255,48,40,.08),
-inset 0 0 30px rgba(255,48,40,.04);
+  position:absolute;
+  left:50%;
+  top:50%;
+  border:1px solid rgba(255,48,40,.58);
+  border-radius:50%;
+  transform-style:preserve-3d;
+  box-shadow:0 0 15px rgba(255,48,40,.12);
 }
 
-.holo-ring:nth-child(1){
-animation:holoRotate 16s linear infinite;
+.ring1{
+  width:250px;
+  height:250px;
+  transform:translate(-50%,-50%) rotateX(70deg);
+  animation:holoSpin 9s linear infinite;
 }
 
-.holo-ring:nth-child(2){
-width:82%;
-height:82%;
-border-style:dashed;
-border-color:rgba(255,48,40,.32);
-animation:holoRotateReverse 10s linear infinite;
+.ring2{
+  width:340px;
+  height:180px;
+  transform:translate(-50%,-50%) rotateY(65deg);
+  border-color:rgba(255,255,255,.3);
+  animation:holoSpinReverse 12s linear infinite;
 }
 
-.holo-ring:nth-child(3){
-width:62%;
-height:62%;
-border-color:rgba(255,255,255,.16);
-animation:holoPulse 3s ease-in-out infinite;
+.ring3{
+  width:420px;
+  height:420px;
+  transform:translate(-50%,-50%) rotateX(65deg) rotateZ(20deg);
+  border-style:dashed;
+  border-color:rgba(255,48,40,.28);
+  animation:holoSpin 18s linear infinite;
 }
 
-.holo-ring:nth-child(4){
-width:43%;
-height:43%;
-border-style:dotted;
-border-color:rgba(255,48,40,.45);
-animation:holoRotate 6s linear infinite;
+.ring4{
+  width:470px;
+  height:110px;
+  transform:translate(-50%,-50%) rotateY(72deg) rotateZ(8deg);
+  border-color:rgba(255,255,255,.16);
+  animation:holoSpinReverse 15s linear infinite;
 }
 
-.holo-core{
-position:absolute;
-left:50%;
-top:50%;
-width:150px;
-height:150px;
-transform:translate(-50%,-50%);
-border-radius:50%;
-background:
-radial-gradient(
-circle,
-rgba(255,48,40,.24),
-rgba(255,48,40,.07) 40%,
-transparent 70%
-);
-border:1px solid rgba(255,48,40,.65);
-box-shadow:
-0 0 30px rgba(255,48,40,.25),
-inset 0 0 30px rgba(255,48,40,.15);
-animation:coreFloat 3s ease-in-out infinite;
+@keyframes holoSpin{
+  from{transform:translate(-50%,-50%) rotateX(70deg) rotateZ(0deg);}
+  to{transform:translate(-50%,-50%) rotateX(70deg) rotateZ(360deg);}
 }
 
-.holo-core::before{
-content:"ALFA";
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-font-size:23px;
-font-weight:900;
-letter-spacing:6px;
-color:#fff;
-text-shadow:
-0 0 8px rgba(255,48,40,.9),
-0 0 25px rgba(255,48,40,.6);
+@keyframes holoSpinReverse{
+  from{transform:translate(-50%,-50%) rotateY(65deg) rotateZ(360deg);}
+  to{transform:translate(-50%,-50%) rotateY(65deg) rotateZ(0deg);}
 }
 
-.holo-core::after{
-content:"GRAPHIC";
-position:absolute;
-left:50%;
-top:67%;
-transform:translateX(-50%);
-font-size:7px;
-letter-spacing:3px;
-color:#ff7771;
-white-space:nowrap;
-}
-
-.holo-scan{
-position:absolute;
-left:13%;
-width:74%;
-height:2px;
-top:15%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,48,40,.95),
-transparent
-);
-box-shadow:
-0 0 10px rgba(255,48,40,.8),
-0 0 25px rgba(255,48,40,.4);
-animation:holoScan 3.5s linear infinite;
+@keyframes corePulse{
+  0%,100%{transform:translate(-50%,-50%) scale(.96);filter:brightness(.9);}
+  50%{transform:translate(-50%,-50%) scale(1.06);filter:brightness(1.3);}
 }
 
 .holo-line{
-position:absolute;
-left:50%;
-top:50%;
-width:90%;
-height:1px;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,48,40,.3),
-transparent
-);
-transform:translate(-50%,-50%);
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:480px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--red),transparent);
+  transform:translate(-50%,-50%);
+  animation:scanRotate 5s linear infinite;
+  opacity:.45;
 }
 
-.holo-line.vertical{
-transform:translate(-50%,-50%) rotate(90deg);
+@keyframes scanRotate{
+  from{transform:translate(-50%,-50%) rotate(0deg);}
+  to{transform:translate(-50%,-50%) rotate(360deg);}
 }
 
-.holo-data{
-position:absolute;
-font-family:monospace;
-font-size:8px;
-letter-spacing:2px;
-color:rgba(255,100,90,.55);
-white-space:nowrap;
+.holo-label{
+  position:absolute;
+  right:4%;
+  bottom:7%;
+  padding:8px 13px;
+  border:1px solid rgba(255,48,40,.5);
+  background:rgba(10,0,0,.65);
+  color:#ff6862;
+  font-size:9px;
+  letter-spacing:2px;
+  box-shadow:0 0 20px rgba(255,48,40,.12);
+  animation:labelFloat 3s ease-in-out infinite;
 }
 
-.data-a{
-top:18%;
-left:3%;
+.holo-label::before{
+  content:"●";
+  margin-right:7px;
+  color:#ff3028;
+  text-shadow:0 0 10px #ff3028;
 }
 
-.data-b{
-top:75%;
-right:2%;
+@keyframes labelFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
 }
 
-.data-c{
-bottom:8%;
-left:20%;
+.orbit-dot{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 8px #fff,0 0 20px var(--red);
 }
 
-.holo-particle{
-position:absolute;
-width:4px;
-height:4px;
-border-radius:50%;
-background:var(--red);
-box-shadow:
-0 0 8px var(--red),
-0 0 18px rgba(255,48,40,.7);
+.dot1{
+  animation:orbit1 5s linear infinite;
 }
 
-.hp1{
-left:15%;
-top:25%;
-animation:particleFloat1 4s ease-in-out infinite;
+.dot2{
+  animation:orbit2 8s linear infinite;
 }
 
-.hp2{
-left:78%;
-top:30%;
-animation:particleFloat2 5s ease-in-out infinite;
+@keyframes orbit1{
+  from{transform:rotate(0deg) translateX(190px) rotate(0deg);}
+  to{transform:rotate(360deg) translateX(190px) rotate(-360deg);}
 }
 
-.hp3{
-left:25%;
-top:78%;
-animation:particleFloat3 4.5s ease-in-out infinite;
+@keyframes orbit2{
+  from{transform:rotate(360deg) translateX(145px) rotate(-360deg);}
+  to{transform:rotate(0deg) translateX(145px) rotate(0deg);}
 }
 
-.hp4{
-left:73%;
-top:76%;
-animation:particleFloat1 6s ease-in-out infinite reverse;
-}
-
-.hp5{
-left:50%;
-top:8%;
-animation:particleFloat2 4s ease-in-out infinite;
-}
-
-.hp6{
-left:8%;
-top:55%;
-animation:particleFloat3 5s ease-in-out infinite;
-}
-
-.hp7{
-right:7%;
-top:58%;
-animation:particleFloat1 5.5s ease-in-out infinite;
-}
-
-@keyframes holoRotate{
-from{
-transform:translate(-50%,-50%) rotate(0deg);
-}
-to{
-transform:translate(-50%,-50%) rotate(360deg);
-}
-}
-
-@keyframes holoRotateReverse{
-from{
-transform:translate(-50%,-50%) rotate(360deg);
-}
-to{
-transform:translate(-50%,-50%) rotate(0deg);
-}
-}
-
-@keyframes holoPulse{
-0%,100%{
-opacity:.25;
-transform:translate(-50%,-50%) scale(.96);
-}
-50%{
-opacity:.8;
-transform:translate(-50%,-50%) scale(1.06);
-}
-}
-
-@keyframes coreFloat{
-0%,100%{
-transform:translate(-50%,-50%) scale(.94);
-}
-50%{
-transform:translate(-50%,-50%) scale(1.06);
-}
-}
-
-@keyframes holoScan{
-0%{
-top:13%;
-opacity:0;
-}
-15%{
-opacity:1;
-}
-85%{
-opacity:1;
-}
-100%{
-top:87%;
-opacity:0;
-}
-}
-
-@keyframes particleFloat1{
-0%,100%{
-transform:translate(0,0) scale(.8);
-opacity:.3;
-}
-50%{
-transform:translate(15px,-35px) scale(1.5);
-opacity:1;
-}
-}
-
-@keyframes particleFloat2{
-0%,100%{
-transform:translate(0,0) scale(.7);
-opacity:.25;
-}
-50%{
-transform:translate(-25px,30px) scale(1.6);
-opacity:1;
-}
-}
-
-@keyframes particleFloat3{
-0%,100%{
-transform:translate(0,0);
-opacity:.3;
-}
-50%{
-transform:translate(30px,-20px);
-opacity:1;
-}
-}
-
-@keyframes heroPulse{
-
-0%,100%{
-transform:translate(-50%,-50%) scale(1);
-opacity:.35;
-}
-
-50%{
-transform:translate(-50%,-50%) scale(1.08);
-opacity:.8;
-}
-
-}
+/* =========================
+   HERO CONTENT
+========================= */
 
 .hero-content{
-position:relative;
-z-index:4;
-max-width:1000px;
+  position:relative;
+  z-index:10;
+  max-width:780px;
+  margin:auto;
 }
 
 .badge{
-display:inline-flex;
-align-items:center;
-padding:10px 18px;
-border:1px solid rgba(255,48,40,.65);
-background:rgba(255,48,40,.07);
-border-radius:50px;
-color:#ff7771;
-font-size:11px;
-font-weight:bold;
-letter-spacing:2px;
-margin-bottom:28px;
-box-shadow:
-0 0 15px rgba(255,48,40,.08),
-inset 0 0 15px rgba(255,48,40,.04);
-animation:badgeGlow 2.5s ease-in-out infinite;
+  display:inline-block;
+  padding:9px 16px;
+  border:1px solid rgba(255,48,40,.5);
+  background:rgba(255,48,40,.07);
+  color:#ff6963;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+  box-shadow:0 0 25px rgba(255,48,40,.12);
+  animation:badgePulse 3s ease-in-out infinite;
 }
 
-@keyframes badgeGlow{
-0%,100%{
-box-shadow:0 0 10px rgba(255,48,40,.05);
-}
-50%{
-box-shadow:
-0 0 25px rgba(255,48,40,.22),
-inset 0 0 15px rgba(255,48,40,.08);
-}
+@keyframes badgePulse{
+  0%,100%{box-shadow:0 0 12px rgba(255,48,40,.1);}
+  50%{box-shadow:0 0 28px rgba(255,48,40,.28);}
 }
 
 .hero h1{
-font-size:clamp(48px,9vw,110px);
-line-height:.88;
-font-weight:900;
-letter-spacing:-6px;
-position:relative;
+  margin-top:25px;
+  font-size:clamp(48px,8vw,92px);
+  line-height:.92;
+  letter-spacing:-4px;
+  font-weight:1000;
+  text-transform:uppercase;
+  text-shadow:
+    0 0 15px rgba(255,255,255,.06),
+    0 0 45px rgba(255,48,40,.08);
 }
 
 .hero h1 span{
-color:var(--red);
-text-shadow:
-0 0 20px rgba(255,48,40,.18),
-0 0 50px rgba(255,48,40,.12);
-animation:titleGlow 3s ease-in-out infinite;
-}
-
-@keyframes titleGlow{
-0%,100%{
-text-shadow:0 0 20px rgba(255,48,40,.12);
-}
-50%{
-text-shadow:
-0 0 30px rgba(255,48,40,.35),
-0 0 70px rgba(255,48,40,.18);
-}
+  color:var(--red);
+  text-shadow:
+    0 0 10px rgba(255,48,40,.7),
+    0 0 35px rgba(255,48,40,.35);
 }
 
 .hero p{
-max-width:730px;
-margin:30px auto 0;
-color:#aaa;
-font-size:17px;
-line-height:1.8;
+  max-width:650px;
+  margin:28px auto;
+  color:#aaa;
+  line-height:1.8;
+  font-size:16px;
 }
 
-.buttons{
-margin-top:35px;
-display:flex;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap;
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
 }
 
 .btn{
-min-height:52px;
-padding:15px 25px;
-border-radius:10px;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-text-decoration:none;
-font-size:13px;
-font-weight:900;
-transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:14px 22px;
+  border-radius:8px;
+  font-weight:bold;
+  transition:.3s;
+  border:1px solid transparent;
+  cursor:pointer;
 }
 
-.btn-primary{
-background:var(--red);
-color:#fff;
-box-shadow:0 10px 35px rgba(255,48,40,.18);
+.btn-red{
+  background:var(--red);
+  color:#fff;
+  box-shadow:0 0 25px rgba(255,48,40,.22);
 }
 
-.btn-primary:hover{
-transform:translateY(-5px) scale(1.02);
-box-shadow:
-0 15px 45px rgba(255,48,40,.35),
-0 0 25px rgba(255,48,40,.2);
+.btn-red:hover{
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 0 40px rgba(255,48,40,.48);
 }
 
 .btn-outline{
-background:#0d0d0d;
-border:1px solid #444;
-color:#fff;
+  border-color:#444;
+  background:rgba(255,255,255,.02);
+  color:#fff;
 }
 
 .btn-outline:hover{
-border-color:var(--red);
-color:var(--red);
-transform:translateY(-4px);
-box-shadow:0 0 25px rgba(255,48,40,.12);
+  border-color:var(--red);
+  color:var(--red);
+  transform:translateY(-4px);
 }
 
-/* ==================================================
-   WHATSAPP ICON
-   ================================================== */
-
-.wa-icon{
-width:21px;
-height:21px;
-fill:currentColor;
-display:block;
-}
-
-/* ==================================================
-   SECTION
-   ================================================== */
+/* =========================
+   SECTIONS
+========================= */
 
 section{
-padding:100px 7%;
+  padding:100px 5%;
+  position:relative;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
 }
 
 .section-title{
-text-align:center;
-margin-bottom:55px;
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.section-title small{
+  color:var(--red);
+  letter-spacing:3px;
+  font-weight:bold;
+  font-size:11px;
 }
 
 .section-title h2{
-font-size:clamp(30px,5vw,48px);
-font-weight:900;
-letter-spacing:-2px;
-}
-
-.section-title h2 span{
-color:var(--red);
+  margin-top:12px;
+  font-size:clamp(32px,5vw,52px);
 }
 
 .section-title p{
-max-width:650px;
-margin:15px auto 0;
-color:#888;
-font-size:14px;
-line-height:1.7;
+  color:#888;
+  margin-top:14px;
 }
 
-/* ==================================================
+/* =========================
    STATS
-   ================================================== */
+========================= */
 
 .stats{
-max-width:1050px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#070707;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
 }
 
 .stat{
-position:relative;
-overflow:hidden;
-background:linear-gradient(145deg,#141414,#0b0b0b);
-border:1px solid var(--line);
-border-radius:16px;
-padding:30px 20px;
-text-align:center;
-transition:.35s;
-}
-
-.stat::before,
-.service::before,
-.price-card::before,
-.testimonial::before{
-content:"";
-position:absolute;
-width:100px;
-height:1px;
-left:-120px;
-top:0;
-background:linear-gradient(
-90deg,
-transparent,
-var(--red),
-transparent
-);
-animation:cardScan 4s linear infinite;
-}
-
-@keyframes cardScan{
-0%{left:-120px}
-100%{left:110%}
-}
-
-.stat:hover{
-transform:translateY(-7px);
-border-color:#444;
-box-shadow:0 15px 40px rgba(0,0,0,.35);
+  text-align:center;
+  padding:20px;
 }
 
 .stat h3{
-font-size:34px;
-color:var(--red);
-font-weight:900;
+  font-size:35px;
+  color:var(--red);
+  text-shadow:0 0 18px rgba(255,48,40,.35);
 }
 
 .stat p{
-margin-top:8px;
-color:#888;
-font-size:11px;
-letter-spacing:1px;
+  color:#888;
+  margin-top:5px;
 }
 
-/* ==================================================
+/* =========================
    SERVICES
-   ================================================== */
+========================= */
 
-.services{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.service{
-position:relative;
-overflow:hidden;
-background:linear-gradient(145deg,#141414,#0b0b0b);
-padding:32px;
-border:1px solid var(--line);
-border-radius:18px;
-transition:
-transform .35s,
-border-color .35s,
-box-shadow .35s;
-transform-style:preserve-3d;
+.service-card{
+  position:relative;
+  padding:30px;
+  background:linear-gradient(145deg,#121212,#090909);
+  border:1px solid var(--line);
+  border-radius:15px;
+  overflow:hidden;
+  transition:.4s;
 }
 
-.service:hover{
-transform:
-translateY(-8px)
-perspective(700px)
-rotateX(2deg)
-rotateY(-2deg);
-border-color:rgba(255,48,40,.5);
-box-shadow:
-0 20px 45px rgba(0,0,0,.35),
-0 0 25px rgba(255,48,40,.05);
+.service-card::before{
+  content:"";
+  position:absolute;
+  top:-100%;
+  left:-30%;
+  width:50%;
+  height:300%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+  transform:rotate(25deg);
+  transition:.7s;
 }
 
-.service .icon{
-width:58px;
-height:58px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:15px;
-background:rgba(255,48,40,.08);
-border:1px solid rgba(255,48,40,.2);
-font-size:28px;
-margin-bottom:22px;
-transition:.35s;
+.service-card:hover::before{
+  left:130%;
 }
 
-.service:hover .icon{
-transform:translateZ(15px) scale(1.08);
-box-shadow:0 0 25px rgba(255,48,40,.15);
+.service-card::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--red),transparent);
+  transform:scaleX(0);
+  transition:.4s;
 }
 
-.service h3{
-font-size:20px;
-margin-bottom:12px;
+.service-card:hover{
+  transform:translateY(-9px);
+  border-color:rgba(255,48,40,.55);
+  box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(255,48,40,.1);
 }
 
-.service p{
-font-size:14px;
-line-height:1.7;
-color:#888;
+.service-card:hover::after{
+  transform:scaleX(1);
 }
 
-/* ==================================================
+.service-icon{
+  font-size:35px;
+  margin-bottom:18px;
+}
+
+.service-card h3{
+  margin-bottom:10px;
+}
+
+.service-card p{
+  color:#888;
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* =========================
    PORTFOLIO
-   ================================================== */
-
-.portfolio{
-background:
-linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px),
-#090909;
-
-background-size:40px 40px;
-position:relative;
-}
-
-.portfolio::before{
-content:"";
-position:absolute;
-inset:0;
-pointer-events:none;
-background:
-radial-gradient(
-circle at 50% 50%,
-rgba(255,48,40,.06),
-transparent 35%
-);
-animation:portfolioGlow 5s ease-in-out infinite;
-}
-
-@keyframes portfolioGlow{
-0%,100%{opacity:.5}
-50%{opacity:1}
-}
+========================= */
 
 .portfolio-grid{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-position:relative;
-z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.portfolio-item{
-position:relative;
-height:370px;
-overflow:hidden;
-border-radius:18px;
-background:#111;
-border:1px solid #222;
-cursor:pointer;
-transition:.4s;
+.portfolio-card{
+  position:relative;
+  min-height:270px;
+  background:#0c0c0c;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  transform-style:preserve-3d;
+  transition:.4s;
 }
 
-.portfolio-item:hover{
-transform:
-translateY(-8px)
-perspective(900px)
-rotateX(1deg);
-border-color:rgba(255,48,40,.75);
-box-shadow:
-0 20px 50px rgba(0,0,0,.45),
-0 0 30px rgba(255,48,40,.07);
+.portfolio-card img{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  transition:.6s;
 }
 
-.portfolio-item img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-transition:.6s;
+.portfolio-card:hover{
+  transform:perspective(900px) rotateX(3deg) rotateY(-3deg) translateY(-7px);
+  border-color:rgba(255,48,40,.6);
+  box-shadow:0 25px 50px rgba(0,0,0,.5),0 0 30px rgba(255,48,40,.12);
 }
 
-.portfolio-item:hover img{
-transform:scale(1.08);
+.portfolio-card:hover img{
+  transform:scale(1.07);
+  filter:saturate(1.2);
 }
 
-.portfolio-item::after{
-content:"";
-position:absolute;
-left:-100%;
-top:0;
-width:45%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.08),
-transparent
-);
-transform:skewX(-20deg);
-transition:.6s;
-pointer-events:none;
+.portfolio-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  padding:20px;
+  background:linear-gradient(transparent 40%,rgba(0,0,0,.9));
 }
 
-.portfolio-item:hover::after{
-left:140%;
+.portfolio-overlay h3{
+  font-size:19px;
 }
 
-.portfolio-info{
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-padding:70px 22px 22px;
-background:linear-gradient(transparent,rgba(0,0,0,.96));
+.placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  color:#666;
+  text-align:center;
 }
 
-.portfolio-info h3{
-font-size:19px;
+.placeholder span{
+  font-size:40px;
+  margin-bottom:12px;
 }
 
-.portfolio-info p{
-font-size:12px;
-color:#bbb;
-margin-top:6px;
-}
-
-.portfolio-badge{
-position:absolute;
-top:15px;
-left:15px;
-padding:7px 11px;
-border-radius:20px;
-background:rgba(0,0,0,.7);
-border:1px solid rgba(255,255,255,.15);
-font-size:10px;
-font-weight:bold;
-letter-spacing:1px;
-z-index:3;
-}
-
-/* ==================================================
-   PORTFOLIO PLACEHOLDER
-   ================================================== */
-
-.portfolio-placeholder{
-height:100%;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-
-background:
-radial-gradient(circle,rgba(255,48,40,.13),transparent 45%),
-linear-gradient(145deg,#171717,#080808);
-}
-
-.portfolio-placeholder .emoji{
-font-size:70px;
-margin-bottom:15px;
-}
-
-.portfolio-placeholder h3{
-font-size:14px;
-letter-spacing:2px;
-color:#aaa;
-}
-
-/* ==================================================
-   LIGHTBOX
-   ================================================== */
-
-.lightbox{
-position:fixed;
-inset:0;
-display:none;
-align-items:center;
-justify-content:center;
-background:rgba(0,0,0,.94);
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
-z-index:100000;
-padding:30px;
-}
-
-.lightbox.active{
-display:flex;
-}
-
-.lightbox-content{
-position:relative;
-max-width:1000px;
-width:100%;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.lightbox img{
-max-width:90vw;
-max-height:82vh;
-object-fit:contain;
-border-radius:12px;
-box-shadow:0 30px 100px rgba(0,0,0,.7);
-}
-
-.lightbox-close{
-position:fixed;
-top:22px;
-right:28px;
-width:48px;
-height:48px;
-border-radius:50%;
-background:#151515;
-border:1px solid #333;
-color:white;
-font-size:25px;
-cursor:pointer;
-z-index:3;
-}
-
-.lightbox-close:hover{
-background:var(--red);
-border-color:var(--red);
-}
-
-.lightbox-prev,
-.lightbox-next{
-position:fixed;
-top:50%;
-transform:translateY(-50%);
-width:52px;
-height:52px;
-border-radius:50%;
-background:#151515;
-border:1px solid #333;
-color:white;
-font-size:28px;
-cursor:pointer;
-z-index:3;
-}
-
-.lightbox-prev{
-left:25px;
-}
-
-.lightbox-next{
-right:25px;
-}
-
-.lightbox-prev:hover,
-.lightbox-next:hover{
-background:var(--red);
-border-color:var(--red);
-}
-
-/* ==================================================
+/* =========================
    CLIENT PROJECT
-   ================================================== */
+========================= */
 
 .client-project{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:40px;
-align-items:center;
-background:
-radial-gradient(circle at 80% 50%,rgba(255,48,40,.09),transparent 30%),
-#101010;
-
-padding:55px;
-border:1px solid #222;
-border-radius:25px;
+  background:
+    radial-gradient(circle at center,rgba(255,48,40,.08),transparent 45%),
+    #080808;
 }
 
-.client-project h2{
-font-size:clamp(30px,4vw,48px);
-line-height:1.05;
-letter-spacing:-2px;
-margin-bottom:20px;
+.client-box{
+  border:1px solid rgba(255,48,40,.25);
+  border-radius:18px;
+  padding:50px;
+  text-align:center;
+  background:rgba(255,48,40,.025);
+  box-shadow:0 0 70px rgba(255,48,40,.05);
 }
 
-.client-project h2 span{
-color:var(--red);
+.client-box .money{
+  font-size:42px;
+  margin-bottom:15px;
 }
 
-.client-project p{
-color:#999;
-line-height:1.8;
-margin-bottom:20px;
+.client-box h2{
+  font-size:35px;
 }
 
-.project-list{
-list-style:none;
+.client-box p{
+  color:#999;
+  max-width:700px;
+  margin:18px auto;
+  line-height:1.8;
 }
 
-.project-list li{
-padding:13px 0;
-border-bottom:1px solid #222;
-color:#ddd;
-font-size:14px;
-}
+/* =========================
+   STEPS
+========================= */
 
-.money-box{
-background:
-radial-gradient(circle at top right,rgba(255,255,255,.2),transparent 25%),
-linear-gradient(135deg,#ff3b32,#990000);
-
-padding:55px 30px;
-border-radius:22px;
-text-align:center;
-box-shadow:0 20px 60px rgba(255,48,40,.15);
-animation:moneyFloat 4s ease-in-out infinite;
-}
-
-@keyframes moneyFloat{
-0%,100%{
-transform:translateY(0);
-}
-50%{
-transform:translateY(-8px);
-}
-}
-
-.money-box .money{
-font-size:65px;
-}
-
-.money-box h3{
-font-size:25px;
-margin:15px 0;
-}
-
-.money-box p{
-color:#fff;
-opacity:.85;
-}
-
-/* ==================================================
-   ORDER
-   ================================================== */
-
-.order-steps{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:15px;
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
 }
 
 .step{
-background:#101010;
-padding:30px 18px;
-text-align:center;
-border:1px solid #222;
-border-radius:18px;
-transition:.3s;
+  text-align:center;
+  padding:25px 15px;
+  border:1px solid var(--line);
+  background:#0b0b0b;
+  border-radius:12px;
+  transition:.3s;
 }
 
 .step:hover{
-transform:translateY(-7px);
-border-color:rgba(255,48,40,.5);
-box-shadow:0 15px 35px rgba(0,0,0,.3);
+  transform:translateY(-7px);
+  border-color:rgba(255,48,40,.5);
 }
 
 .step-number{
-width:48px;
-height:48px;
-margin:auto auto 17px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:var(--red);
-font-size:19px;
-font-weight:900;
-box-shadow:0 0 20px rgba(255,48,40,.15);
+  width:42px;
+  height:42px;
+  margin:0 auto 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--red);
+  font-weight:900;
+  box-shadow:0 0 20px rgba(255,48,40,.25);
 }
 
 .step h3{
-font-size:15px;
-margin-bottom:9px;
+  font-size:15px;
+  margin-bottom:8px;
 }
 
 .step p{
-font-size:12px;
-color:#888;
-line-height:1.6;
+  color:#777;
+  font-size:12px;
+  line-height:1.6;
 }
 
-/* ==================================================
+/* =========================
    PRICING
-   ================================================== */
-
-.pricing{
-background:#090909;
-}
+========================= */
 
 .pricing-grid{
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
-align-items:stretch;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .price-card{
-position:relative;
-overflow:hidden;
-background:linear-gradient(145deg,#141414,#0b0b0b);
-padding:38px 30px;
-border:1px solid #222;
-border-radius:20px;
-text-align:center;
-transition:.35s;
-}
-
-.price-card:hover{
-transform:translateY(-8px);
-border-color:#444;
-box-shadow:0 20px 50px rgba(0,0,0,.35);
+  padding:35px;
+  background:#0e0e0e;
+  border:1px solid var(--line);
+  border-radius:15px;
+  transition:.4s;
+  position:relative;
+  overflow:hidden;
 }
 
 .price-card.featured{
-position:relative;
-border:2px solid var(--red);
-transform:scale(1.04);
-box-shadow:
-0 20px 60px rgba(255,48,40,.1),
-0 0 30px rgba(255,48,40,.05);
-}
-
-.price-card.featured:hover{
-transform:scale(1.04) translateY(-8px);
+  border-color:rgba(255,48,40,.7);
+  box-shadow:0 0 45px rgba(255,48,40,.1);
 }
 
 .price-card.featured::before{
-content:"PALING POPULER";
-position:absolute;
-top:-13px;
-left:50%;
-transform:translateX(-50%);
-background:var(--red);
-padding:6px 15px;
-border-radius:20px;
-font-size:10px;
-font-weight:900;
-letter-spacing:1px;
-animation:popularPulse 2s infinite;
+  content:"POPULAR";
+  position:absolute;
+  right:18px;
+  top:18px;
+  font-size:9px;
+  letter-spacing:2px;
+  color:var(--red);
 }
 
-@keyframes popularPulse{
-0%,100%{box-shadow:0 0 5px rgba(255,48,40,.2)}
-50%{box-shadow:0 0 20px rgba(255,48,40,.6)}
+.price-card:hover{
+  transform:translateY(-8px);
 }
 
 .price-card h3{
-font-size:22px;
+  color:#aaa;
 }
 
 .price{
-font-size:31px;
-color:var(--red);
-font-weight:900;
-margin:22px 0;
+  font-size:38px;
+  font-weight:900;
+  margin:15px 0;
+}
+
+.price span{
+  font-size:13px;
+  color:#777;
 }
 
 .price-card ul{
-list-style:none;
-margin:25px 0;
+  list-style:none;
+  margin:25px 0;
 }
 
 .price-card li{
-padding:11px 0;
-color:#999;
-font-size:13px;
-border-bottom:1px solid #222;
+  color:#999;
+  margin:12px 0;
+  font-size:14px;
 }
 
-.price-card .btn{
-width:100%;
+.price-card li::before{
+  content:"✓";
+  color:var(--red);
+  margin-right:9px;
 }
 
-/* ==================================================
+/* =========================
    TESTIMONIAL
-   ================================================== */
+========================= */
 
-.testimonials{
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .testimonial{
-position:relative;
-overflow:hidden;
-background:#111;
-padding:32px;
-border:1px solid #222;
-border-radius:18px;
-transition:.3s;
-}
-
-.testimonial:hover{
-transform:translateY(-7px);
-border-color:#444;
-box-shadow:0 15px 35px rgba(0,0,0,.3);
+  background:#0e0e0e;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:28px;
 }
 
 .stars{
-color:#ffc107;
-letter-spacing:2px;
-margin-bottom:18px;
+  color:#ff4b44;
+  letter-spacing:3px;
+  margin-bottom:15px;
 }
 
 .testimonial p{
-color:#aaa;
-line-height:1.8;
-font-size:14px;
+  color:#aaa;
+  line-height:1.8;
+  font-size:14px;
 }
 
-.testimonial h4{
-margin-top:20px;
-color:var(--red);
-font-size:13px;
+.testimonial strong{
+  display:block;
+  margin-top:20px;
 }
 
-/* ==================================================
+/* =========================
    FAQ
-   ================================================== */
+========================= */
 
 .faq{
-max-width:850px;
-margin:auto;
+  max-width:850px;
+  margin:auto;
 }
 
 details{
-background:#111;
-padding:21px 24px;
-margin-bottom:12px;
-border:1px solid #222;
-border-radius:13px;
-transition:.3s;
-}
-
-details:hover{
-border-color:#444;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
+  border:1px solid var(--line);
+  background:#0d0d0d;
+  border-radius:10px;
+  margin-bottom:12px;
+  overflow:hidden;
 }
 
 summary{
-cursor:pointer;
-font-weight:bold;
-font-size:14px;
+  padding:20px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
 details p{
-color:#999;
-line-height:1.8;
-font-size:13px;
-margin-top:15px;
+  padding:0 20px 20px;
+  color:#888;
+  line-height:1.7;
 }
 
-/* ==================================================
+/* =========================
    CTA
-   ================================================== */
+========================= */
 
 .cta{
-position:relative;
-overflow:hidden;
-text-align:center;
-background:
-radial-gradient(circle at center,rgba(255,48,40,.18),transparent 45%),
-#060606;
-}
-
-.cta::before{
-content:"ALFA";
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-font-size:clamp(120px,25vw,350px);
-font-weight:900;
-color:rgba(255,255,255,.018);
-pointer-events:none;
-animation:ctaWatermark 6s ease-in-out infinite;
-}
-
-@keyframes ctaWatermark{
-0%,100%{
-transform:translate(-50%,-50%) scale(1);
-}
-50%{
-transform:translate(-50%,-50%) scale(1.05);
-}
-}
-
-.cta h2,
-.cta p,
-.cta a{
-position:relative;
-z-index:2;
+  text-align:center;
+  padding:100px 5%;
+  background:
+    radial-gradient(circle at center,rgba(255,48,40,.14),transparent 48%),
+    #070707;
 }
 
 .cta h2{
-font-size:clamp(36px,6vw,70px);
-line-height:1;
-letter-spacing:-3px;
-margin-bottom:22px;
+  font-size:clamp(35px,6vw,65px);
+  margin-bottom:15px;
 }
 
 .cta p{
-color:#999;
-margin-bottom:30px;
-font-size:16px;
+  color:#999;
+  margin-bottom:28px;
 }
 
-/* ==================================================
+/* =========================
    FOOTER
-   ================================================== */
+========================= */
 
 footer{
-background:#030303;
-padding:50px 7%;
-text-align:center;
-border-top:1px solid #222;
+  padding:35px 5%;
+  border-top:1px solid var(--line);
+  background:#050505;
+  text-align:center;
+  color:#666;
+  font-size:13px;
 }
 
-footer h2{
-font-size:25px;
-letter-spacing:2px;
-margin-bottom:15px;
+footer strong{
+  color:#fff;
 }
 
-footer h2 span{
-color:var(--red);
+/* =========================
+   WHATSAPP FLOAT
+========================= */
+
+.wa-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:var(--green);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  box-shadow:0 10px 35px rgba(37,211,102,.3);
+  animation:waPulse 2.5s infinite;
 }
 
-footer p{
-color:#666;
-font-size:13px;
-line-height:1.8;
-}
-
-/* ==================================================
-   FLOATING WHATSAPP
-   ================================================== */
-
-.whatsapp{
-position:fixed;
-right:24px;
-bottom:24px;
-width:63px;
-height:63px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:var(--green);
-color:white;
-border-radius:50%;
-text-decoration:none;
-z-index:99999;
-box-shadow:
-0 8px 25px rgba(37,211,102,.35),
-0 0 0 5px rgba(37,211,102,.08);
-transition:.3s;
-animation:waPulse 2.5s infinite;
-}
-
-.whatsapp:hover{
-transform:scale(1.12);
-}
-
-.whatsapp .wa-icon{
-width:35px;
-height:35px;
+.wa-float svg{
+  width:31px;
+  height:31px;
+  fill:#fff;
 }
 
 @keyframes waPulse{
-
-0%,100%{
-box-shadow:
-0 8px 25px rgba(37,211,102,.35),
-0 0 0 5px rgba(37,211,102,.08);
+  0%,100%{transform:scale(1);box-shadow:0 10px 35px rgba(37,211,102,.25);}
+  50%{transform:scale(1.08);box-shadow:0 10px 50px rgba(37,211,102,.45);}
 }
 
-50%{
-box-shadow:
-0 8px 30px rgba(37,211,102,.45),
-0 0 0 9px rgba(37,211,102,.04);
-}
-
-}
-
-/* ==================================================
-   MOBILE
-   ================================================== */
-
-@media(max-width:1000px){
-
-nav{
-padding:0 5%;
-}
-
-nav ul{
-gap:15px;
-}
-
-.stats{
-grid-template-columns:repeat(2,1fr);
-}
-
-.services{
-grid-template-columns:repeat(2,1fr);
-}
-
-.portfolio-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.order-steps{
-grid-template-columns:repeat(2,1fr);
-}
-
-.pricing-grid{
-grid-template-columns:1fr;
-max-width:600px;
-}
-
-.price-card.featured{
-transform:none;
-}
-
-.price-card.featured:hover{
-transform:translateY(-8px);
-}
-
-.testimonials{
-grid-template-columns:1fr;
-max-width:600px;
-}
-
-.client-project{
-grid-template-columns:1fr;
-}
-
-.hologram{
-width:430px;
-height:430px;
-opacity:.65;
-}
-
-}
-
-/* ==================================================
-   MOBILE SMALL
-   ================================================== */
-
-@media(max-width:650px){
-
-nav{
-height:65px;
-}
-
-.logo{
-font-size:18px;
-letter-spacing:2px;
-}
-
-nav ul{
-display:none;
-}
-
-section{
-padding:75px 5%;
-}
-
-.hero{
-padding-top:100px;
-}
-
-.hero h1{
-font-size:clamp(45px,14vw,75px);
-letter-spacing:-4px;
-}
-
-.hero p{
-font-size:14px;
-}
-
-.buttons{
-flex-direction:column;
-width:100%;
-max-width:330px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.btn{
-width:100%;
-}
-
-.hologram{
-width:330px;
-height:330px;
-opacity:.45;
-}
-
-.holo-core{
-width:100px;
-height:100px;
-}
-
-.holo-core::before{
-font-size:15px;
-letter-spacing:4px;
-}
-
-.holo-core::after{
-font-size:6px;
-}
-
-.holo-data{
-font-size:6px;
-}
-
-.hero::before{
-width:360px;
-height:360px;
-}
-
-.hero::after{
-width:500px;
-height:500px;
-}
-
-.stats{
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
-
-.stat{
-padding:22px 10px;
-}
-
-.stat h3{
-font-size:26px;
-}
-
-.stat p{
-font-size:9px;
-}
-
-.services{
-grid-template-columns:1fr;
-}
-
-.portfolio-grid{
-grid-template-columns:1fr;
-}
-
-.portfolio-item{
-height:330px;
-}
-
-.client-project{
-padding:30px 22px;
-border-radius:18px;
-}
-
-.client-project h2{
-font-size:31px;
-}
-
-.money-box{
-padding:40px 20px;
-}
-
-.order-steps{
-grid-template-columns:1fr;
-}
-
-.section-title{
-margin-bottom:38px;
-}
-
-.section-title h2{
-font-size:31px;
-}
-
-.price-card{
-padding:32px 22px;
-}
-
-.whatsapp{
-width:58px;
-height:58px;
-right:17px;
-bottom:17px;
-}
-
-.whatsapp .wa-icon{
-width:31px;
-height:31px;
-}
+/* =========================
+   LIGHTBOX
+========================= */
 
 .lightbox{
-padding:15px;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.94);
+  z-index:2000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+}
+
+.lightbox.active{
+  display:flex;
 }
 
 .lightbox img{
-max-width:95vw;
-max-height:75vh;
+  max-width:min(1000px,90vw);
+  max-height:85vh;
+  border-radius:10px;
+  box-shadow:0 0 60px rgba(255,48,40,.2);
 }
 
+.lightbox-close,
 .lightbox-prev,
 .lightbox-next{
-width:44px;
-height:44px;
-font-size:22px;
+  position:absolute;
+  width:45px;
+  height:45px;
+  border:1px solid #444;
+  background:#111;
+  color:#fff;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+.lightbox-close{
+  top:25px;
+  right:25px;
 }
 
 .lightbox-prev{
-left:10px;
+  left:25px;
 }
 
 .lightbox-next{
-right:10px;
+  right:25px;
 }
 
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover{
+  border-color:var(--red);
+  color:var(--red);
 }
 
-/* ==================================================
-   VERY SMALL DEVICES
-   ================================================== */
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+  .nav-links{
+    gap:14px;
+  }
+
+  .holo-stage{
+    opacity:.2;
+    right:50%;
+    transform:translate(50%,-50%) scale(.8);
+  }
+
+  .hero-content{
+    position:relative;
+  }
+
+  .services-grid,
+  .portfolio-grid,
+  .pricing-grid,
+  .testimonial-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .steps-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+
+  .navbar{
+    padding:15px 4%;
+  }
+
+  .nav-inner{
+    justify-content:center;
+  }
+
+  .logo{
+    font-size:19px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .hero h1{
+    font-size:48px;
+    letter-spacing:-2px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .holo-stage{
+    width:400px;
+    height:400px;
+    opacity:.16;
+  }
+
+  .holo-core{
+    width:110px;
+    height:110px;
+  }
+
+  .core-text{
+    font-size:24px;
+  }
+
+  section{
+    padding:75px 5%;
+  }
+
+  .services-grid,
+  .portfolio-grid,
+  .pricing-grid,
+  .testimonial-grid,
+  .steps-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .client-box{
+    padding:35px 20px;
+  }
+
+  .client-box h2{
+    font-size:27px;
+  }
+
+  .lightbox-prev{
+    left:10px;
+  }
+
+  .lightbox-next{
+    right:10px;
+  }
+}
 
 @media(max-width:380px){
 
-.hero h1{
-font-size:42px;
+  .hero h1{
+    font-size:41px;
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
 }
 
-.stats{
-grid-template-columns:1fr;
-}
-
-.portfolio-item{
-height:300px;
-}
-
-.hologram{
-width:280px;
-height:280px;
-}
-
-}
-
-/* ==================================================
+/* =========================
    REDUCED MOTION
-   ================================================== */
+========================= */
 
 @media(prefers-reduced-motion:reduce){
 
-*{
-scroll-behavior:auto;
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
 }
-
-.hologram,
-.holo-ring,
-.holo-core,
-.holo-scan,
-.holo-particle,
-.badge,
-.hero h1 span,
-.money-box,
-.whatsapp{
-animation:none !important;
-}
-
-}
-
-/* ==================================================
-   END CSS
-   ================================================== */
-
 </style>
-
 </head>
 
 <body>
 
-<!-- ==================================================
-     NAVBAR
-     ================================================== -->
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">ALFA <span>GRAPHIC</span></a>
 
-<nav>
-
-<div class="logo">
-ALFA <span>GRAPHIC</span>
-</div>
-
-<ul>
-
-<li>
-<a href="#home">Home</a>
-</li>
-
-<li>
-<a href="#services">Layanan</a>
-</li>
-
-<li>
-<a href="#portfolio">Portfolio</a>
-</li>
-
-<li>
-<a href="#order">Cara Order</a>
-</li>
-
-<li>
-<a href="#contact">Kontak</a>
-</li>
-
-</ul>
-
+    <ul class="nav-links">
+      <li><a href="#services">Layanan</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#pricing">Harga</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </div>
 </nav>
 
+<!-- HERO -->
+<header class="hero" id="home">
 
-<!-- ==================================================
-     HERO
-     ================================================== -->
+  <div class="hero-grid" aria-hidden="true"></div>
 
-<section class="hero" id="home">
+  <canvas id="particles" aria-hidden="true"></canvas>
 
-<!-- ==================================================
-     HOLOGRAM
-     ================================================== -->
+  <!-- HOLOGRAM -->
+  <div class="holo-stage" id="holoStage" aria-hidden="true">
 
-<div class="hologram" id="hologram">
+    <div class="holo-ring ring1"></div>
+    <div class="holo-ring ring2"></div>
+    <div class="holo-ring ring3"></div>
+    <div class="holo-ring ring4"></div>
 
-<div class="holo-ring"></div>
-<div class="holo-ring"></div>
-<div class="holo-ring"></div>
-<div class="holo-ring"></div>
+    <div class="holo-line"></div>
 
-<div class="holo-line"></div>
-<div class="holo-line vertical"></div>
+    <div class="holo-core">
+      <div class="core-text">AG</div>
+    </div>
 
-<div class="holo-core"></div>
+    <div class="orbit-dot dot1"></div>
+    <div class="orbit-dot dot2"></div>
 
-<div class="holo-scan"></div>
+    <div class="holo-label">
+      ALFA CREATIVE // VISUAL ENGINE
+    </div>
 
-<div class="holo-data data-a">
-ALFA_SYSTEM // ONLINE
-</div>
+  </div>
 
-<div class="holo-data data-b">
-CREATIVE_ENGINE // V9.0
-</div>
+  <div class="hero-content reveal">
 
-<div class="holo-data data-c">
-VISUAL_MODE // ACTIVE
-</div>
+    <div class="badge">
+      🎨 CREATIVE GRAPHIC DESIGN
+    </div>
 
-<div class="holo-particle hp1"></div>
-<div class="holo-particle hp2"></div>
-<div class="holo-particle hp3"></div>
-<div class="holo-particle hp4"></div>
-<div class="holo-particle hp5"></div>
-<div class="holo-particle hp6"></div>
-<div class="holo-particle hp7"></div>
+    <h1>
+      WE CREATE<br>
+      <span>YOUR VISUAL</span><br>
+      IDENTITY
+    </h1>
 
-</div>
+    <p>
+      Desain visual profesional untuk kaos, jersey, band, sablon,
+      logo, branding, poster, merchandise dan berbagai kebutuhan
+      kreatif Anda.
+    </p>
 
+    <div class="hero-buttons">
 
-<div class="hero-content">
+      <a class="btn btn-red"
+         href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20desain."
+         target="_blank">
+        💬 Pesan Sekarang
+      </a>
 
-<div class="badge">
-🎨 CREATIVE GRAPHIC DESIGN // HOLOGRAPHIC STUDIO
-</div>
+      <a class="btn btn-outline" href="#portfolio">
+        👁 Lihat Portfolio
+      </a>
 
-<h1>
+    </div>
 
-WE CREATE
-<br>
+  </div>
+</header>
 
-<span>YOUR VISUAL</span>
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
 
-<br>
+    <div class="stat reveal">
+      <h3>100+</h3>
+      <p>Konsep Visual</p>
+    </div>
 
-IDENTITY
+    <div class="stat reveal">
+      <h3>6+</h3>
+      <p>Layanan Desain</p>
+    </div>
 
-</h1>
+    <div class="stat reveal">
+      <h3>HD</h3>
+      <p>High Resolution</p>
+    </div>
 
-<p>
+    <div class="stat reveal">
+      <h3>FAST</h3>
+      <p>Respons WhatsApp</p>
+    </div>
 
-ALFA GRAPHIC menyediakan jasa desain grafis profesional
-untuk kebutuhan kaos, jersey, komunitas, band, UMKM,
-branding, merchandise dan berbagai kebutuhan visual kreatif.
-
-</p>
-
-<div class="buttons">
-
-<a
-href="https://wa.me/6283870874140"
-class="btn btn-primary"
-target="_blank"
-rel="noopener">
-
-<svg class="wa-icon" viewBox="0 0 32 32">
-
-<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
-
-</svg>
-
-PESAN DESAIN
-
-</a>
-
-<a
-href="#portfolio"
-class="btn btn-outline">
-
-🎨 LIHAT PORTFOLIO
-
-</a>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
-<!-- ==================================================
-     STATS
-     ================================================== -->
-
-<section>
-
-<div class="stats">
-
-<div class="stat">
-<h3>100%</h3>
-<p>Custom Design</p>
-</div>
-
-<div class="stat">
-<h3>PRO</h3>
-<p>Creative Design</p>
-</div>
-
-<div class="stat">
-<h3>FAST</h3>
-<p>Responsive Service</p>
-</div>
-
-<div class="stat">
-<h3>READY</h3>
-<p>For Your Project</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ==================================================
-     SERVICES
-     ================================================== -->
-
+<!-- SERVICES -->
 <section id="services">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title reveal">
+      <small>OUR SERVICES</small>
+      <h2>Layanan Kreatif</h2>
+      <p>Kebutuhan visual Anda, kami bantu wujudkan.</p>
+    </div>
 
-<h2>
-LAYANAN <span>ALFA GRAPHIC</span>
-</h2>
+    <div class="services-grid">
 
-<p>
-Berbagai layanan desain kreatif untuk personal,
-komunitas, bisnis dan kebutuhan profesional.
-</p>
+      <article class="service-card reveal">
+        <div class="service-icon">👕</div>
+        <h3>Desain Kaos</h3>
+        <p>Desain kaos custom untuk personal, komunitas, brand dan merchandise.</p>
+      </article>
 
-</div>
+      <article class="service-card reveal">
+        <div class="service-icon">🏆</div>
+        <h3>Desain Jersey</h3>
+        <p>Konsep jersey olahraga dengan visual modern dan identitas yang kuat.</p>
+      </article>
 
-<div class="services">
+      <article class="service-card reveal">
+        <div class="service-icon">🎸</div>
+        <h3>Desain Band</h3>
+        <p>Artwork untuk band, musik, komunitas dan kebutuhan merchandise.</p>
+      </article>
 
-<div class="service">
-<div class="icon">👕</div>
-<h3>Desain Kaos</h3>
-<p>
-Desain kaos custom untuk brand clothing,
-komunitas, band dan berbagai kebutuhan sablon.
-</p>
-</div>
+      <article class="service-card reveal">
+        <div class="service-icon">🔥</div>
+        <h3>Desain Sablon</h3>
+        <p>Artwork siap produksi untuk kebutuhan sablon dan printing.</p>
+      </article>
 
-<div class="service">
-<div class="icon">⚽</div>
-<h3>Desain Jersey</h3>
-<p>
-Desain jersey olahraga modern, unik
-dan sesuai identitas tim.
-</p>
-</div>
+      <article class="service-card reveal">
+        <div class="service-icon">◈</div>
+        <h3>Logo & Branding</h3>
+        <p>Identitas visual yang membantu brand tampil lebih profesional.</p>
+      </article>
 
-<div class="service">
-<div class="icon">🎸</div>
-<h3>Desain Band</h3>
-<p>
-Artwork kreatif untuk merchandise,
-event dan kebutuhan visual band.
-</p>
-</div>
+      <article class="service-card reveal">
+        <div class="service-icon">📢</div>
+        <h3>Desain Promosi</h3>
+        <p>Poster, banner, flyer, konten promosi dan kebutuhan visual lainnya.</p>
+      </article>
 
-<div class="service">
-<div class="icon">🔥</div>
-<h3>Desain Sablon</h3>
-<p>
-Konsep desain visual untuk kebutuhan
-produksi apparel dan merchandise.
-</p>
-</div>
-
-<div class="service">
-<div class="icon">🏆</div>
-<h3>Logo & Branding</h3>
-<p>
-Menciptakan identitas visual untuk
-bisnis, komunitas dan brand.
-</p>
-</div>
-
-<div class="service">
-<div class="icon">📱</div>
-<h3>Desain Promosi</h3>
-<p>
-Poster, banner dan konten visual
-untuk promosi bisnis Anda.
-</p>
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-
-<!-- ==================================================
-     PORTFOLIO
-     ================================================== -->
-
-<section class="portfolio" id="portfolio">
-
-<div class="section-title">
-
-<h2>
-PORTFOLIO <span>DESAIN</span>
-</h2>
-
-<p>
-Klik gambar untuk melihat karya dalam ukuran besar.
-</p>
-
-</div>
-
-<div class="portfolio-grid">
-
-
-<div
-class="portfolio-item"
-onclick="openLightbox(0)">
-
-<img
-src="assets/KAOS-ALFA.png"
-alt="Desain Kaos ALFA GRAPHIC"
-loading="lazy">
-
-<div class="portfolio-badge">
-APPAREL
-</div>
-
-<div class="portfolio-info">
-
-<h3>
-ALFA T-SHIRT DESIGN
-</h3>
-
-<p>
-Creative Apparel Artwork
-</p>
-
-</div>
-
-</div>
-
-
-<div
-class="portfolio-item"
-onclick="openLightbox(1)">
-
-<img
-src="assets/KAOS-REGGAE.png"
-alt="Desain Kaos Reggae ALFA GRAPHIC"
-loading="lazy">
-
-<div class="portfolio-badge">
-MUSIC
-</div>
-
-<div class="portfolio-info">
-
-<h3>
-REGGAE T-SHIRT
-</h3>
-
-<p>
-Music & Apparel Artwork
-</p>
-
-</div>
-
-</div>
-
-
-<div
-class="portfolio-item"
-onclick="openLightbox(2)">
-
-<img
-src="assets/SAMURAI MUAY THAI.png"
-alt="Desain Samurai Muay Thai ALFA GRAPHIC"
-loading="lazy">
-
-<div class="portfolio-badge">
-SPORT
-</div>
-
-<div class="portfolio-info">
-
-<h3>
-SAMURAI MUAY THAI
-</h3>
-
-<p>
-Combat Sport Artwork
-</p>
-
-</div>
-
-</div>
-
-
-<div
-class="portfolio-item"
-onclick="openLightbox(3)">
-
-<img
-src="assets/VTM DESIGN VER 2.png"
-alt="VTM Design Vespa ALFA GRAPHIC"
-loading="lazy">
-
-<div class="portfolio-badge">
-COMMUNITY
-</div>
-
-<div class="portfolio-info">
-
-<h3>
-VTM DESIGN
-</h3>
-
-<p>
-Community & Motor Artwork
-</p>
-
-</div>
-
-</div>
-
-
-<div class="portfolio-item">
-
-<div class="portfolio-placeholder">
-
-<div class="emoji">
-🎨
-</div>
-
-<h3>
-GRAPHIC ART
-</h3>
-
-</div>
-
-<div class="portfolio-info">
-
-<h3>
-CREATIVE GRAPHIC ART
-</h3>
-
-<p>
-Visual Creative Concept
-</p>
-
-</div>
-
-</div>
-
-
-<div class="portfolio-item">
-
-<div class="portfolio-placeholder">
-
-<div class="emoji">
-🚀
-</div>
-
-<h3>
-CUSTOM PROJECT
-</h3>
-
-</div>
-
-<div class="portfolio-info">
-
-<h3>
-CUSTOM DESIGN PROJECT
-</h3>
-
-<p>
-Made For Your Idea
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <small>SELECTED WORKS</small>
+      <h2>Portfolio</h2>
+      <p>Beberapa contoh karya ALFA GRAPHIC.</p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card reveal"
+           data-image="assets/KAOS-ALFA.png"
+           data-title="ALFA T-Shirt Design">
+        <img src="assets/KAOS-ALFA.png" alt="Desain Kaos Alfa Graphic">
+        <div class="portfolio-overlay">
+          <h3>ALFA T-Shirt Design</h3>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal"
+           data-image="assets/KAOS-REGGAE.png"
+           data-title="Reggae T-Shirt Design">
+        <img src="assets/KAOS-REGGAE.png" alt="Desain Kaos Reggae">
+        <div class="portfolio-overlay">
+          <h3>Reggae T-Shirt Design</h3>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal"
+           data-image="assets/SAMURAI MUAY THAI.png"
+           data-title="Samurai Muay Thai">
+        <img src="assets/SAMURAI MUAY THAI.png" alt="Samurai Muay Thai Design">
+        <div class="portfolio-overlay">
+          <h3>Samurai Muay Thai</h3>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal"
+           data-image="assets/VTM DESIGN VER 2.png"
+           data-title="VTM Design">
+        <img src="assets/VTM DESIGN VER 2.png" alt="VTM Design">
+        <div class="portfolio-overlay">
+          <h3>VTM Design</h3>
+        </div>
+      </div>
+
+      <div class="portfolio-card placeholder reveal">
+        <span>✦</span>
+        <h3>Custom Project</h3>
+        <p>Project berikutnya bisa menjadi karya Anda.</p>
+      </div>
+
+      <div class="portfolio-card placeholder reveal">
+        <span>+</span>
+        <h3>Your Brand</h3>
+        <p>Let's create something unique.</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
+<!-- CLIENT PROJECT -->
+<section class="client-project" id="about">
+  <div class="container">
 
-<!-- ==================================================
-     CLIENT PROJECT
-     ================================================== -->
+    <div class="client-box reveal">
 
+      <div class="money">💰</div>
+
+      <h2>SUDAH MENERIMA PROJECT BERBAYAR</h2>
+
+      <p>
+        ALFA GRAPHIC bukan hanya demo. Kami sudah menerima project
+        desain dari client dan terus mengembangkan kualitas layanan
+        untuk kebutuhan visual personal, komunitas maupun bisnis.
+      </p>
+
+      <a class="btn btn-red"
+         href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20memesan%20desain."
+         target="_blank">
+        💬 Konsultasi Project
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ORDER STEPS -->
 <section>
+  <div class="container">
 
-<div class="client-project">
+    <div class="section-title reveal">
+      <small>HOW IT WORKS</small>
+      <h2>Cara Order</h2>
+      <p>Simple, cepat dan langsung melalui WhatsApp.</p>
+    </div>
 
-<div>
+    <div class="steps-grid">
 
-<h2>
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <h3>Chat</h3>
+        <p>Hubungi ALFA GRAPHIC melalui WhatsApp.</p>
+      </div>
 
-SUDAH MENERIMA
-<span>PROJECT BERBAYAR</span>
-💰
+      <div class="step reveal">
+        <div class="step-number">2</div>
+        <h3>Konsultasi</h3>
+        <p>Jelaskan kebutuhan dan konsep desain.</p>
+      </div>
 
-</h2>
+      <div class="step reveal">
+        <div class="step-number">3</div>
+        <h3>Konsep</h3>
+        <p>Kami mulai mengembangkan konsep visual.</p>
+      </div>
 
-<p>
+      <div class="step reveal">
+        <div class="step-number">4</div>
+        <h3>Revisi</h3>
+        <p>Desain disesuaikan sampai sesuai kebutuhan.</p>
+      </div>
 
-ALFA GRAPHIC terus berkembang melalui karya kreatif
-dan project desain untuk berbagai kebutuhan client.
+      <div class="step reveal">
+        <div class="step-number">5</div>
+        <h3>Final</h3>
+        <p>File final siap digunakan atau diproduksi.</p>
+      </div>
 
-</p>
+    </div>
 
-<ul class="project-list">
-
-<li>✅ Desain Kaos Custom</li>
-<li>✅ Desain Komunitas</li>
-<li>✅ Desain Jersey</li>
-<li>✅ Desain Merchandise</li>
-<li>🔥 Siap menerima project baru</li>
-
-</ul>
-
-</div>
-
-
-<div class="money-box">
-
-<div class="money">
-💰
-</div>
-
-<h3>
-REAL CREATIVE WORK
-</h3>
-
-<p>
-Portfolio bukan hanya konsep.
-Terus berkembang melalui project nyata.
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
 
-<!-- ==================================================
-     ORDER
-     ================================================== -->
+    <div class="section-title reveal">
+      <small>PRICING</small>
+      <h2>Paket Desain</h2>
+      <p>Pilihan paket dapat disesuaikan dengan kebutuhan.</p>
+    </div>
 
-<section id="order">
+    <div class="pricing-grid">
 
-<div class="section-title">
+      <div class="price-card reveal">
+        <h3>STARTER</h3>
+        <div class="price">Rp50K <span>/ project</span></div>
 
-<h2>
-CARA <span>ORDER</span>
-</h2>
+        <ul>
+          <li>1 Konsep Desain</li>
+          <li>High Resolution</li>
+          <li>2x Revisi</li>
+          <li>File PNG/JPG</li>
+        </ul>
 
-<p>
-Proses mudah untuk mendapatkan
-desain custom Anda.
-</p>
+        <a class="btn btn-outline"
+           href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20tertarik%20paket%20STARTER."
+           target="_blank">
+          Pilih Paket
+        </a>
+      </div>
 
-</div>
+      <div class="price-card featured reveal">
+        <h3>PROFESSIONAL</h3>
+        <div class="price">Rp100K <span>/ project</span></div>
 
-<div class="order-steps">
+        <ul>
+          <li>2 Konsep Desain</li>
+          <li>High Resolution</li>
+          <li>4x Revisi</li>
+          <li>File PNG/JPG</li>
+          <li>Source File</li>
+        </ul>
 
-<div class="step">
-<div class="step-number">1</div>
-<h3>CHAT</h3>
-<p>
-Hubungi ALFA GRAPHIC melalui WhatsApp.
-</p>
-</div>
+        <a class="btn btn-red"
+           href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20tertarik%20paket%20PROFESSIONAL."
+           target="_blank">
+          Pilih Paket
+        </a>
+      </div>
 
-<div class="step">
-<div class="step-number">2</div>
-<h3>KIRIM KONSEP</h3>
-<p>
-Kirim nama, tema, warna dan referensi desain.
-</p>
-</div>
+      <div class="price-card reveal">
+        <h3>FULL CUSTOM</h3>
+        <div class="price">CUSTOM <span>/ project</span></div>
 
-<div class="step">
-<div class="step-number">3</div>
-<h3>PROSES</h3>
-<p>
-Desain mulai dibuat sesuai konsep Anda.
-</p>
-</div>
+        <ul>
+          <li>Konsep Custom</li>
+          <li>Branding</li>
+          <li>Illustration</li>
+          <li>Unlimited Discussion</li>
+          <li>File Produksi</li>
+        </ul>
 
-<div class="step">
-<div class="step-number">4</div>
-<h3>REVISI</h3>
-<p>
-Berikan masukan sesuai kebutuhan desain.
-</p>
-</div>
+        <a class="btn btn-outline"
+           href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20paket%20FULL%20CUSTOM."
+           target="_blank">
+          Konsultasi
+        </a>
+      </div>
 
-<div class="step">
-<div class="step-number">5</div>
-<h3>FINAL</h3>
-<p>
-Desain selesai dan siap digunakan.
-</p>
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-
-<!-- ==================================================
-     PRICING
-     ================================================== -->
-
-<section class="pricing">
-
-<div class="section-title">
-
-<h2>
-PAKET <span>LAYANAN</span>
-</h2>
-
-<p>
-Harga dapat disesuaikan dengan
-tingkat kerumitan desain.
-</p>
-
-</div>
-
-<div class="pricing-grid">
-
-
-<div class="price-card">
-
-<h3>
-STARTER
-</h3>
-
-<div class="price">
-CUSTOM
-</div>
-
-<ul>
-
-<li>Desain sederhana</li>
-<li>Konsep custom</li>
-<li>File digital</li>
-
-</ul>
-
-<a
-href="https://wa.me/6283870874140"
-class="btn btn-outline"
-target="_blank"
-rel="noopener">
-
-<svg class="wa-icon" viewBox="0 0 32 32">
-
-<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
-
-</svg>
-
-TANYA HARGA
-
-</a>
-
-</div>
-
-
-<div class="price-card featured">
-
-<h3>
-PROFESSIONAL 🔥
-</h3>
-
-<div class="price">
-CUSTOM
-</div>
-
-<ul>
-
-<li>Desain lebih detail</li>
-<li>Konsep sesuai request</li>
-<li>Revisi sesuai kesepakatan</li>
-<li>Siap untuk kebutuhan produksi</li>
-
-</ul>
-
-<a
-href="https://wa.me/6283870874140"
-class="btn btn-primary"
-target="_blank"
-rel="noopener">
-
-<svg class="wa-icon" viewBox="0 0 32 32">
-
-<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-1.59-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
-
-</svg>
-
-PESAN SEKARANG
-
-</a>
-
-</div>
-
-
-<div class="price-card">
-
-<h3>
-FULL CUSTOM
-</h3>
-
-<div class="price">
-PROJECT
-</div>
-
-<ul>
-
-<li>Desain eksklusif</li>
-<li>Konsep premium</li>
-<li>Custom sesuai kebutuhan</li>
-<li>Konsultasi project</li>
-
-</ul>
-
-<a
-href="https://wa.me/6283870874140"
-class="btn btn-outline"
-target="_blank"
-rel="noopener">
-
-<svg class="wa-icon" viewBox="0 0 32 32">
-
-<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
-
-</svg>
-
-HUBUNGI KAMI
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ==================================================
-     TESTIMONIAL
-     ================================================== -->
-
+<!-- TESTIMONIAL -->
 <section>
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title reveal">
+      <small>CLIENT FEEDBACK</small>
+      <h2>Testimonial</h2>
+    </div>
 
-<h2>
-APA KATA <span>CLIENT</span>
-</h2>
+    <div class="testimonial-grid">
 
-<p>
-Kepuasan client adalah bagian penting
-dari setiap project.
-</p>
+      <div class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Desainnya sesuai konsep yang saya mau dan komunikasinya mudah."
+        </p>
+        <strong>Client Project</strong>
+      </div>
 
-</div>
+      <div class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Hasil desain terlihat profesional dan siap digunakan untuk produksi."
+        </p>
+        <strong>Client Project</strong>
+      </div>
 
-<div class="testimonials">
+      <div class="testimonial reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Prosesnya cepat dan konsep visualnya keren."
+        </p>
+        <strong>Client Project</strong>
+      </div>
 
-<div class="testimonial">
-
-<div class="stars">
-⭐⭐⭐⭐⭐
-</div>
-
-<p>
-“Desain keren dan sesuai dengan konsep
-yang saya inginkan.”
-</p>
-
-<h4>
-— CLIENT PROJECT
-</h4>
-
-</div>
-
-
-<div class="testimonial">
-
-<div class="stars">
-⭐⭐⭐⭐⭐
-</div>
-
-<p>
-“Proses komunikasi mudah dan hasil desain
-sangat menarik.”
-</p>
-
-<h4>
-— CLIENT PROJECT
-</h4>
-
-</div>
-
-
-<div class="testimonial">
-
-<div class="stars">
-⭐⭐⭐⭐⭐
-</div>
-
-<p>
-“Cocok untuk kebutuhan desain custom
-dan merchandise.”
-</p>
-
-<h4>
-— CLIENT PROJECT
-</h4>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-
-<!-- ==================================================
-     FAQ
-     ================================================== -->
-
+<!-- FAQ -->
 <section>
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title reveal">
+      <small>FAQ</small>
+      <h2>Pertanyaan Umum</h2>
+    </div>
 
-<h2>
-PERTANYAAN <span>UMUM</span>
-</h2>
+    <div class="faq">
 
-</div>
+      <details class="reveal">
+        <summary>Apakah bisa request desain custom?</summary>
+        <p>
+          Bisa. Konsep desain dapat disesuaikan dengan kebutuhan,
+          referensi dan karakter brand atau komunitas Anda.
+        </p>
+      </details>
 
-<div class="faq">
+      <details class="reveal">
+        <summary>Apakah desain bisa untuk sablon?</summary>
+        <p>
+          Bisa. Kami dapat menyiapkan desain dengan resolusi tinggi
+          untuk kebutuhan produksi dan printing.
+        </p>
+      </details>
 
-<details>
+      <details class="reveal">
+        <summary>Bagaimana cara order?</summary>
+        <p>
+          Cukup hubungi WhatsApp ALFA GRAPHIC dan jelaskan kebutuhan
+          desain Anda.
+        </p>
+      </details>
 
-<summary>
-Bagaimana cara memesan desain?
-</summary>
+      <details class="reveal">
+        <summary>Apakah menerima project logo dan branding?</summary>
+        <p>
+          Ya. ALFA GRAPHIC juga menerima project logo, identitas visual,
+          branding dan materi promosi.
+        </p>
+      </details>
 
-<p>
-Hubungi ALFA GRAPHIC melalui WhatsApp
-dan kirimkan kebutuhan desain Anda.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-Apakah bisa membuat desain sesuai request?
-</summary>
-
-<p>
-Ya. Desain dapat dibuat berdasarkan konsep,
-tema dan kebutuhan project.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-Apakah harga desain selalu sama?
-</summary>
-
-<p>
-Harga dapat menyesuaikan tingkat kerumitan
-dan kebutuhan project.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-Apakah menerima desain kaos dan jersey?
-</summary>
-
-<p>
-Ya. ALFA GRAPHIC menerima berbagai kebutuhan
-desain apparel dan desain grafis.
-</p>
-
-</details>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-
-<!-- ==================================================
-     CTA
-     ================================================== -->
-
+<!-- CTA -->
 <section class="cta" id="contact">
 
-<h2>
+  <div class="container reveal">
 
-PUNYA IDE DESAIN? 🔥
+    <h2>READY TO CREATE?</h2>
 
-<br>
+    <p>
+      Mari buat visual yang membuat brand, komunitas atau project
+      Anda terlihat lebih kuat.
+    </p>
 
-<span style="color:#ff3028">
-MARI WUJUDKAN!
-</span>
+    <a class="btn btn-red"
+       href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20membuat%20desain."
+       target="_blank">
+      💬 Chat ALFA GRAPHIC
+    </a>
 
-</h2>
-
-<p>
-Hubungi ALFA GRAPHIC sekarang dan
-konsultasikan kebutuhan desain Anda.
-</p>
-
-<a
-href="https://wa.me/6283870874140"
-class="btn btn-primary"
-target="_blank"
-rel="noopener">
-
-<svg class="wa-icon" viewBox="0 0 32 32">
-
-<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1-1.05 3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
-
-</svg>
-
-CHAT WHATSAPP SEKARANG
-
-</a>
+  </div>
 
 </section>
 
-
-<!-- ==================================================
-     FOOTER
-     ================================================== -->
-
+<!-- FOOTER -->
 <footer>
-
-<h2>
-ALFA <span>GRAPHIC</span>
-</h2>
-
-<p>
-Creative Graphic Design • Apparel Design • Visual Identity
-</p>
-
-<br>
-
-<p>
-WhatsApp: 083870874140
-</p>
-
-<p>
-© 2026 ALFA GRAPHIC. All Rights Reserved.
-</p>
-
+  <p>
+    © 2026 <strong>ALFA GRAPHIC</strong>.
+    Graphic Design & Creative Visual.
+  </p>
 </footer>
 
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float"
+   href="https://wa.me/6283870874140?text=Halo%20ALFA%20GRAPHIC,%20saya%20ingin%20konsultasi%20desain."
+   target="_blank"
+   aria-label="Chat WhatsApp ALFA GRAPHIC">
 
-<!-- ==================================================
-     LIGHTBOX
-     ================================================== -->
-
-<div
-class="lightbox"
-id="lightbox"
-onclick="closeLightbox(event)">
-
-<button
-class="lightbox-close"
-onclick="closeLightbox()">
-×
-</button>
-
-<button
-class="lightbox-prev"
-onclick="changeImage(-1,event)">
-‹
-</button>
-
-<div class="lightbox-content">
-
-<img
-id="lightboxImage"
-src=""
-alt="Portfolio ALFA GRAPHIC">
-
-</div>
-
-<button
-class="lightbox-next"
-onclick="changeImage(1,event)">
-›
-</button>
-
-</div>
-
-
-<!-- ==================================================
-     FLOATING WHATSAPP
-     ================================================== -->
-
-<a
-href="https://wa.me/6283870874140"
-class="whatsapp"
-target="_blank"
-rel="noopener"
-title="Chat WhatsApp"
-aria-label="Chat WhatsApp ALFA GRAPHIC">
-
-<svg
-class="wa-icon"
-viewBox="0 0 32 32"
-aria-hidden="true">
-
-<path d="M19.11 17.39c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
-
-<path d="M16.01 3C8.83 3 3 8.83 3 16c0 2.3.6 4.55 1.74 6.52L3 29l6.64-1.69A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.18 3 16.01 3zm0 23.65c-2.03 0-4.02-.55-5.75-1.59l-.41-.24-3.94 1 1.05-3.84-.27-.42A10.64 10.64 0 1 1 16.01 26.65z"/>
-
-</svg>
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.6 4.45 1.65 6.32L3.1 29l6.86-1.5A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.6c-2.02 0-3.9-.58-5.5-1.58l-.39-.24-4.07.89.87-3.97-.25-.41A10.58 10.58 0 1 1 16 26.6zm5.8-7.93c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.52-.16-.74.16-.22.32-.84 1.05-1.03 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.38.49-.57.16-.19.22-.32.33-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.32-1.14 1.11-1.14 2.7s1.17 3.13 1.33 3.35c.16.22 2.3 3.51 5.57 4.92.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.9-.78 2.17-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"/>
+  </svg>
 
 </a>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
 
-<!-- ==================================================
-     JAVASCRIPT
-     ================================================== -->
+  <button class="lightbox-close" id="closeLightbox" aria-label="Tutup">×</button>
+
+  <button class="lightbox-prev" id="prevLightbox" aria-label="Sebelumnya">‹</button>
+
+  <img id="lightboxImage" src="" alt="Portfolio ALFA GRAPHIC">
+
+  <button class="lightbox-next" id="nextLightbox" aria-label="Berikutnya">›</button>
+
+</div>
 
 <script>
 
-/* ==================================================
-   PORTFOLIO LIGHTBOX
-   ================================================== */
+/* =========================
+   PARTICLES
+========================= */
 
-const portfolioImages = [
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
 
-"assets/KAOS-ALFA.png",
+let particles = [];
+let width;
+let height;
 
-"assets/KAOS-REGGAE.png",
+function resizeCanvas(){
+  width = canvas.width = canvas.offsetWidth * devicePixelRatio;
+  height = canvas.height = canvas.offsetHeight * devicePixelRatio;
+  ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+}
 
-"assets/SAMURAI MUAY THAI.png",
+function createParticles(){
 
-"assets/VTM DESIGN VER 2.png"
+  particles = [];
 
-];
+  const amount = window.innerWidth < 650 ? 22 : 42;
 
-let currentImage = 0;
+  for(let i=0;i<amount;i++){
 
+    particles.push({
+      x:Math.random()*window.innerWidth,
+      y:Math.random()*window.innerHeight,
+      r:Math.random()*1.8+.4,
+      speed:Math.random()*.35+.08,
+      drift:(Math.random()-.5)*.35,
+      alpha:Math.random()*.65+.15
+    });
 
-/* ==================================================
-   OPEN LIGHTBOX
-   ================================================== */
+  }
+}
+
+function animateParticles(){
+
+  ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+
+  particles.forEach(p=>{
+
+    p.y -= p.speed;
+    p.x += p.drift;
+
+    if(p.y < -10){
+      p.y = window.innerHeight + 10;
+      p.x = Math.random()*window.innerWidth;
+    }
+
+    if(p.x < -10) p.x = window.innerWidth+10;
+    if(p.x > window.innerWidth+10) p.x = -10;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+
+    ctx.fillStyle =
+      `rgba(255,48,40,${p.alpha})`;
+
+    ctx.shadowBlur = 12;
+    ctx.shadowColor = "rgba(255,48,40,.8)";
+    ctx.fill();
+
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+window.addEventListener("resize",()=>{
+  resizeCanvas();
+  createParticles();
+});
+
+resizeCanvas();
+createParticles();
+animateParticles();
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const observer = new IntersectionObserver(
+  entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold:.12
+  }
+);
+
+document.querySelectorAll(".reveal").forEach(el=>{
+  observer.observe(el);
+});
+
+/* =========================
+   HOLOGRAM MOUSE MOTION
+========================= */
+
+const hero = document.querySelector(".hero");
+const holo = document.getElementById("holoStage");
+
+if(window.matchMedia("(pointer:fine)").matches){
+
+  hero.addEventListener("pointermove",(e)=>{
+
+    const rect = hero.getBoundingClientRect();
+
+    const x =
+      (e.clientX - rect.left) / rect.width - .5;
+
+    const y =
+      (e.clientY - rect.top) / rect.height - .5;
+
+    holo.style.transform =
+      `translateY(-50%) rotateX(${y * -7}deg) rotateY(${x * 9}deg)`;
+
+  });
+
+  hero.addEventListener("pointerleave",()=>{
+    holo.style.transform =
+      "translateY(-50%) rotateX(0deg) rotateY(0deg)";
+  });
+
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+const cards =
+  [...document.querySelectorAll(".portfolio-card[data-image]")];
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImage =
+  document.getElementById("lightboxImage");
+
+const closeLightbox =
+  document.getElementById("closeLightbox");
+
+const prevLightbox =
+  document.getElementById("prevLightbox");
+
+const nextLightbox =
+  document.getElementById("nextLightbox");
+
+let currentIndex = 0;
 
 function openLightbox(index){
 
-currentImage = index;
+  currentIndex = index;
 
-document.getElementById("lightboxImage").src =
-portfolioImages[currentImage];
+  const card = cards[currentIndex];
 
-document.getElementById("lightbox").classList.add("active");
+  lightboxImage.src =
+    card.dataset.image;
 
-document.body.classList.add("lightbox-open");
+  lightboxImage.alt =
+    card.dataset.title;
+
+  lightbox.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+function closeBox(){
+
+  lightbox.classList.remove("active");
+
+  document.body.style.overflow = "";
 
 }
 
+function nextImage(){
 
-/* ==================================================
-   CLOSE LIGHTBOX
-   ================================================== */
+  currentIndex =
+    (currentIndex + 1) % cards.length;
 
-function closeLightbox(event){
-
-if(
-event &&
-event.target &&
-event.target.id !== "lightbox" &&
-!event.target.classList.contains("lightbox-close")
-){
-return;
+  openLightbox(currentIndex);
 }
 
-document.getElementById("lightbox").classList.remove("active");
+function prevImage(){
 
-document.body.classList.remove("lightbox-open");
+  currentIndex =
+    (currentIndex - 1 + cards.length) % cards.length;
 
+  openLightbox(currentIndex);
 }
 
+cards.forEach((card,index)=>{
 
-/* ==================================================
-   NEXT / PREVIOUS
-   ================================================== */
-
-function changeImage(direction,event){
-
-if(event){
-event.stopPropagation();
-}
-
-currentImage += direction;
-
-if(currentImage < 0){
-currentImage = portfolioImages.length - 1;
-}
-
-if(currentImage >= portfolioImages.length){
-currentImage = 0;
-}
-
-document.getElementById("lightboxImage").src =
-portfolioImages[currentImage];
-
-}
-
-
-/* ==================================================
-   KEYBOARD
-   ================================================== */
-
-document.addEventListener("keydown",function(event){
-
-const box =
-document.getElementById("lightbox");
-
-if(!box.classList.contains("active")){
-return;
-}
-
-if(event.key === "Escape"){
-closeLightbox();
-}
-
-if(event.key === "ArrowRight"){
-changeImage(1);
-}
-
-if(event.key === "ArrowLeft"){
-changeImage(-1);
-}
+  card.addEventListener("click",()=>{
+    openLightbox(index);
+  });
 
 });
 
+closeLightbox.addEventListener("click",closeBox);
+nextLightbox.addEventListener("click",nextImage);
+prevLightbox.addEventListener("click",prevImage);
 
-/* ==================================================
-   HOLOGRAM MOUSE PARALLAX
-   ================================================== */
+lightbox.addEventListener("click",(e)=>{
 
-(function(){
+  if(e.target === lightbox){
+    closeBox();
+  }
 
-const hologram =
-document.getElementById("hologram");
+});
 
-if(!hologram){
-return;
+document.addEventListener("keydown",(e)=>{
+
+  if(!lightbox.classList.contains("active")) return;
+
+  if(e.key === "Escape") closeBox();
+  if(e.key === "ArrowRight") nextImage();
+  if(e.key === "ArrowLeft") prevImage();
+
+});
+
+/* =========================
+   CARD TILT
+========================= */
+
+if(window.matchMedia("(pointer:fine)").matches){
+
+  document.querySelectorAll(".portfolio-card").forEach(card=>{
+
+    card.addEventListener("pointermove",(e)=>{
+
+      const rect =
+        card.getBoundingClientRect();
+
+      const x =
+        (e.clientX - rect.left) / rect.width - .5;
+
+      const y =
+        (e.clientY - rect.top) / rect.height - .5;
+
+      card.style.transform =
+        `perspective(900px)
+         rotateX(${y * -5}deg)
+         rotateY(${x * 5}deg)
+         translateY(-7px)`;
+
+    });
+
+    card.addEventListener("pointerleave",()=>{
+
+      card.style.transform = "";
+
+    });
+
+  });
+
 }
-
-let targetX = 0;
-let targetY = 0;
-
-let currentX = 0;
-let currentY = 0;
-
-document.addEventListener("mousemove",function(event){
-
-const x =
-(event.clientX / window.innerWidth) - .5;
-
-const y =
-(event.clientY / window.innerHeight) - .5;
-
-targetX = x * 22;
-targetY = y * 22;
-
-});
-
-function animateHologram(){
-
-currentX +=
-(targetX - currentX) * .05;
-
-currentY +=
-(targetY - currentY) * .05;
-
-hologram.style.marginLeft =
-currentX + "px";
-
-hologram.style.marginTop =
-currentY + "px";
-
-requestAnimationFrame(animateHologram);
-
-}
-
-animateHologram();
-
-})();
-
-
-/* ==================================================
-   SERVICE CARD LIGHT PARALLAX
-   ================================================== */
-
-(function(){
-
-const cards =
-document.querySelectorAll(".service");
-
-cards.forEach(function(card){
-
-card.addEventListener("mousemove",function(event){
-
-const rect =
-card.getBoundingClientRect();
-
-const x =
-event.clientX - rect.left;
-
-const y =
-event.clientY - rect.top;
-
-const rotateY =
-((x / rect.width) - .5) * 4;
-
-const rotateX =
-((y / rect.height) - .5) * -4;
-
-card.style.transform =
-"translateY(-8px) perspective(700px) rotateX(" +
-rotateX +
-"deg) rotateY(" +
-rotateY +
-"deg)";
-
-});
-
-card.addEventListener("mouseleave",function(){
-
-card.style.transform = "";
-
-});
-
-});
-
-})();
-
-
-/* ==================================================
-   STARTUP EFFECT
-   ================================================== */
-
-window.addEventListener("load",function(){
-
-document.body.classList.add("alfa-v9-ready");
-
-console.log(
-"ALFA GRAPHIC V9.0 // HOLOGRAPHIC GRAPHIC STUDIO ONLINE"
-);
-
-});
 
 </script>
-
 
 </body>
 </html>
