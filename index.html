@@ -6,954 +6,1090 @@
 
 <title>ALFA GRAPHIC | Holographic Design Catalog</title>
 
-<meta name="description" content="ALFA GRAPHIC — Katalog desain kaos, sablon, otomotif, streetwear dan custom graphic design.">
+<meta name="description" content="ALFA GRAPHIC — Katalog desain kaos, sablon, otomotif, streetwear, gaming dan custom graphic design.">
+<meta name="keywords" content="Alfa Graphic, desain kaos, sablon, graphic design, custom design, katalog desain">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#050510">
+<meta name="theme-color" content="#f4f6f8">
 
 <style>
 :root{
-    --bg:#050510;
-    --bg2:#09091a;
-    --panel:rgba(15,15,35,.72);
-    --line:rgba(0,255,255,.22);
-    --cyan:#00f7ff;
-    --purple:#a855f7;
-    --pink:#ff2bd6;
-    --text:#f4f7ff;
-    --muted:#9da5bd;
-    --shadow:0 0 25px rgba(0,247,255,.18);
+--bg:#f4f6f8;
+--white:#fff;
+--text:#111827;
+--muted:#687386;
+--cyan:#00a9c7;
+--cyan2:#007f98;
+--purple:#7c3aed;
+--pink:#db2777;
+--border:rgba(17,24,39,.09);
+--shadow:0 15px 45px rgba(15,23,42,.10);
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    background:
-        radial-gradient(circle at 20% 10%,rgba(168,85,247,.15),transparent 30%),
-        radial-gradient(circle at 80% 20%,rgba(0,247,255,.12),transparent 30%),
-        linear-gradient(180deg,#03030a,#070714 45%,#030309);
-    color:var(--text);
-    font-family:Arial,Helvetica,sans-serif;
-    overflow-x:hidden;
+font-family:Arial,Helvetica,sans-serif;
+color:var(--text);
+background:
+radial-gradient(circle at 10% 10%,rgba(0,169,199,.10),transparent 28%),
+radial-gradient(circle at 90% 15%,rgba(124,58,237,.09),transparent 28%),
+linear-gradient(180deg,#fff 0%,#f5f7fa 45%,#eef1f5 100%);
+overflow-x:hidden;
 }
 
-/* =========================
-   BACKGROUND
-========================= */
+/* BACKGROUND */
 
-.grid-bg{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:-3;
-    opacity:.28;
-    background-image:
-        linear-gradient(rgba(0,247,255,.06) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(0,247,255,.06) 1px,transparent 1px);
-    background-size:45px 45px;
-    mask-image:linear-gradient(to bottom,black,transparent);
+.background{
+position:fixed;
+inset:0;
+z-index:-10;
+pointer-events:none;
+overflow:hidden;
 }
 
-.scanlines{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:999;
-    opacity:.035;
-    background:repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 3px,
-        #fff 4px
-    );
+.glow{
+position:absolute;
+width:420px;
+height:420px;
+border-radius:50%;
+filter:blur(75px);
+opacity:.15;
+animation:glowMove 14s ease-in-out infinite alternate;
+}
+
+.glow1{
+background:#00d9ff;
+top:-180px;
+left:-100px;
+}
+
+.glow2{
+background:#8b5cf6;
+right:-180px;
+top:25%;
+animation-delay:-5s;
+}
+
+.glow3{
+background:#ec4899;
+left:35%;
+bottom:-220px;
+animation-delay:-8s;
+}
+
+@keyframes glowMove{
+0%{transform:translate(0,0) scale(1)}
+50%{transform:translate(100px,50px) scale(1.15)}
+100%{transform:translate(-60px,100px) scale(.95)}
+}
+
+.grid{
+position:fixed;
+inset:0;
+z-index:-9;
+opacity:.22;
+background-image:
+linear-gradient(rgba(17,24,39,.04) 1px,transparent 1px),
+linear-gradient(90deg,rgba(17,24,39,.04) 1px,transparent 1px);
+background-size:42px 42px;
+animation:gridMove 18s linear infinite;
+}
+
+@keyframes gridMove{
+to{background-position:42px 42px}
 }
 
 .particle{
-    position:fixed;
-    width:3px;
-    height:3px;
-    border-radius:50%;
-    background:var(--cyan);
-    box-shadow:0 0 12px var(--cyan);
-    opacity:.7;
-    pointer-events:none;
-    z-index:-1;
-    animation:floatParticle linear infinite;
+position:fixed;
+width:7px;
+height:7px;
+border:1px solid rgba(0,169,199,.35);
+border-radius:50%;
+pointer-events:none;
+z-index:-5;
+animation:particleMove linear infinite;
 }
 
-@keyframes floatParticle{
-    from{
-        transform:translateY(110vh);
-        opacity:0;
-    }
-    15%{opacity:.7;}
-    85%{opacity:.7;}
-    to{
-        transform:translateY(-10vh);
-        opacity:0;
-    }
+@keyframes particleMove{
+0%{
+transform:translateY(110vh) rotate(0);
+opacity:0;
+}
+15%{opacity:.7}
+85%{opacity:.7}
+100%{
+transform:translateY(-15vh) rotate(360deg);
+opacity:0;
+}
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAV */
 
 nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:100;
-    padding:16px 6%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:rgba(3,3,10,.72);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(0,247,255,.15);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:100;
+padding:16px 6%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(255,255,255,.86);
+backdrop-filter:blur(18px);
+border-bottom:1px solid var(--border);
+box-shadow:0 5px 25px rgba(15,23,42,.05);
 }
 
 .logo{
-    color:white;
-    font-size:21px;
-    font-weight:900;
-    letter-spacing:3px;
-    text-decoration:none;
-    text-shadow:
-        0 0 5px #fff,
-        0 0 15px var(--cyan),
-        0 0 30px var(--purple);
+text-decoration:none;
+color:#111827;
+font-size:21px;
+font-weight:1000;
+letter-spacing:3px;
 }
 
 .logo span{
-    color:var(--cyan);
+color:var(--cyan2);
+}
+
+.logo:hover{
+text-shadow:0 0 15px rgba(0,169,199,.25);
 }
 
 .nav-links{
-    display:flex;
-    gap:25px;
-    list-style:none;
+display:flex;
+gap:27px;
+list-style:none;
 }
 
 .nav-links a{
-    color:#cbd5e1;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:bold;
-    letter-spacing:1px;
-    transition:.3s;
+color:#566174;
+text-decoration:none;
+font-size:12px;
+font-weight:800;
+letter-spacing:1px;
+transition:.3s;
 }
 
 .nav-links a:hover{
-    color:var(--cyan);
-    text-shadow:0 0 12px var(--cyan);
+color:var(--cyan2);
 }
 
-.menu-btn{
-    display:none;
-    color:var(--cyan);
-    font-size:25px;
-    cursor:pointer;
+.menu{
+display:none;
+font-size:25px;
+color:var(--cyan2);
+cursor:pointer;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-    min-height:100vh;
-    padding:130px 6% 80px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    text-align:center;
+min-height:100vh;
+padding:140px 6% 70px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 .hero-content{
-    max-width:1000px;
+width:100%;
+max-width:1050px;
 }
 
 .badge{
-    display:inline-block;
-    padding:8px 18px;
-    border:1px solid rgba(0,247,255,.45);
-    border-radius:50px;
-    color:var(--cyan);
-    font-size:11px;
-    letter-spacing:3px;
-    background:rgba(0,247,255,.05);
-    box-shadow:0 0 20px rgba(0,247,255,.1);
-    margin-bottom:28px;
+display:inline-block;
+padding:9px 18px;
+border-radius:50px;
+color:var(--cyan2);
+background:rgba(255,255,255,.8);
+border:1px solid rgba(0,169,199,.25);
+font-size:10px;
+font-weight:900;
+letter-spacing:3px;
+animation:badgeFloat 3s ease-in-out infinite;
 }
 
-.holo-logo{
-    position:relative;
-    font-size:clamp(55px,12vw,145px);
-    font-weight:1000;
-    letter-spacing:8px;
-    line-height:.9;
-    color:transparent;
-    background:linear-gradient(
-        90deg,
-        #00f7ff,
-        #fff,
-        #a855f7,
-        #ff2bd6,
-        #00f7ff
-    );
-    background-size:300% auto;
-    -webkit-background-clip:text;
-    background-clip:text;
-    animation:holoText 5s linear infinite;
-    filter:
-        drop-shadow(0 0 8px rgba(0,247,255,.8))
-        drop-shadow(0 0 30px rgba(168,85,247,.5));
+@keyframes badgeFloat{
+50%{transform:translateY(-5px)}
 }
 
-@keyframes holoText{
-    to{
-        background-position:300% center;
-    }
+.holo{
+margin-top:28px;
+font-size:clamp(50px,12vw,145px);
+font-weight:1000;
+letter-spacing:7px;
+line-height:.9;
+color:transparent;
+background:
+linear-gradient(
+90deg,
+#007f98,
+#00d9ff,
+#7c3aed,
+#db2777,
+#00a9c7
+);
+background-size:400% auto;
+-webkit-background-clip:text;
+background-clip:text;
+animation:holoFlow 6s linear infinite;
+filter:
+drop-shadow(0 4px 8px rgba(0,169,199,.18))
+drop-shadow(0 10px 25px rgba(124,58,237,.10));
+position:relative;
 }
 
-.holo-logo::after{
-    content:"ALFA GRAPHIC";
-    position:absolute;
-    inset:0;
-    color:transparent;
-    background:linear-gradient(
-        transparent 45%,
-        rgba(255,255,255,.8) 50%,
-        transparent 55%
-    );
-    -webkit-background-clip:text;
-    background-clip:text;
-    animation:scanText 3s infinite;
+@keyframes holoFlow{
+to{background-position:400% center}
 }
 
-@keyframes scanText{
-    0%,100%{transform:translateY(-30px);opacity:0;}
-    40%{opacity:1;}
-    70%{transform:translateY(30px);opacity:0;}
+.holo:after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:45%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.9),
+transparent
+);
+transform:skewX(-20deg);
+animation:shine 4s ease-in-out infinite;
+}
+
+@keyframes shine{
+0%,35%{left:-100%}
+70%,100%{left:150%}
 }
 
 .hero h2{
-    margin-top:28px;
-    font-size:clamp(22px,4vw,42px);
-    letter-spacing:3px;
+margin-top:28px;
+font-size:clamp(22px,4vw,42px);
+letter-spacing:2px;
 }
 
 .hero h2 span{
-    color:var(--cyan);
-    text-shadow:0 0 18px var(--cyan);
+color:var(--cyan2);
 }
 
 .hero p{
-    max-width:700px;
-    margin:22px auto 35px;
-    color:var(--muted);
-    line-height:1.8;
-    font-size:15px;
+max-width:720px;
+margin:20px auto 34px;
+color:var(--muted);
+line-height:1.8;
+font-size:15px;
 }
 
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:14px;
-    flex-wrap:wrap;
+.buttons{
+display:flex;
+justify-content:center;
+gap:13px;
+flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-width:180px;
-    padding:14px 24px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:800;
-    letter-spacing:1px;
-    font-size:13px;
-    transition:.3s;
+min-width:180px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 24px;
+border-radius:10px;
+text-decoration:none;
+font-size:12px;
+font-weight:900;
+letter-spacing:1px;
+transition:.35s;
+cursor:pointer;
 }
 
-.btn-primary{
-    color:#001014;
-    background:linear-gradient(90deg,var(--cyan),#7dfcff);
-    box-shadow:0 0 25px rgba(0,247,255,.3);
+.primary{
+color:#fff;
+background:
+linear-gradient(100deg,#007f98,#00bcd4,#7c3aed);
+background-size:200% auto;
+box-shadow:0 10px 30px rgba(0,169,199,.2);
+animation:buttonFlow 5s linear infinite;
 }
 
-.btn-primary:hover{
-    transform:translateY(-4px);
-    box-shadow:0 0 40px rgba(0,247,255,.65);
+@keyframes buttonFlow{
+to{background-position:200% center}
 }
 
-.btn-outline{
-    color:var(--cyan);
-    border:1px solid var(--cyan);
-    background:rgba(0,247,255,.03);
+.primary:hover{
+transform:translateY(-5px);
+box-shadow:0 18px 40px rgba(0,169,199,.28);
 }
 
-.btn-outline:hover{
-    background:rgba(0,247,255,.12);
-    transform:translateY(-4px);
+.outline{
+color:var(--cyan2);
+border:1px solid rgba(0,169,199,.4);
+background:rgba(255,255,255,.7);
 }
 
-/* hologram rings */
+.outline:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(15,23,42,.1);
+}
 
-.holo-rings{
-    width:min(700px,90vw);
-    height:220px;
-    margin:50px auto -20px;
-    position:relative;
-    perspective:700px;
+/* RINGS */
+
+.rings{
+position:relative;
+width:min(720px,90vw);
+height:210px;
+margin:55px auto -15px;
+perspective:700px;
 }
 
 .ring{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%) rotateX(70deg);
-    border:1px solid rgba(0,247,255,.4);
-    border-radius:50%;
-    box-shadow:
-        0 0 15px rgba(0,247,255,.35),
-        inset 0 0 15px rgba(168,85,247,.15);
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%) rotateX(70deg);
+border-radius:50%;
+border:1px solid rgba(0,169,199,.28);
+box-shadow:0 0 20px rgba(0,169,199,.1);
 }
 
 .ring:nth-child(1){
-    width:100%;
-    height:75px;
-    animation:ringMove 5s infinite linear;
+width:100%;
+height:75px;
+animation:ringRotate 8s linear infinite;
 }
 
 .ring:nth-child(2){
-    width:75%;
-    height:60px;
-    border-color:rgba(168,85,247,.5);
-    animation:ringMove 4s infinite reverse linear;
+width:75%;
+height:58px;
+border-color:rgba(124,58,237,.32);
+animation:ringRotate 6s linear infinite reverse;
 }
 
 .ring:nth-child(3){
-    width:50%;
-    height:45px;
-    border-color:rgba(255,43,214,.5);
-    animation:ringMove 3s infinite linear;
+width:50%;
+height:42px;
+border-color:rgba(219,39,119,.3);
+animation:ringRotate 4s linear infinite;
 }
 
-@keyframes ringMove{
-    0%{transform:translate(-50%,-50%) rotateX(70deg) rotateZ(0deg);}
-    100%{transform:translate(-50%,-50%) rotateX(70deg) rotateZ(360deg);}
+@keyframes ringRotate{
+to{
+transform:
+translate(-50%,-50%)
+rotateX(70deg)
+rotateZ(360deg);
+}
 }
 
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 
 section{
-    padding:90px 6%;
+padding:90px 6%;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
+.title{
+text-align:center;
+margin-bottom:45px;
 }
 
-.section-title .mini{
-    color:var(--cyan);
-    font-size:11px;
-    letter-spacing:4px;
-    font-weight:bold;
-    margin-bottom:12px;
+.mini{
+color:var(--cyan2);
+font-size:10px;
+font-weight:900;
+letter-spacing:4px;
+margin-bottom:12px;
 }
 
-.section-title h2{
-    font-size:clamp(30px,5vw,48px);
+.title h2{
+font-size:clamp(30px,5vw,48px);
 }
 
-.section-title h2 span{
-    color:var(--cyan);
+.title h2 span{
+color:var(--cyan2);
 }
 
-.section-title p{
-    color:var(--muted);
-    max-width:650px;
-    margin:14px auto 0;
-    line-height:1.7;
+.title p{
+max-width:680px;
+margin:14px auto 0;
+color:var(--muted);
+line-height:1.7;
 }
 
-/* =========================
-   FILTER
-========================= */
+/* FILTER */
 
 .filters{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:40px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:9px;
+margin-bottom:38px;
 }
 
-.filter-btn{
-    border:1px solid rgba(0,247,255,.25);
-    background:rgba(10,10,25,.75);
-    color:#aeb8cd;
-    padding:10px 18px;
-    border-radius:50px;
-    cursor:pointer;
-    font-size:12px;
-    font-weight:bold;
-    transition:.3s;
+.filter{
+cursor:pointer;
+padding:10px 18px;
+border-radius:50px;
+color:#687386;
+background:rgba(255,255,255,.8);
+border:1px solid var(--border);
+font-size:11px;
+font-weight:900;
+transition:.3s;
 }
 
-.filter-btn:hover,
-.filter-btn.active{
-    color:#001014;
-    background:var(--cyan);
-    box-shadow:0 0 20px rgba(0,247,255,.35);
+.filter:hover,
+.filter.active{
+color:#fff;
+background:linear-gradient(100deg,#007f98,#7c3aed);
+border-color:transparent;
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(0,169,199,.15);
 }
 
-/* =========================
-   CATALOG
-========================= */
+/* CATALOG */
 
 .catalog{
-    max-width:1250px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+max-width:1250px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
 }
 
 .card{
-    position:relative;
-    overflow:hidden;
-    border:1px solid rgba(0,247,255,.17);
-    border-radius:18px;
-    background:
-        linear-gradient(145deg,rgba(15,15,40,.95),rgba(6,6,18,.95));
-    box-shadow:0 10px 35px rgba(0,0,0,.25);
-    transition:.45s;
+position:relative;
+overflow:hidden;
+border-radius:20px;
+background:rgba(255,255,255,.94);
+border:1px solid var(--border);
+box-shadow:var(--shadow);
+transition:.45s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(0,247,255,.55);
-    box-shadow:
-        0 0 25px rgba(0,247,255,.12),
-        0 20px 50px rgba(0,0,0,.4);
+transform:translateY(-10px);
+border-color:rgba(0,169,199,.3);
+box-shadow:0 25px 65px rgba(15,23,42,.16);
 }
 
-.card-image{
-    height:330px;
-    position:relative;
-    overflow:hidden;
-    background:
-        radial-gradient(circle at 30% 30%,rgba(0,247,255,.18),transparent 30%),
-        radial-gradient(circle at 70% 70%,rgba(168,85,247,.2),transparent 35%),
-        #080817;
+.card:before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:80%;
+height:2px;
+z-index:5;
+background:linear-gradient(
+90deg,
+transparent,
+#00a9c7,
+#7c3aed,
+transparent
+);
+animation:cardLine 4s linear infinite;
 }
 
-.card-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
+@keyframes cardLine{
+to{left:130%}
 }
 
-.card:hover .card-image img{
-    transform:scale(1.07);
+.image{
+height:340px;
+position:relative;
+overflow:hidden;
+background:#edf1f5;
 }
 
-.card-overlay{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    opacity:0;
-    background:rgba(2,2,10,.5);
-    backdrop-filter:blur(3px);
-    transition:.3s;
+.image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.7s;
 }
 
-.card:hover .card-overlay{
-    opacity:1;
+.card:hover .image img{
+transform:scale(1.07);
 }
 
-.view-btn{
-    border:1px solid var(--cyan);
-    color:var(--cyan);
-    background:rgba(0,0,0,.65);
-    padding:11px 20px;
-    border-radius:50px;
-    cursor:pointer;
-    font-weight:bold;
+.image:after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:50%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.5),
+transparent
+);
+transform:skewX(-20deg);
+animation:imageShine 5s infinite;
 }
 
-.card-info{
-    padding:19px;
+@keyframes imageShine{
+0%,40%{left:-100%}
+70%,100%{left:150%}
 }
 
-.card-code{
-    color:var(--cyan);
-    font-size:10px;
-    letter-spacing:2px;
-    font-weight:bold;
+.overlay{
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+background:rgba(255,255,255,.38);
+backdrop-filter:blur(5px);
+transition:.35s;
 }
 
-.card-info h3{
-    margin:8px 0;
-    font-size:19px;
+.card:hover .overlay{
+opacity:1;
 }
 
-.card-info p{
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.6;
+.view{
+padding:12px 21px;
+border-radius:50px;
+border:1px solid rgba(0,169,199,.35);
+background:#fff;
+color:var(--cyan2);
+font-size:11px;
+font-weight:900;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(15,23,42,.12);
 }
 
-.card-bottom{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:16px;
+.info{
+padding:20px;
+}
+
+.code{
+color:var(--cyan2);
+font-size:9px;
+font-weight:900;
+letter-spacing:2px;
+}
+
+.info h3{
+margin:8px 0;
+font-size:19px;
+}
+
+.info p{
+color:var(--muted);
+font-size:12px;
+line-height:1.65;
+}
+
+.bottom{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-top:17px;
 }
 
 .tag{
-    color:#d8def0;
-    background:rgba(168,85,247,.1);
-    border:1px solid rgba(168,85,247,.25);
-    padding:6px 10px;
-    border-radius:6px;
-    font-size:10px;
+padding:6px 10px;
+border-radius:7px;
+color:#667085;
+background:#f1f3f6;
+border:1px solid var(--border);
+font-size:9px;
+font-weight:900;
 }
 
-.order-small{
-    border:0;
-    color:#001014;
-    background:var(--cyan);
-    padding:8px 12px;
-    border-radius:7px;
-    font-size:10px;
-    font-weight:900;
-    cursor:pointer;
+.order{
+cursor:pointer;
+padding:8px 13px;
+border:0;
+border-radius:7px;
+color:#fff;
+background:linear-gradient(100deg,#007f98,#7c3aed);
+font-size:10px;
+font-weight:900;
+transition:.3s;
 }
 
-/* =========================
-   SERVICES
-========================= */
+.order:hover{
+transform:translateY(-2px);
+}
+
+/* SERVICES */
 
 .services{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
 }
 
 .service{
-    padding:28px 20px;
-    text-align:center;
-    border:1px solid rgba(0,247,255,.15);
-    border-radius:16px;
-    background:rgba(10,10,25,.6);
-    transition:.3s;
+padding:30px 20px;
+text-align:center;
+background:rgba(255,255,255,.78);
+border:1px solid var(--border);
+border-radius:17px;
+box-shadow:0 10px 30px rgba(15,23,42,.06);
+transition:.35s;
 }
 
 .service:hover{
-    transform:translateY(-5px);
-    border-color:var(--cyan);
-    box-shadow:var(--shadow);
+transform:translateY(-7px);
+border-color:rgba(0,169,199,.3);
+box-shadow:0 20px 45px rgba(15,23,42,.1);
 }
 
-.service-icon{
-    font-size:32px;
-    margin-bottom:14px;
-    filter:drop-shadow(0 0 10px rgba(0,247,255,.5));
+.icon{
+font-size:32px;
+margin-bottom:14px;
+animation:iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat{
+50%{transform:translateY(-6px)}
 }
 
 .service h3{
-    font-size:15px;
-    margin-bottom:9px;
+font-size:14px;
+margin-bottom:9px;
 }
 
 .service p{
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.6;
+color:var(--muted);
+font-size:11px;
+line-height:1.7;
 }
 
-/* =========================
-   CUSTOM CTA
-========================= */
+/* CUSTOM */
 
 .custom-box{
-    max-width:1050px;
-    margin:auto;
-    padding:55px 30px;
-    text-align:center;
-    border:1px solid rgba(0,247,255,.25);
-    border-radius:25px;
-    position:relative;
-    overflow:hidden;
-    background:
-        radial-gradient(circle at 20% 50%,rgba(0,247,255,.12),transparent 30%),
-        radial-gradient(circle at 80% 50%,rgba(168,85,247,.14),transparent 30%),
-        rgba(10,10,25,.75);
+max-width:1050px;
+margin:auto;
+padding:58px 30px;
+position:relative;
+overflow:hidden;
+text-align:center;
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.96),
+rgba(241,244,248,.9)
+);
+border:1px solid rgba(0,169,199,.18);
+border-radius:25px;
+box-shadow:0 20px 60px rgba(15,23,42,.08);
 }
 
-.custom-box::before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    border-radius:25px;
-    border:1px solid transparent;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(0,247,255,.7),
-        transparent,
-        rgba(168,85,247,.7),
-        transparent
-    ) border-box;
-    mask:
-        linear-gradient(#000 0 0) padding-box,
-        linear-gradient(#000 0 0);
-    mask-composite:exclude;
-    animation:borderFlow 5s linear infinite;
+.custom-box:before,
+.custom-box:after{
+content:"";
+position:absolute;
+width:450px;
+height:450px;
+border-radius:50%;
+filter:blur(10px);
 }
 
-@keyframes borderFlow{
-    to{
-        transform:translateX(100%);
-    }
+.custom-box:before{
+top:-330px;
+left:-180px;
+background:radial-gradient(
+circle,
+rgba(0,169,199,.12),
+transparent 70%
+);
+animation:customMove 8s infinite alternate;
+}
+
+.custom-box:after{
+bottom:-330px;
+right:-180px;
+background:radial-gradient(
+circle,
+rgba(124,58,237,.12),
+transparent 70%
+);
+animation:customMove 9s infinite alternate-reverse;
+}
+
+@keyframes customMove{
+to{transform:translate(100px,60px)}
+}
+
+.custom-box h2,
+.custom-box p,
+.custom-box .btn{
+position:relative;
+z-index:2;
 }
 
 .custom-box h2{
-    font-size:clamp(27px,5vw,44px);
-    margin-bottom:15px;
+font-size:clamp(27px,5vw,44px);
+margin-bottom:15px;
 }
 
 .custom-box h2 span{
-    color:var(--cyan);
+color:var(--cyan2);
 }
 
 .custom-box p{
-    max-width:650px;
-    margin:0 auto 28px;
-    color:var(--muted);
-    line-height:1.8;
+max-width:680px;
+margin:0 auto 28px;
+color:var(--muted);
+line-height:1.8;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact{
-    text-align:center;
+text-align:center;
 }
 
 .contact-card{
-    max-width:700px;
-    margin:auto;
-    padding:35px;
-    border:1px solid rgba(0,247,255,.18);
-    border-radius:20px;
-    background:rgba(10,10,25,.7);
+max-width:760px;
+margin:auto;
+padding:40px;
+background:rgba(255,255,255,.86);
+border:1px solid var(--border);
+border-radius:22px;
+box-shadow:0 15px 45px rgba(15,23,42,.07);
 }
 
 .contact-card h3{
-    font-size:25px;
-    margin-bottom:12px;
+font-size:27px;
+margin-bottom:10px;
 }
 
 .contact-card p{
-    color:var(--muted);
-    line-height:1.7;
-    margin-bottom:22px;
+color:var(--muted);
+line-height:1.8;
+margin-bottom:10px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+.contact-info{
+margin:20px 0 25px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.contact-item{
+padding:12px 17px;
+border-radius:10px;
+background:#f3f5f7;
+border:1px solid var(--border);
+color:#4b5563;
+font-size:12px;
+font-weight:bold;
+}
+
+.contact-item a{
+color:var(--cyan2);
+text-decoration:none;
+}
+
+/* FOOTER */
 
 footer{
-    padding:35px 6%;
-    border-top:1px solid rgba(0,247,255,.12);
-    text-align:center;
-    color:#737d94;
-    font-size:11px;
-    line-height:2;
+padding:38px 6%;
+text-align:center;
+color:#7a8495;
+font-size:10px;
+line-height:2;
+border-top:1px solid var(--border);
+background:rgba(255,255,255,.6);
 }
 
 footer strong{
-    color:var(--cyan);
+color:var(--cyan2);
 }
 
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 
 .modal{
-    position:fixed;
-    inset:0;
-    z-index:500;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    background:rgba(0,0,0,.78);
-    backdrop-filter:blur(10px);
+position:fixed;
+inset:0;
+z-index:500;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+background:rgba(15,23,42,.48);
+backdrop-filter:blur(12px);
 }
 
 .modal.show{
-    display:flex;
+display:flex;
 }
 
 .modal-box{
-    width:min(850px,100%);
-    max-height:90vh;
-    overflow:auto;
-    border:1px solid rgba(0,247,255,.35);
-    border-radius:22px;
-    background:
-        radial-gradient(circle at top right,rgba(168,85,247,.12),transparent 35%),
-        #080815;
-    box-shadow:
-        0 0 50px rgba(0,247,255,.16),
-        0 25px 80px rgba(0,0,0,.65);
-    position:relative;
-    padding:20px;
-    animation:modalIn .3s ease;
+width:min(850px,100%);
+max-height:90vh;
+overflow:auto;
+position:relative;
+padding:20px;
+border-radius:22px;
+background:rgba(255,255,255,.98);
+border:1px solid rgba(0,169,199,.2);
+box-shadow:0 30px 90px rgba(15,23,42,.22);
+animation:modalIn .35s ease;
 }
 
 @keyframes modalIn{
-    from{
-        transform:scale(.9);
-        opacity:0;
-    }
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
+from{
+opacity:0;
+transform:scale(.92) translateY(15px);
+}
+to{
+opacity:1;
+transform:scale(1) translateY(0);
+}
 }
 
 .close{
-    position:absolute;
-    right:18px;
-    top:14px;
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    border:1px solid rgba(0,247,255,.3);
-    background:rgba(0,0,0,.5);
-    color:var(--cyan);
-    cursor:pointer;
-    font-size:20px;
-    z-index:3;
+position:absolute;
+top:15px;
+right:15px;
+width:38px;
+height:38px;
+z-index:5;
+border-radius:50%;
+border:1px solid rgba(0,169,199,.25);
+background:#fff;
+color:var(--cyan2);
+font-size:21px;
+cursor:pointer;
 }
 
 .modal-image{
-    width:100%;
-    max-height:500px;
-    object-fit:contain;
-    border-radius:14px;
-    background:#03030a;
+width:100%;
+max-height:500px;
+object-fit:contain;
+border-radius:15px;
+background:#f1f3f6;
 }
 
 .modal-content{
-    padding:22px 5px 5px;
+padding:22px 5px 5px;
 }
 
 .modal-code{
-    color:var(--cyan);
-    letter-spacing:3px;
-    font-size:10px;
+color:var(--cyan2);
+font-size:9px;
+font-weight:900;
+letter-spacing:3px;
 }
 
 .modal-content h2{
-    margin:8px 0;
-    font-size:28px;
+margin:8px 0;
+font-size:28px;
 }
 
 .modal-content p{
-    color:var(--muted);
-    line-height:1.7;
-    margin-bottom:20px;
+color:var(--muted);
+margin-bottom:20px;
+line-height:1.7;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:950px){
-    .catalog{
-        grid-template-columns:repeat(2,1fr);
-    }
 
-    .services{
-        grid-template-columns:repeat(2,1fr);
-    }
+.catalog{
+grid-template-columns:repeat(2,1fr);
+}
+
+.services{
+grid-template-columns:repeat(2,1fr);
+}
+
 }
 
 @media(max-width:700px){
 
-    nav{
-        padding:14px 5%;
-    }
+nav{
+padding:14px 5%;
+}
 
-    .menu-btn{
-        display:block;
-    }
+.menu{
+display:block;
+}
 
-    .nav-links{
-        position:absolute;
-        top:65px;
-        left:5%;
-        right:5%;
-        display:none;
-        flex-direction:column;
-        padding:20px;
-        border:1px solid rgba(0,247,255,.2);
-        border-radius:15px;
-        background:rgba(5,5,15,.95);
-        backdrop-filter:blur(20px);
-    }
+.nav-links{
+position:absolute;
+top:65px;
+left:5%;
+right:5%;
+display:none;
+flex-direction:column;
+padding:20px;
+border-radius:15px;
+background:rgba(255,255,255,.97);
+border:1px solid var(--border);
+box-shadow:0 20px 45px rgba(15,23,42,.1);
+}
 
-    .nav-links.open{
-        display:flex;
-    }
+.nav-links.open{
+display:flex;
+}
 
-    .hero{
-        padding-left:5%;
-        padding-right:5%;
-    }
+.hero{
+padding:125px 5% 70px;
+}
 
-    .holo-logo{
-        letter-spacing:3px;
-    }
+.holo{
+letter-spacing:3px;
+}
 
-    section{
-        padding:70px 5%;
-    }
+section{
+padding:70px 5%;
+}
 
-    .catalog{
-        grid-template-columns:1fr;
-    }
+.catalog{
+grid-template-columns:1fr;
+}
 
-    .services{
-        grid-template-columns:1fr 1fr;
-    }
+.services{
+grid-template-columns:repeat(2,1fr);
+}
 
-    .card-image{
-        height:360px;
-    }
+.image{
+height:360px;
+}
+
 }
 
 @media(max-width:450px){
 
-    .services{
-        grid-template-columns:1fr;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .btn{
-        width:100%;
-    }
-
-    .card-image{
-        height:330px;
-    }
+.services{
+grid-template-columns:1fr;
 }
+
+.buttons{
+flex-direction:column;
+align-items:stretch;
+}
+
+.btn{
+width:100%;
+}
+
+.contact-card{
+padding:30px 20px;
+}
+
+.image{
+height:330px;
+}
+
+.rings{
+height:160px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="grid-bg"></div>
-<div class="scanlines"></div>
+<!-- BACKGROUND -->
 
-<!-- PARTICLES -->
+<div class="background">
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+<div class="glow glow3"></div>
+
+</div>
+
+<div class="grid"></div>
+
 <div id="particles"></div>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+
+<!-- NAVIGATION -->
 
 <nav>
 
 <a href="#home" class="logo">
-    ALFA<span>GRAPHIC</span>
+ALFA<span>GRAPHIC</span>
 </a>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="menu" onclick="toggleMenu()">☰</div>
 
 <ul class="nav-links" id="navLinks">
-    <li><a href="#home">HOME</a></li>
-    <li><a href="#catalog">CATALOG</a></li>
-    <li><a href="#services">SERVICES</a></li>
-    <li><a href="#custom">CUSTOM</a></li>
-    <li><a href="#contact">CONTACT</a></li>
+
+<li><a href="#home">HOME</a></li>
+<li><a href="#catalog">CATALOG</a></li>
+<li><a href="#services">SERVICES</a></li>
+<li><a href="#custom">CUSTOM</a></li>
+<li><a href="#contact">CONTACT</a></li>
+
 </ul>
 
 </nav>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
 <div class="hero-content">
 
 <div class="badge">
-    ✦ HOLOGRAPHIC GRAPHIC STUDIO ✦
+✦ HOLOGRAPHIC GRAPHIC STUDIO ✦
 </div>
 
-<div class="holo-logo">
-    ALFA GRAPHIC
+<div class="holo">
+ALFA GRAPHIC
 </div>
 
 <h2>
-    DIGITAL <span>DESIGN CATALOG</span>
+DIGITAL <span>DESIGN CATALOG</span>
 </h2>
 
 <p>
-    Koleksi desain grafis untuk kaos, sablon, streetwear,
-    otomotif, komunitas, gaming dan kebutuhan custom.
-    Pilih desain, lihat detailnya, lalu langsung pesan.
+Koleksi desain grafis untuk kaos, sablon,
+streetwear, otomotif, sport, gaming dan
+kebutuhan custom design.
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a href="#catalog" class="btn btn-primary">
-    ⚡ EXPLORE CATALOG
+<a href="#catalog" class="btn primary">
+⚡ EXPLORE CATALOG
 </a>
 
-<a href="#custom" class="btn btn-outline">
-    ✦ CUSTOM DESIGN
+<a href="#custom" class="btn outline">
+✦ CUSTOM DESIGN
 </a>
 
 </div>
 
-<div class="holo-rings">
-    <div class="ring"></div>
-    <div class="ring"></div>
-    <div class="ring"></div>
+<div class="rings">
+
+<div class="ring"></div>
+<div class="ring"></div>
+<div class="ring"></div>
+
 </div>
 
 </div>
@@ -961,23 +1097,23 @@ footer strong{
 </section>
 
 
-<!-- =========================
-     CATALOG
-========================= -->
+<!-- CATALOG -->
 
 <section id="catalog">
 
-<div class="section-title">
+<div class="title">
 
-<div class="mini">ALFA GRAPHIC COLLECTION</div>
+<div class="mini">
+ALFA GRAPHIC COLLECTION
+</div>
 
 <h2>
-    <span>DESIGN</span> CATALOG
+<span>DESIGN</span> CATALOG
 </h2>
 
 <p>
-    Jelajahi koleksi desain ALFA GRAPHIC.
-    Gunakan filter untuk menemukan kategori yang sesuai.
+Jelajahi koleksi desain ALFA GRAPHIC.
+Pilih kategori dan klik desain untuk melihat preview.
 </p>
 
 </div>
@@ -985,79 +1121,87 @@ footer strong{
 
 <div class="filters">
 
-<button class="filter-btn active" onclick="filterCatalog('all',this)">
-    ALL
+<button class="filter active"
+onclick="filterCatalog('all',this)">
+ALL
 </button>
 
-<button class="filter-btn" onclick="filterCatalog('kaos',this)">
-    KAOS
+<button class="filter"
+onclick="filterCatalog('kaos',this)">
+KAOS
 </button>
 
-<button class="filter-btn" onclick="filterCatalog('otomotif',this)">
-    OTOMOTIF
+<button class="filter"
+onclick="filterCatalog('otomotif',this)">
+OTOMOTIF
 </button>
 
-<button class="filter-btn" onclick="filterCatalog('sport',this)">
-    SPORT
+<button class="filter"
+onclick="filterCatalog('sport',this)">
+SPORT
 </button>
 
-<button class="filter-btn" onclick="filterCatalog('streetwear',this)">
-    STREETWEAR
+<button class="filter"
+onclick="filterCatalog('streetwear',this)">
+STREETWEAR
 </button>
 
-<button class="filter-btn" onclick="filterCatalog('gaming',this)">
-    GAMING
+<button class="filter"
+onclick="filterCatalog('gaming',this)">
+GAMING
 </button>
 
 </div>
 
 
-<div class="catalog" id="catalogGrid">
+<div class="catalog">
 
 
 <!-- CARD 1 -->
 
 <article class="card" data-category="kaos">
 
-<div class="card-image">
+<div class="image">
 
 <img
 src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=85"
-alt="Alfa Graphic Urban Tee"
+alt="Urban Alpha"
 loading="lazy">
 
-<div class="card-overlay">
+<div class="overlay">
 
-<button class="view-btn"
+<button
+class="view"
 onclick="openModal(
 'AG-001',
 'URBAN ALPHA',
-'Kaos',
+'KAOS',
 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90'
 )">
-    VIEW DESIGN
+VIEW DESIGN
 </button>
 
 </div>
+
 </div>
 
-<div class="card-info">
+<div class="info">
 
-<div class="card-code">AG-001</div>
+<div class="code">AG-001</div>
 
 <h3>URBAN ALPHA</h3>
 
 <p>
-    Konsep urban modern untuk kaos streetwear.
+Konsep urban modern untuk kaos streetwear.
 </p>
 
-<div class="card-bottom">
+<div class="bottom">
 
 <span class="tag">KAOS</span>
 
-<button class="order-small"
+<button class="order"
 onclick="orderDesign('AG-001','URBAN ALPHA')">
-    PESAN
+PESAN
 </button>
 
 </div>
@@ -1071,45 +1215,47 @@ onclick="orderDesign('AG-001','URBAN ALPHA')">
 
 <article class="card" data-category="otomotif">
 
-<div class="card-image">
+<div class="image">
 
 <img
 src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
-alt="Alfa Graphic Motorcycle"
+alt="Motor Culture"
 loading="lazy">
 
-<div class="card-overlay">
+<div class="overlay">
 
-<button class="view-btn"
+<button
+class="view"
 onclick="openModal(
 'AG-002',
 'MOTOR CULTURE',
-'Otomotif',
+'OTOMOTIF',
 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=90'
 )">
-    VIEW DESIGN
+VIEW DESIGN
 </button>
 
 </div>
+
 </div>
 
-<div class="card-info">
+<div class="info">
 
-<div class="card-code">AG-002</div>
+<div class="code">AG-002</div>
 
 <h3>MOTOR CULTURE</h3>
 
 <p>
-    Visual otomotif untuk komunitas dan pecinta motor.
+Visual otomotif untuk komunitas dan pecinta motor.
 </p>
 
-<div class="card-bottom">
+<div class="bottom">
 
 <span class="tag">OTOMOTIF</span>
 
-<button class="order-small"
+<button class="order"
 onclick="orderDesign('AG-002','MOTOR CULTURE')">
-    PESAN
+PESAN
 </button>
 
 </div>
@@ -1123,45 +1269,47 @@ onclick="orderDesign('AG-002','MOTOR CULTURE')">
 
 <article class="card" data-category="sport">
 
-<div class="card-image">
+<div class="image">
 
 <img
 src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=85"
-alt="Alfa Graphic Sport"
+alt="Fight Spirit"
 loading="lazy">
 
-<div class="card-overlay">
+<div class="overlay">
 
-<button class="view-btn"
+<button
+class="view"
 onclick="openModal(
 'AG-003',
 'FIGHT SPIRIT',
-'Sport',
+'SPORT',
 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=90'
 )">
-    VIEW DESIGN
+VIEW DESIGN
 </button>
 
 </div>
+
 </div>
 
-<div class="card-info">
+<div class="info">
 
-<div class="card-code">AG-003</div>
+<div class="code">AG-003</div>
 
 <h3>FIGHT SPIRIT</h3>
 
 <p>
-    Konsep energi sport untuk boxing, Muay Thai dan komunitas.
+Konsep sport untuk boxing, Muay Thai dan komunitas.
 </p>
 
-<div class="card-bottom">
+<div class="bottom">
 
 <span class="tag">SPORT</span>
 
-<button class="order-small"
+<button class="order"
 onclick="orderDesign('AG-003','FIGHT SPIRIT')">
-    PESAN
+PESAN
 </button>
 
 </div>
@@ -1175,45 +1323,47 @@ onclick="orderDesign('AG-003','FIGHT SPIRIT')">
 
 <article class="card" data-category="streetwear">
 
-<div class="card-image">
+<div class="image">
 
 <img
 src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85"
-alt="Alfa Graphic Streetwear"
+alt="Neon Street"
 loading="lazy">
 
-<div class="card-overlay">
+<div class="overlay">
 
-<button class="view-btn"
+<button
+class="view"
 onclick="openModal(
 'AG-004',
 'NEON STREET',
-'Streetwear',
+'STREETWEAR',
 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=90'
 )">
-    VIEW DESIGN
+VIEW DESIGN
 </button>
 
 </div>
+
 </div>
 
-<div class="card-info">
+<div class="info">
 
-<div class="card-code">AG-004</div>
+<div class="code">AG-004</div>
 
 <h3>NEON STREET</h3>
 
 <p>
-    Gaya streetwear futuristik dengan karakter neon.
+Gaya streetwear futuristik dengan karakter neon.
 </p>
 
-<div class="card-bottom">
+<div class="bottom">
 
 <span class="tag">STREETWEAR</span>
 
-<button class="order-small"
+<button class="order"
 onclick="orderDesign('AG-004','NEON STREET')">
-    PESAN
+PESAN
 </button>
 
 </div>
@@ -1227,45 +1377,47 @@ onclick="orderDesign('AG-004','NEON STREET')">
 
 <article class="card" data-category="gaming">
 
-<div class="card-image">
+<div class="image">
 
 <img
 src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85"
-alt="Alfa Graphic Gaming"
+alt="Cyber Gamer"
 loading="lazy">
 
-<div class="card-overlay">
+<div class="overlay">
 
-<button class="view-btn"
+<button
+class="view"
 onclick="openModal(
 'AG-005',
 'CYBER GAMER',
-'Gaming',
+'GAMING',
 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=90'
 )">
-    VIEW DESIGN
+VIEW DESIGN
 </button>
 
 </div>
+
 </div>
 
-<div class="card-info">
+<div class="info">
 
-<div class="card-code">AG-005</div>
+<div class="code">AG-005</div>
 
 <h3>CYBER GAMER</h3>
 
 <p>
-    Tema cyber gaming untuk komunitas dan apparel.
+Tema cyber gaming untuk komunitas dan apparel.
 </p>
 
-<div class="card-bottom">
+<div class="bottom">
 
 <span class="tag">GAMING</span>
 
-<button class="order-small"
+<button class="order"
 onclick="orderDesign('AG-005','CYBER GAMER')">
-    PESAN
+PESAN
 </button>
 
 </div>
@@ -1279,45 +1431,47 @@ onclick="orderDesign('AG-005','CYBER GAMER')">
 
 <article class="card" data-category="kaos">
 
-<div class="card-image">
+<div class="image">
 
 <img
 src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1000&q=85"
-alt="Alfa Graphic Premium Tee"
+alt="Premium Black"
 loading="lazy">
 
-<div class="card-overlay">
+<div class="overlay">
 
-<button class="view-btn"
+<button
+class="view"
 onclick="openModal(
 'AG-006',
 'PREMIUM BLACK',
-'Kaos',
+'KAOS',
 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90'
 )">
-    VIEW DESIGN
+VIEW DESIGN
 </button>
 
 </div>
+
 </div>
 
-<div class="card-info">
+<div class="info">
 
-<div class="card-code">AG-006</div>
+<div class="code">AG-006</div>
 
 <h3>PREMIUM BLACK</h3>
 
 <p>
-    Konsep premium minimalis untuk apparel modern.
+Konsep premium minimalis untuk apparel modern.
 </p>
 
-<div class="card-bottom">
+<div class="bottom">
 
 <span class="tag">KAOS</span>
 
-<button class="order-small"
+<button class="order"
 onclick="orderDesign('AG-006','PREMIUM BLACK')">
-    PESAN
+PESAN
 </button>
 
 </div>
@@ -1326,29 +1480,28 @@ onclick="orderDesign('AG-006','PREMIUM BLACK')">
 
 </article>
 
-
 </div>
 
 </section>
 
 
-<!-- =========================
-     SERVICES
-========================= -->
+<!-- SERVICES -->
 
 <section id="services">
 
-<div class="section-title">
+<div class="title">
 
-<div class="mini">WHAT WE CREATE</div>
+<div class="mini">
+WHAT WE CREATE
+</div>
 
 <h2>
-    GRAPHIC <span>SERVICES</span>
+GRAPHIC <span>SERVICES</span>
 </h2>
 
 <p>
-    Tidak hanya menyediakan katalog.
-    ALFA GRAPHIC juga melayani kebutuhan desain custom.
+Layanan desain untuk apparel, komunitas,
+brand, otomotif dan kebutuhan custom.
 </p>
 
 </div>
@@ -1357,27 +1510,27 @@ onclick="orderDesign('AG-006','PREMIUM BLACK')">
 <div class="services">
 
 <div class="service">
-    <div class="service-icon">👕</div>
-    <h3>DESAIN KAOS</h3>
-    <p>Desain apparel untuk kebutuhan pribadi, komunitas dan brand.</p>
+<div class="icon">👕</div>
+<h3>DESAIN KAOS</h3>
+<p>Desain apparel untuk pribadi, komunitas dan brand.</p>
 </div>
 
 <div class="service">
-    <div class="service-icon">🏍️</div>
-    <h3>OTOMOTIF</h3>
-    <p>Visual untuk klub motor, otomotif dan komunitas.</p>
+<div class="icon">🏍️</div>
+<h3>OTOMOTIF</h3>
+<p>Visual untuk klub motor, otomotif dan komunitas.</p>
 </div>
 
 <div class="service">
-    <div class="service-icon">🥊</div>
-    <h3>SPORT</h3>
-    <p>Desain untuk boxing, Muay Thai, gym dan berbagai olahraga.</p>
+<div class="icon">🥊</div>
+<h3>SPORT</h3>
+<p>Desain untuk boxing, Muay Thai, gym dan olahraga.</p>
 </div>
 
 <div class="service">
-    <div class="service-icon">⚡</div>
-    <h3>CUSTOM</h3>
-    <p>Konsep desain dibuat berdasarkan kebutuhan pelanggan.</p>
+<div class="icon">⚡</div>
+<h3>CUSTOM</h3>
+<p>Konsep desain berdasarkan kebutuhan pelanggan.</p>
 </div>
 
 </div>
@@ -1385,28 +1538,29 @@ onclick="orderDesign('AG-006','PREMIUM BLACK')">
 </section>
 
 
-<!-- =========================
-     CUSTOM
-========================= -->
+<!-- CUSTOM -->
 
 <section id="custom">
 
 <div class="custom-box">
 
 <h2>
-    PUNYA <span>IDE SENDIRI?</span>
+PUNYA <span>IDE SENDIRI?</span>
 </h2>
 
 <p>
-    Kirim konsep, gambar referensi atau ide desain kamu.
-    ALFA GRAPHIC siap membantu mengubahnya menjadi desain
-    yang siap digunakan untuk kebutuhan apparel dan printing.
+Kirim konsep, gambar referensi atau ide desain kamu.
+ALFA GRAPHIC siap membantu mengubahnya menjadi desain
+untuk kebutuhan apparel dan printing.
 </p>
 
-<a href="javascript:void(0)"
-   onclick="orderCustom()"
-   class="btn btn-primary">
-    ✦ REQUEST CUSTOM DESIGN
+<a
+href="javascript:void(0)"
+onclick="orderCustom()"
+class="btn primary">
+
+✦ REQUEST CUSTOM DESIGN
+
 </a>
 
 </div>
@@ -1414,34 +1568,56 @@ onclick="orderDesign('AG-006','PREMIUM BLACK')">
 </section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 
 <section id="contact" class="contact">
 
-<div class="section-title">
+<div class="title">
 
-<div class="mini">CONNECT WITH US</div>
+<div class="mini">
+CONNECT WITH US
+</div>
 
 <h2>
-    LET'S <span>CREATE</span>
+LET'S <span>CREATE</span>
 </h2>
 
 </div>
+
 
 <div class="contact-card">
 
 <h3>ALFA GRAPHIC</h3>
 
 <p>
-    Graphic Design • Apparel • Sablon • Custom Design
+Graphic Design • Apparel • Sablon • Custom Design
 </p>
 
-<a href="javascript:void(0)"
-   onclick="orderCustom()"
-   class="btn btn-primary">
-    📲 CHAT VIA WHATSAPP
+<div class="contact-info">
+
+<div class="contact-item">
+📲
+<a href="https://wa.me/6283870874140" target="_blank">
+083870874140
+</a>
+</div>
+
+<div class="contact-item">
+📧
+<a href="mailto:adnanfarisi007@gmail.com">
+adnanfarisi007@gmail.com
+</a>
+</div>
+
+</div>
+
+<a
+href="javascript:void(0)"
+onclick="orderCustom()"
+class="btn primary">
+
+📲 CHAT VIA WHATSAPP
+
 </a>
 
 </div>
@@ -1449,58 +1625,69 @@ onclick="orderDesign('AG-006','PREMIUM BLACK')">
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
 <div>
-    © 2026 <strong>ALFA GRAPHIC</strong>
+© 2026 <strong>ALFA GRAPHIC</strong>
 </div>
 
 <div>
-    HOLOGRAPHIC DIGITAL DESIGN CATALOG
+Holographic White Digital Design Catalog
+</div>
+
+<div>
+WhatsApp: <strong>083870874140</strong>
+•
+Email: <strong>adnanfarisi007@gmail.com</strong>
 </div>
 
 </footer>
 
 
-<!-- =========================
-     MODAL
-========================= -->
+<!-- MODAL -->
 
-<div class="modal" id="designModal" onclick="closeModalOutside(event)">
+<div
+class="modal"
+id="modal"
+onclick="closeOutside(event)">
 
 <div class="modal-box">
 
 <button class="close" onclick="closeModal()">
-    ×
+×
 </button>
 
-<img id="modalImage"
-     class="modal-image"
-     src=""
-     alt="Design Preview">
+<img
+id="modalImage"
+class="modal-image"
+src=""
+alt="Design Preview">
 
 <div class="modal-content">
 
-<div class="modal-code" id="modalCode">
-    AG-000
+<div
+id="modalCode"
+class="modal-code">
+AG-000
 </div>
 
 <h2 id="modalTitle">
-    DESIGN
+DESIGN
 </h2>
 
 <p id="modalCategory">
-    Kategori
+Kategori
 </p>
 
-<a href="javascript:void(0)"
-   onclick="orderCurrentDesign()"
-   class="btn btn-primary">
-    📲 PESAN DESAIN INI
+<a
+href="javascript:void(0)"
+onclick="orderCurrent()"
+class="btn primary">
+
+📲 PESAN DESAIN INI
+
 </a>
 
 </div>
@@ -1512,228 +1699,221 @@ onclick="orderDesign('AG-006','PREMIUM BLACK')">
 
 <script>
 
-/* ==================================================
-   WHATSAPP CONFIGURATION
-   MASUKKAN NOMOR WHATSAPP ALFA GRAPHIC DI SINI
+/* =====================================================
+   ALFA GRAPHIC CONTACT
+===================================================== */
 
-   Format:
-   628xxxxxxxxxx
-
-   Jangan gunakan +, spasi atau tanda -
-================================================== */
-
-const WA_NUMBER = "628XXXXXXXXXX";
+const WA_NUMBER = "6283870874140";
+const EMAIL = "adnanfarisi007@gmail.com";
 
 
-/* ==================================================
+/* =====================================================
    MOBILE MENU
-================================================== */
+===================================================== */
 
 function toggleMenu(){
 
-    const nav = document.getElementById("navLinks");
-
-    nav.classList.toggle("open");
+document
+.getElementById("navLinks")
+.classList.toggle("open");
 
 }
 
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
 
-/* tutup menu ketika link diklik */
+link.addEventListener("click",()=>{
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+document
+.getElementById("navLinks")
+.classList
+.remove("open");
 
-    link.addEventListener("click", () => {
-
-        document.getElementById("navLinks").classList.remove("open");
-
-    });
+});
 
 });
 
 
-/* ==================================================
+/* =====================================================
    PARTICLES
-================================================== */
+===================================================== */
 
-const particleContainer =
-    document.getElementById("particles");
+const particleArea =
+document.getElementById("particles");
 
-for(let i = 0; i < 45; i++){
+for(let i=0;i<32;i++){
 
-    const particle =
-        document.createElement("div");
+const p =
+document.createElement("div");
 
-    particle.className = "particle";
+p.className="particle";
 
-    particle.style.left =
-        Math.random() * 100 + "%";
+p.style.left =
+Math.random()*100+"%";
 
-    particle.style.animationDuration =
-        (7 + Math.random() * 12) + "s";
+p.style.width =
+(5+Math.random()*9)+"px";
 
-    particle.style.animationDelay =
-        (-Math.random() * 15) + "s";
+p.style.height =
+p.style.width;
 
-    particle.style.transform =
-        "scale(" + (0.5 + Math.random()) + ")";
+p.style.animationDuration =
+(8+Math.random()*15)+"s";
 
-    particleContainer.appendChild(particle);
+p.style.animationDelay =
+(-Math.random()*20)+"s";
 
-}
-
-
-/* ==================================================
-   FILTER CATALOG
-================================================== */
-
-function filterCatalog(category, button){
-
-    document.querySelectorAll(".filter-btn")
-        .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    const cards =
-        document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-
-        const cardCategory =
-            card.dataset.category;
-
-        if(
-            category === "all" ||
-            cardCategory === category
-        ){
-
-            card.style.display = "";
-
-            setTimeout(() => {
-
-                card.style.opacity = "1";
-                card.style.transform = "translateY(0)";
-
-            },10);
-
-        }else{
-
-            card.style.opacity = "0";
-            card.style.transform = "translateY(10px)";
-
-            setTimeout(() => {
-
-                card.style.display = "none";
-
-            },200);
-
-        }
-
-    });
+particleArea.appendChild(p);
 
 }
 
 
-/* ==================================================
+/* =====================================================
+   FILTER
+===================================================== */
+
+function filterCatalog(category,button){
+
+document
+.querySelectorAll(".filter")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+if(
+category==="all" ||
+card.dataset.category===category
+){
+
+card.style.display="";
+
+setTimeout(()=>{
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+},20);
+
+}else{
+
+card.style.opacity="0";
+card.style.transform="translateY(20px)";
+
+setTimeout(()=>{
+card.style.display="none";
+},250);
+
+}
+
+});
+
+}
+
+
+/* =====================================================
    MODAL
-================================================== */
+===================================================== */
 
-let currentCode = "";
-let currentTitle = "";
+let currentCode="";
+let currentTitle="";
 
-function openModal(code,title,category,image){
 
-    currentCode = code;
-    currentTitle = title;
+function openModal(
+code,
+title,
+category,
+image
+){
 
-    document.getElementById("modalCode").textContent =
-        code;
+currentCode=code;
+currentTitle=title;
 
-    document.getElementById("modalTitle").textContent =
-        title;
+document
+.getElementById("modalCode")
+.textContent=code;
 
-    document.getElementById("modalCategory").textContent =
-        "Kategori: " + category;
+document
+.getElementById("modalTitle")
+.textContent=title;
 
-    document.getElementById("modalImage").src =
-        image;
+document
+.getElementById("modalCategory")
+.textContent=
+"Kategori: "+category;
 
-    document.getElementById("designModal")
-        .classList.add("show");
+document
+.getElementById("modalImage")
+.src=image;
 
-    document.body.style.overflow = "hidden";
+document
+.getElementById("modal")
+.classList.add("show");
+
+document.body.style.overflow="hidden";
 
 }
 
 
 function closeModal(){
 
-    document.getElementById("designModal")
-        .classList.remove("show");
+document
+.getElementById("modal")
+.classList.remove("show");
 
-    document.body.style.overflow = "";
-
-}
-
-
-function closeModalOutside(event){
-
-    if(event.target.id === "designModal"){
-
-        closeModal();
-
-    }
+document.body.style.overflow="";
 
 }
 
 
-document.addEventListener("keydown",function(event){
+function closeOutside(event){
 
-    if(event.key === "Escape"){
+if(event.target.id==="modal"){
+closeModal();
+}
 
-        closeModal();
+}
 
-    }
+
+document.addEventListener(
+"keydown",
+event=>{
+
+if(event.key==="Escape"){
+closeModal();
+}
 
 });
 
 
-/* ==================================================
+/* =====================================================
    WHATSAPP
-================================================== */
+===================================================== */
 
 function openWhatsApp(message){
 
-    if(
-        !WA_NUMBER ||
-        WA_NUMBER.includes("XXXXXXXX")
-    ){
+const url =
+"https://wa.me/" +
+WA_NUMBER +
+"?text=" +
+encodeURIComponent(message);
 
-        alert(
-            "Silakan isi nomor WhatsApp ALFA GRAPHIC terlebih dahulu di bagian WA_NUMBER pada kode."
-        );
-
-        return;
-
-    }
-
-    const url =
-        "https://wa.me/" +
-        WA_NUMBER +
-        "?text=" +
-        encodeURIComponent(message);
-
-    window.open(url,"_blank");
+window.open(url,"_blank");
 
 }
 
 
-/* ==================================================
+/* =====================================================
    ORDER DESIGN
-================================================== */
+===================================================== */
 
 function orderDesign(code,title){
 
-    const message =
+const message =
 `Halo ALFA GRAPHIC 👋
 
 Saya tertarik dengan desain katalog:
@@ -1741,131 +1921,166 @@ Saya tertarik dengan desain katalog:
 Kode: ${code}
 Nama: ${title}
 
-Saya ingin mengetahui detail dan proses pemesanannya.
+Saya ingin mengetahui detail, harga, dan proses pemesanannya.
 
 Terima kasih.`;
 
-    openWhatsApp(message);
+openWhatsApp(message);
 
 }
 
 
-/* ==================================================
-   ORDER CURRENT DESIGN
-================================================== */
+/* =====================================================
+   CURRENT DESIGN
+===================================================== */
 
-function orderCurrentDesign(){
+function orderCurrent(){
 
-    orderDesign(
-        currentCode,
-        currentTitle
-    );
+orderDesign(
+currentCode,
+currentTitle
+);
 
 }
 
 
-/* ==================================================
-   CUSTOM DESIGN
-================================================== */
+/* =====================================================
+   CUSTOM
+===================================================== */
 
 function orderCustom(){
 
-    const message =
+const message =
 `Halo ALFA GRAPHIC 👋
 
 Saya ingin konsultasi CUSTOM DESIGN.
 
 Saya mempunyai ide/referensi desain dan ingin menanyakan proses, harga, serta pengerjaannya.
 
-Terima kasih.`;
+Terima kasih.
 
-    openWhatsApp(message);
+Email:
+${EMAIL}`;
+
+openWhatsApp(message);
 
 }
 
 
-/* ==================================================
-   SCROLL REVEAL
-================================================== */
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
 
 const observer =
-    new IntersectionObserver(
-        entries => {
+new IntersectionObserver(
+entries=>{
 
-            entries.forEach(entry => {
+entries.forEach(entry=>{
 
-                if(entry.isIntersecting){
+if(entry.isIntersecting){
 
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform =
-                        "translateY(0)";
+entry.target.style.opacity="1";
 
-                }
+entry.target.style.transform=
+"translateY(0)";
 
-            });
+}
 
-        },
-        {
-            threshold:.08
-        }
-    );
+});
+
+},
+{
+threshold:.08
+}
+);
 
 
-document.querySelectorAll(
-    ".card,.service,.custom-box,.contact-card"
-).forEach(el => {
+document
+.querySelectorAll(
+".card,.service,.custom-box,.contact-card"
+)
+.forEach(element=>{
 
-    el.style.opacity = "0";
-    el.style.transform = "translateY(25px)";
-    el.style.transition =
-        "opacity .7s ease, transform .7s ease";
+element.style.opacity="0";
 
-    observer.observe(el);
+element.style.transform=
+"translateY(25px)";
+
+element.style.transition=
+"opacity .7s ease,transform .7s ease";
+
+observer.observe(element);
 
 });
 
 
-/* ==================================================
-   CURSOR LIGHT EFFECT
-================================================== */
+/* =====================================================
+   3D CARD MOVEMENT
+===================================================== */
 
-const cursorLight =
-    document.createElement("div");
+document
+.querySelectorAll(".card")
+.forEach(card=>{
 
-cursorLight.style.position = "fixed";
-cursorLight.style.width = "180px";
-cursorLight.style.height = "180px";
-cursorLight.style.borderRadius = "50%";
-cursorLight.style.pointerEvents = "none";
-cursorLight.style.zIndex = "-1";
-cursorLight.style.background =
-    "radial-gradient(circle,rgba(0,247,255,.07),transparent 70%)";
-cursorLight.style.transform =
-    "translate(-50%,-50%)";
+card.addEventListener(
+"mousemove",
+event=>{
 
-document.body.appendChild(cursorLight);
+if(window.innerWidth<700)return;
 
-document.addEventListener("mousemove",event => {
+const rect =
+card.getBoundingClientRect();
 
-    cursorLight.style.left =
-        event.clientX + "px";
+const x =
+event.clientX-rect.left;
 
-    cursorLight.style.top =
-        event.clientY + "px";
+const y =
+event.clientY-rect.top;
+
+const centerX =
+rect.width/2;
+
+const centerY =
+rect.height/2;
+
+const rotateY =
+((x-centerX)/centerX)*2;
+
+const rotateX =
+((centerY-y)/centerY)*2;
+
+card.style.transform =
+`translateY(-10px)
+ rotateX(${rotateX}deg)
+ rotateY(${rotateY}deg)`;
+
+});
+
+card.addEventListener(
+"mouseleave",
+()=>{
+
+card.style.transform="";
+
+});
 
 });
 
 
-/* ==================================================
-   CONSOLE
-================================================== */
+/* =====================================================
+   SYSTEM
+===================================================== */
 
 console.log(
-"ALFA GRAPHIC — HOLOGRAPHIC CATALOG V2"
+"ALFA GRAPHIC V2.1 — WHITE HOLOGRAPHIC CATALOG"
 );
 
 console.log(
-"System initialized successfully."
+"WhatsApp: "+WA_NUMBER
+);
+
+console.log(
+"Email: "+EMAIL
 );
 
 </script>
